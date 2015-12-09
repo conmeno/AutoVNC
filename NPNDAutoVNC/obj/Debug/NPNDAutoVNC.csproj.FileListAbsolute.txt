@@ -1,0 +1,57 @@
+D:\Source\NPNDAutoVNC\NPNDAutoVNC\bin\Debug\NPNDAutoVNC.exe
+D:\Source\NPNDAutoVNC\NPNDAutoVNC\bin\Debug\NPNDAutoVNC.pdb
+D:\Source\NPNDAutoVNC\NPNDAutoVNC\obj\Debug\ResolveAssemblyReference.cache
+D:\Source\NPNDAutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.Form1.resources
+D:\Source\NPNDAutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.Properties.Resources.resources
+D:\Source\NPNDAutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.csproj.GenerateResource.Cache
+D:\Source\NPNDAutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.exe
+D:\Source\NPNDAutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.pdb
+C:\Users\nhatduy\Desktop\NPNDAutoVNC-12-08\NPNDAutoVNC\NPNDAutoVNC\bin\Debug\NPNDAutoVNC.exe
+C:\Users\nhatduy\Desktop\NPNDAutoVNC-12-08\NPNDAutoVNC\NPNDAutoVNC\bin\Debug\NPNDAutoVNC.pdb
+C:\Users\nhatduy\Desktop\NPNDAutoVNC-12-08\NPNDAutoVNC\NPNDAutoVNC\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\nhatduy\Desktop\NPNDAutoVNC-12-08\NPNDAutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.Form1.resources
+C:\Users\nhatduy\Desktop\NPNDAutoVNC-12-08\NPNDAutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.Properties.Resources.resources
+C:\Users\nhatduy\Desktop\NPNDAutoVNC-12-08\NPNDAutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.csproj.GenerateResource.Cache
+C:\Users\nhatduy\Desktop\NPNDAutoVNC-12-08\NPNDAutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.exe
+C:\Users\nhatduy\Desktop\NPNDAutoVNC-12-08\NPNDAutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.pdb
+C:\Documents and Settings\TMS\Desktop\NPNDAutoVNC-12-08 sua\NPNDAutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.exe
+C:\Documents and Settings\TMS\Desktop\NPNDAutoVNC-12-08 sua\NPNDAutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.pdb
+C:\Documents and Settings\TMS\Desktop\NPNDAutoVNC-12-08 sua\NPNDAutoVNC\NPNDAutoVNC\bin\Debug\NPNDAutoVNC.exe
+C:\Documents and Settings\TMS\Desktop\NPNDAutoVNC-12-08 sua\NPNDAutoVNC\NPNDAutoVNC\bin\Debug\NPNDAutoVNC.pdb
+C:\Documents and Settings\TMS\Desktop\NPNDAutoVNC-12-08 sua\NPNDAutoVNC\NPNDAutoVNC\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\TMS\Desktop\NPNDAutoVNC-12-08 sua\NPNDAutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.Form1.resources
+C:\Documents and Settings\TMS\Desktop\NPNDAutoVNC-12-08 sua\NPNDAutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.Properties.Resources.resources
+C:\Documents and Settings\TMS\Desktop\NPNDAutoVNC-12-08 sua\NPNDAutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.csproj.GenerateResource.Cache
+C:\Users\nhatduy\Desktop\NPNDAutoVNC-12-08 sua\NPNDAutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.exe
+C:\Users\nhatduy\Desktop\NPNDAutoVNC-12-08 sua\NPNDAutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.pdb
+C:\Users\nhatduy\Desktop\NPNDAutoVNC-12-08 sua\NPNDAutoVNC\NPNDAutoVNC\bin\Debug\NPNDAutoVNC.exe
+C:\Users\nhatduy\Desktop\NPNDAutoVNC-12-08 sua\NPNDAutoVNC\NPNDAutoVNC\bin\Debug\NPNDAutoVNC.pdb
+C:\Users\nhatduy\Desktop\NPNDAutoVNC-12-08 sua\NPNDAutoVNC\NPNDAutoVNC\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\nhatduy\Desktop\NPNDAutoVNC-12-08 sua\NPNDAutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.Form1.resources
+C:\Users\nhatduy\Desktop\NPNDAutoVNC-12-08 sua\NPNDAutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.Properties.Resources.resources
+C:\Users\nhatduy\Desktop\NPNDAutoVNC-12-08 sua\NPNDAutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.csproj.GenerateResource.Cache
+C:\Users\dell nhat duy\Desktop\NPNDAutoVNC-12-08 sua\NPNDAutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.pdb
+C:\Users\dell nhat duy\Desktop\NPNDAutoVNC-12-08 sua\NPNDAutoVNC\NPNDAutoVNC\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\dell nhat duy\Desktop\NPNDAutoVNC-12-08 sua\NPNDAutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.Form1.resources
+C:\Users\dell nhat duy\Desktop\NPNDAutoVNC-12-08 sua\NPNDAutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.Properties.Resources.resources
+C:\Users\dell nhat duy\Desktop\NPNDAutoVNC-12-08 sua\NPNDAutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.csproj.GenerateResource.Cache
+C:\Users\dell nhat duy\Desktop\NPNDAutoVNC-12-08 sua\NPNDAutoVNC\NPNDAutoVNC\bin\Debug\NPNDAutoVNC.exe
+C:\Users\dell nhat duy\Desktop\NPNDAutoVNC-12-08 sua\NPNDAutoVNC\NPNDAutoVNC\bin\Debug\NPNDAutoVNC.pdb
+C:\Users\dell nhat duy\Desktop\NPNDAutoVNC-12-08 sua\NPNDAutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.exe
+C:\Users\Administrator\Desktop\NPNDAutoVNC\NPNDAutoVNC\bin\Debug\NPNDAutoVNC.exe
+C:\Users\Administrator\Desktop\NPNDAutoVNC\NPNDAutoVNC\bin\Debug\NPNDAutoVNC.pdb
+C:\Users\Administrator\Desktop\NPNDAutoVNC\NPNDAutoVNC\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\NPNDAutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.Form1.resources
+C:\Users\Administrator\Desktop\NPNDAutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.Properties.Resources.resources
+C:\Users\Administrator\Desktop\NPNDAutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\NPNDAutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.exe
+C:\Users\Administrator\Desktop\NPNDAutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.pdb
+E:\dl\NPNDAutoVNC1-10-15\NPNDAutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.exe
+E:\dl\NPNDAutoVNC1-10-15\NPNDAutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.pdb
+E:\dl\NPNDAutoVNC1-10-15\NPNDAutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.Form1.resources
+E:\dl\NPNDAutoVNC1-10-15\NPNDAutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.Properties.Resources.resources
+E:\dl\NPNDAutoVNC1-10-15\NPNDAutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.csproj.GenerateResource.Cache
+E:\dl\NPNDAutoVNC1-10-15\NPNDAutoVNC\NPNDAutoVNC\bin\Debug\NPNDAutoVNC.exe
+E:\dl\NPNDAutoVNC1-10-15\NPNDAutoVNC\NPNDAutoVNC\bin\Debug\NPNDAutoVNC.pdb
+E:\AutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.exe
+E:\AutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.pdb

@@ -1,0 +1,184 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="livetemplates.csharp.usevar">True</setting>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="C093A99C-88EF-499D-9141-8674C6139BAD/f:CTLConfig.cs" caret="4238" fromTop="11" />
+      <File id="C093A99C-88EF-499D-9141-8674C6139BAD/f:Form1.cs" caret="4106" fromTop="2" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="C093A99C-88EF-499D-9141-8674C6139BAD/f:Form1.cs" caret="21727" fromTop="12" />
+      <File id="C093A99C-88EF-499D-9141-8674C6139BAD/f:Form1.cs" caret="22133" fromTop="22" />
+      <File id="C093A99C-88EF-499D-9141-8674C6139BAD/f:CTLConfig.cs" caret="737" fromTop="9" />
+      <File id="C093A99C-88EF-499D-9141-8674C6139BAD/f:CTLConfig.cs" caret="3369" fromTop="10" />
+      <File id="C093A99C-88EF-499D-9141-8674C6139BAD/f:Form1.cs" caret="23227" fromTop="23" />
+      <File id="C093A99C-88EF-499D-9141-8674C6139BAD/f:Form1.cs" caret="22898" fromTop="16" />
+      <File id="C093A99C-88EF-499D-9141-8674C6139BAD/f:Form1.cs" caret="12877" fromTop="15" />
+      <File id="C093A99C-88EF-499D-9141-8674C6139BAD/f:CTLConfig.cs" caret="5501" fromTop="11" />
+      <File id="C093A99C-88EF-499D-9141-8674C6139BAD/f:CTLConfig.cs" caret="5977" fromTop="22" />
+      <File id="C093A99C-88EF-499D-9141-8674C6139BAD/f:CTLConfig.cs" caret="5770" fromTop="17" />
+      <File id="C093A99C-88EF-499D-9141-8674C6139BAD/f:Form1.cs" caret="13127" fromTop="23" />
+      <File id="C093A99C-88EF-499D-9141-8674C6139BAD/f:Form1.cs" caret="27447" fromTop="13" />
+      <File id="C093A99C-88EF-499D-9141-8674C6139BAD/f:Form1.cs" caret="9632" fromTop="8" />
+      <File id="C093A99C-88EF-499D-9141-8674C6139BAD/f:Form1.cs" caret="25346" fromTop="13" />
+      <File id="C093A99C-88EF-499D-9141-8674C6139BAD/f:Form1.cs" caret="12651" fromTop="0" />
+      <File id="C093A99C-88EF-499D-9141-8674C6139BAD/f:Form1.cs" caret="26206" fromTop="14" />
+      <File id="C093A99C-88EF-499D-9141-8674C6139BAD/f:Form1.cs" caret="26922" fromTop="25" />
+      <File id="C093A99C-88EF-499D-9141-8674C6139BAD/f:Form1.cs" caret="23346" fromTop="10" />
+      <File id="C093A99C-88EF-499D-9141-8674C6139BAD/f:Form1.cs" caret="24422" fromTop="25" />
+      <File id="C093A99C-88EF-499D-9141-8674C6139BAD/f:Form1.cs" caret="25031" fromTop="16" />
+      <File id="C093A99C-88EF-499D-9141-8674C6139BAD/f:Form1.cs" caret="6178" fromTop="11" />
+      <File id="C093A99C-88EF-499D-9141-8674C6139BAD/f:Form1.cs" caret="14947" fromTop="5" />
+      <File id="C093A99C-88EF-499D-9141-8674C6139BAD/f:Form1.cs" caret="2454" fromTop="19" />
+      <File id="C093A99C-88EF-499D-9141-8674C6139BAD/f:Form1.cs" caret="27155" fromTop="20" />
+      <File id="C093A99C-88EF-499D-9141-8674C6139BAD/f:Form1.cs" caret="25083" fromTop="19" />
+      <File id="C093A99C-88EF-499D-9141-8674C6139BAD/f:Form1.cs" caret="4225" fromTop="20" />
+      <File id="C093A99C-88EF-499D-9141-8674C6139BAD/f:Form1.cs" caret="5975" fromTop="16" />
+      <File id="C093A99C-88EF-499D-9141-8674C6139BAD/f:Form1.cs" caret="21871" fromTop="4" />
+      <File id="C093A99C-88EF-499D-9141-8674C6139BAD/f:Form1.cs" caret="5722" fromTop="4" />
+      <File id="C093A99C-88EF-499D-9141-8674C6139BAD/f:Form1.cs" caret="13558" fromTop="4" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir>C:\Program Files\NUnit 2.6.2\bin\net-2.0\</NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="public" priority="3" />
+      <Item value="static" priority="0" />
+      <Item value="int" priority="5" />
+      <Item value="_PointFirtApp" priority="0" />
+      <Item value="strPontfirtapp" priority="0" />
+      <Item value="strPointStartApp" priority="0" />
+      <Item value="_SLApp" priority="0" />
+      <Item value="Convert`0" priority="1" />
+      <Item value="slapp" priority="1" />
+      <Item value="_WidthApp" priority="0" />
+      <Item value="width" priority="0" />
+      <Item value="checkBoxStartAndClose" priority="2" />
+      <Item value="numTick" priority="2" />
+      <Item value="true" priority="5" />
+      <Item value="else" priority="5" />
+      <Item value="false" priority="5" />
+      <Item value="if" priority="6" />
+      <Item value="checkBoxStartAndClose_CheckedChanged`0" priority="0" />
+      <Item value="btStop" priority="1" />
+      <Item value="btStart" priority="1" />
+      <Item value="Point`0" priority="2" />
+      <Item value="return" priority="0" />
+      <Item value="p" priority="3" />
+      <Item value="Random`0" priority="1" />
+      <Item value="new" priority="3" />
+      <Item value="Random" priority="0" />
+      <Item value="ran" priority="0" />
+      <Item value="Point" priority="1" />
+      <Item value="x" priority="2" />
+      <Item value="CTLConfig`0" priority="12" />
+      <Item value="w" priority="0" />
+      <Item value="h" priority="0" />
+      <Item value="_hightApp" priority="0" />
+      <Item value="txtslapp" priority="2" />
+      <Item value="e" priority="1" />
+      <Item value="F2" priority="0" />
+      <Item value="txtwidth" priority="1" />
+      <Item value="F3" priority="0" />
+      <Item value="hight" priority="0" />
+      <Item value="txthight" priority="1" />
+      <Item value="void" priority="1" />
+      <Item value="DataTable`0" priority="1" />
+      <Item value="gridlist" priority="0" />
+      <Item value="foreach" priority="0" />
+      <Item value="DataRow`0" priority="0" />
+      <Item value="StartAndrestartApp`0" priority="2" />
+      <Item value="CloseAndRestart`0" priority="0" />
+      <Item value="GetPointRandonApp`0" priority="0" />
+      <Item value="app" priority="0" />
+      <Item value="string" priority="1" />
+      <Item value="SetVNCByIP`0" priority="0" />
+      <Item value="r" priority="1" />
+      <Item value="Thread`0" priority="1" />
+      <Item value="timerRestartApp" priority="4" />
+      <Item value="EventHandler" priority="1" />
+      <Item value="bool" priority="0" />
+      <Item value="_isRestartAppOK" priority="1" />
+      <Item value="toar" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Convert">
+      <Item value="ToInt32`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.CheckBox">
+      <Item value="Checked" priority="0" />
+      <Item value="Enabled" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.NumericUpDown">
+      <Item value="Enabled" priority="1" />
+      <Item value="Value" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.Button">
+      <Item value="Enabled" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Random">
+      <Item value="Next`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@NPNDAutoVNC.CTLConfig">
+      <Item value="_PointFirtApp" priority="2" />
+      <Item value="_WidthApp" priority="1" />
+      <Item value="_hightApp" priority="1" />
+      <Item value="SetSLApp`0" priority="0" />
+      <Item value="SetWidthApp`0" priority="0" />
+      <Item value="SetHightApp`0" priority="0" />
+      <Item value="_pointRightClick" priority="0" />
+      <Item value="_PointAppCl" priority="0" />
+      <Item value="_SLApp" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Drawing.Point">
+      <Item value="X" priority="0" />
+      <Item value="Y" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.Forms.Keys">
+      <Item value="F1" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.TextBox">
+      <Item value="Text" priority="6" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.KeyEventArgs">
+      <Item value="KeyCode" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.DataGridView">
+      <Item value="DataSource" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.DataTable">
+      <Item value="Rows" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Object">
+      <Item value="ToString`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.String">
+      <Item value="Empty" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Threading.Thread">
+      <Item value="Sleep`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.Timer">
+      <Item value="Enabled" priority="1" />
+      <Item value="Tick" priority="1" />
+      <Item value="Interval" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Int32">
+      <Item value="ToString`0" priority="2" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>

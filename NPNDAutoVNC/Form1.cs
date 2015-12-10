@@ -172,7 +172,7 @@ namespace NPNDAutoVNC
                 {
                     //timerRestartApp.Enabled = true;
                     //timerRestartApp.Interval = (int)numTick.Value;
-                    //timerRestartApp.Tick += new EventHandler(timerRestartApp_Tick);
+                    ////timerRestartApp.Tick += new EventHandler(timerRestartApp_Tick);
                     lookuprestartapp();
                 }
                 else//click ad
@@ -521,6 +521,37 @@ namespace NPNDAutoVNC
             Thread.Sleep(2500);
             sendMouseLeftclick(appstart);
             //Thread.Sleep(500);
+        }
+        public void ResetAd(Point RightClick, Point appReset, Point appReset1, Point appReset2, Point appReset3)
+        {
+            SetCursorPos(RightClick.X, RightClick.Y);
+            Thread.Sleep(500);
+            sendMouseRightclick(RightClick);
+            Thread.Sleep(2500);
+
+            //click to App reset
+            SetCursorPos(appReset.X, appReset.Y);
+            Thread.Sleep(1000);
+            sendMouseLeftclick(appReset);
+            Thread.Sleep(2000);
+
+            //click reset point 1
+            SetCursorPos(appReset1.X, appReset1.Y);
+            Thread.Sleep(1000);
+            sendMouseLeftclick(appReset1);
+            Thread.Sleep(2000);
+
+            //click reset point 2
+            SetCursorPos(appReset2.X, appReset2.Y);
+            Thread.Sleep(1000);
+            sendMouseLeftclick(appReset2);
+            Thread.Sleep(2000);
+
+            //click reset point 3
+            SetCursorPos(appReset3.X, appReset3.Y);
+            Thread.Sleep(1000);
+            sendMouseLeftclick(appReset3);
+            
         }
         #endregion
 
@@ -889,6 +920,12 @@ namespace NPNDAutoVNC
                     SetVNCByIP(r["IP"].ToString());
                     Thread.Sleep(500);
                     Point app = GetPointRandonApp(Convert.ToInt32("0" + txtslapp.Text));
+
+                    if (checkResetAd.Checked)
+                    {
+                        ResetAd(CTLConfig._pointRightClick, CTLConfig._PointAppResetAd, CTLConfig._PointResetAdID1, CTLConfig._PointResetAdID2, CTLConfig._PointResetAdID3);
+                    }
+
                     CloseAndRestart(CTLConfig._pointRightClick, app, CTLConfig._PointAppCl);
                     Thread.Sleep(1000);
                     Process p = Process.GetProcessesByName(CTLConfig._ProcessName)[0];

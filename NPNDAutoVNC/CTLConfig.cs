@@ -19,6 +19,13 @@ namespace NPNDAutoVNC
         public static Point _pointRightClick;
         public static Point _PointStartApp;
         public static Point _PointFirtApp;
+
+        public static Point _PointAppResetAd;
+        public static Point _PointResetAdID1;
+        public static Point _PointResetAdID2;
+        public static Point _PointResetAdID3;
+
+
         public static Point _PointVNCConnect;
         public static Point _PointOK;
         public static int _SLApp;
@@ -52,11 +59,35 @@ namespace NPNDAutoVNC
 
                 string strPointStartApp = document.SelectSingleNode("//PointStartApp").Attributes["Value"].Value;
                 string[] strPontStartapp = strPointStartApp.Split(',');
-                _PointStartApp = new Point(Convert.ToInt32(strPointStartApp[0]), Convert.ToInt32(strRightClick[1]));
+                _PointStartApp = new Point(Convert.ToInt32(strPointStartApp[0]), Convert.ToInt32(strPontStartapp[1]));
 
                 string strfirtapp = document.SelectSingleNode("//PointFirtApp").Attributes["Value"].Value;
                 string[] strPontfirtapp = strfirtapp.Split(',');
-                _PointFirtApp = new Point(Convert.ToInt32(strPontfirtapp[0]), Convert.ToInt32(strRightClick[1]));
+                _PointFirtApp = new Point(Convert.ToInt32(strPontfirtapp[0]), Convert.ToInt32(strPontfirtapp[1]));
+
+
+                //phuong edit
+                string strAppResetAd = document.SelectSingleNode("//PointAppResetAd").Attributes["Value"].Value;
+                string[] strPontAppResetAd = strAppResetAd.Split(',');
+                _PointAppResetAd = new Point(Convert.ToInt32(strPontAppResetAd[0]), Convert.ToInt32(strPontAppResetAd[1]));
+
+
+                string strResetAdID1 = document.SelectSingleNode("//PointResetAdID1").Attributes["Value"].Value;
+                string[] strPontResetAdID1 = strResetAdID1.Split(',');
+                _PointResetAdID1 = new Point(Convert.ToInt32(strPontResetAdID1[0]), Convert.ToInt32(strPontResetAdID1[1]));
+
+                string strResetAdID2 = document.SelectSingleNode("//PointResetAdID2").Attributes["Value"].Value;
+                string[] strPontResetAdID2 = strResetAdID2.Split(',');
+                _PointResetAdID2 = new Point(Convert.ToInt32(strPontResetAdID2[0]), Convert.ToInt32(strPontResetAdID2[1]));
+
+
+                string strResetAdID3 = document.SelectSingleNode("//PointResetAdID3").Attributes["Value"].Value;
+                string[] strPontResetAdID3 = strResetAdID3.Split(',');
+                _PointResetAdID3 = new Point(Convert.ToInt32(strPontResetAdID3[0]), Convert.ToInt32(strPontResetAdID3[1]));
+
+
+
+                //end phuong edit
 
                 string strvncconnect = document.SelectSingleNode("//PointVNCConnect").Attributes["Value"].Value;
                 string[] strPontVNCCon = strvncconnect.Split(',');

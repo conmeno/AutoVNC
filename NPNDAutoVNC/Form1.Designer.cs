@@ -64,6 +64,7 @@
             this.btdoubleLeftclick = new System.Windows.Forms.Button();
             this.btRightClick = new System.Windows.Forms.Button();
             this.btdoublerightClcik = new System.Windows.Forms.Button();
+            this.checkResetAd = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridlist)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numTick)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtmouseX)).BeginInit();
@@ -72,8 +73,8 @@
             // 
             // gridlist
             // 
-            this.gridlist.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridlist.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gridlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridlist.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IP,
@@ -235,6 +236,8 @@
             // checkBoxStartAndClose
             // 
             this.checkBoxStartAndClose.AutoSize = true;
+            this.checkBoxStartAndClose.Checked = true;
+            this.checkBoxStartAndClose.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxStartAndClose.Location = new System.Drawing.Point(4, 63);
             this.checkBoxStartAndClose.Name = "checkBoxStartAndClose";
             this.checkBoxStartAndClose.Size = new System.Drawing.Size(99, 17);
@@ -384,11 +387,22 @@
             this.btdoublerightClcik.UseVisualStyleBackColor = true;
             this.btdoublerightClcik.Click += new System.EventHandler(this.btdoublerightClcik_Click);
             // 
+            // checkResetAd
+            // 
+            this.checkResetAd.AutoSize = true;
+            this.checkResetAd.Location = new System.Drawing.Point(4, 141);
+            this.checkResetAd.Name = "checkResetAd";
+            this.checkResetAd.Size = new System.Drawing.Size(70, 17);
+            this.checkResetAd.TabIndex = 13;
+            this.checkResetAd.Text = "Reset Ad";
+            this.checkResetAd.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(690, 431);
+            this.Controls.Add(this.checkResetAd);
             this.Controls.Add(this.btdoublerightClcik);
             this.Controls.Add(this.btRightClick);
             this.Controls.Add(this.btdoubleLeftclick);
@@ -419,8 +433,8 @@
             this.KeyPreview = true;
             this.Name = "Form1";
             this.Text = "Form1";
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
             ((System.ComponentModel.ISupportInitialize)(this.gridlist)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numTick)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtmouseX)).EndInit();
@@ -467,6 +481,7 @@
         private System.Windows.Forms.Button btdoubleLeftclick;
         private System.Windows.Forms.Button btRightClick;
         private System.Windows.Forms.Button btdoublerightClcik;
+        private System.Windows.Forms.CheckBox checkResetAd;
     }
 }
 

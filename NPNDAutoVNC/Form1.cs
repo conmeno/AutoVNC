@@ -1065,6 +1065,15 @@ namespace NPNDAutoVNC
             sendMouseRightDoubleClick(new Point((int)txtmouseX.Value,(int)txtmouseY.Value));
         }
 
+        private void btCopyToList_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show(txtListIPSimple.Text);
+            //DataTable dt = new DataTable();
+            //List<string> listtemp= txtListIPSimple.Text.Split('\n');
+
+
+        }
+
      
     }
     [StructLayout(LayoutKind.Sequential)]

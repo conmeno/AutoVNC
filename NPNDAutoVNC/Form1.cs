@@ -33,6 +33,17 @@ namespace NPNDAutoVNC
         [DllImport("user32.dll")]
         public static extern bool GetCursorPos(out Point lpPoint);
 
+        [DllImport("user32.dll")]
+        public static extern bool GetWindowRect(IntPtr hwnd, ref Rect rectangle);
+
+        public struct Rect
+        {
+            public int Left { get; set; }
+            public int Top { get; set; }
+            public int Right { get; set; }
+            public int Bottom { get; set; }
+        }
+
       
 
         [System.Runtime.InteropServices.DllImport("user32.dll")]
@@ -159,6 +170,7 @@ namespace NPNDAutoVNC
         {
             try
             {
+                ListIPtoFiles();
                 _isstop = false;
                 timer5p.Enabled = false;
                 timer5p.Stop();
@@ -173,6 +185,7 @@ namespace NPNDAutoVNC
                     //timerRestartApp.Enabled = true;
                     //timerRestartApp.Interval = (int)numTick.Value;
                     ////timerRestartApp.Tick += new EventHandler(timerRestartApp_Tick);
+                    
                     lookuprestartapp();
                 }
                 else//click ad
@@ -910,6 +923,27 @@ namespace NPNDAutoVNC
             catch
             { }
         }
+        public void OpenVNCFile(string ip)
+        {
+            string VNCPath = Application.StartupPath + "\\VNC\\" + ip + ".vnc";
+
+            Process vnc = new Process();
+            vnc.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
+
+            vnc.StartInfo.FileName = VNCPath;
+            vnc.Start();
+            Thread.Sleep(100);
+
+            IntPtr id = vnc.MainWindowHandle;
+
+            Rect NotepadRect = new Rect();
+            GetWindowRect(id, ref NotepadRect);
+
+            labpoint.Text = String.Format("x={0}  y={1}", NotepadRect.Left,NotepadRect.Top);
+            //Process.Start(VNCPath);
+            //Thread.Sleep(Convert.ToInt32(2000));
+            labpoint.Visible = true;
+        }
         public void StartAndrestartApp()
         {
             DataTable dt = (DataTable) gridlist.DataSource;
@@ -929,6 +963,7 @@ namespace NPNDAutoVNC
                     CloseAndRestart(CTLConfig._pointRightClick, app, CTLConfig._PointAppCl);
                     Thread.Sleep(1000);
                     Process p = Process.GetProcessesByName(CTLConfig._ProcessName)[0];
+                  
                     if (p != null)
                         p.Kill();
                 }
@@ -936,7 +971,69 @@ namespace NPNDAutoVNC
             }
             _isRestartAppOK = true;
         }
+       
+        //phuong edit
+        public void OpenApps()
+        {
+            DataTable dt = (DataTable)gridlist.DataSource;
+            foreach (DataRow r in dt.Rows)
+            {
+                string ip=r["IP"].ToString().Trim();
+                if ( ip!= string.Empty)
+                {
+                    OpenVNCFile(ip);
+                    Thread.Sleep(500);
+                    Point app = GetPointRandonApp(Convert.ToInt32("0" + txtslapp.Text));
 
+                    if (checkResetAd.Checked)
+                    {
+                        ResetAd(CTLConfig._pointRightClick, CTLConfig._PointAppResetAd, CTLConfig._PointResetAdID1, CTLConfig._PointResetAdID2, CTLConfig._PointResetAdID3);
+                    }
+
+                    CloseAndRestart(CTLConfig._pointRightClick, app, CTLConfig._PointAppCl);
+                    Thread.Sleep(1000);
+                    Process p = Process.GetProcessesByName(CTLConfig._ProcessName)[0];
+                    if (p != null)
+                        p.Kill();
+                }
+
+            }
+            _isRestartAppOK = true;
+        }
+        public void ListIPtoFiles()
+        {
+            string VNCPath = Application.StartupPath + "\\VNC";
+            //Directory.Delete(VNCPath, true);
+          
+            DirectoryInfo VNC = new DirectoryInfo(VNCPath);
+           
+            if (!Directory.Exists(VNCPath))
+                Directory.CreateDirectory(VNCPath);
+
+            DataTable dt = (DataTable)gridlist.DataSource;
+            string VNCConfigTextFile = Application.StartupPath + "\\VNCConfigFile.txt";
+            string VNCConfigText = "";
+            if (File.Exists(VNCConfigTextFile))
+            { 
+                 VNCConfigText= File.ReadAllText(VNCConfigTextFile);
+            }
+            foreach (DataRow r in dt.Rows)
+            {
+                string IP = r["IP"].ToString().Trim();
+                if (IP != string.Empty)
+                {
+                    string fileName = VNCPath + "\\" + IP + ".vnc";
+                    StreamWriter sw = new StreamWriter(fileName);
+                    sw.WriteLine("[Connection]");
+                    sw.WriteLine("Host="+ IP);
+                    sw.WriteLine("Password=b4d90014103bde54");
+                    sw.WriteLine(VNCConfigText);
+                    sw.Close();
+                }
+
+            } 
+        }
+       //end phuong edit
         //private void button1_Click(object sender, EventArgs e)
         //{
         //    SetCursorPos(270, 247);
@@ -1001,7 +1098,8 @@ namespace NPNDAutoVNC
         {
             if(checkBoxIsStartApp.Enabled&&!_isstop)
             {
-                StartAndrestartApp();
+                //StartAndrestartApp();
+                OpenApps();
                 
             }
             lookuprestartapp();
@@ -1065,12 +1163,13 @@ namespace NPNDAutoVNC
             sendMouseRightDoubleClick(new Point((int)txtmouseX.Value,(int)txtmouseY.Value));
         }
 
-        private void btCopyToList_Click(object sender, EventArgs e)
+        private void txtTest_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show(txtListIPSimple.Text);
-            //DataTable dt = new DataTable();
-            //List<string> listtemp= txtListIPSimple.Text.Split('\n');
+            ListIPtoFiles();
+        }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
 
         }
 

@@ -16,7 +16,7 @@ namespace NPNDAutoVNC
             Application.SetCompatibleTextRenderingDefault(false);
             CTLConfig.GetConfiguration();
             char x = (char) 19;
-            Application.Run(new Form1());
+            Application.Run(new Auto());
         }
     }
 }

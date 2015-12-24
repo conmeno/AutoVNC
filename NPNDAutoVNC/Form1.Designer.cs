@@ -65,6 +65,7 @@
             this.btRightClick = new System.Windows.Forms.Button();
             this.btdoublerightClcik = new System.Windows.Forms.Button();
             this.checkResetAd = new System.Windows.Forms.CheckBox();
+            this.txtTest = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridlist)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numTick)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtmouseX)).BeginInit();
@@ -82,6 +83,7 @@
             this.Action});
             this.gridlist.Location = new System.Drawing.Point(333, -2);
             this.gridlist.Name = "gridlist";
+            this.gridlist.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.gridlist.Size = new System.Drawing.Size(357, 398);
             this.gridlist.TabIndex = 0;
             // 
@@ -397,11 +399,22 @@
             this.checkResetAd.Text = "Reset Ad";
             this.checkResetAd.UseVisualStyleBackColor = true;
             // 
+            // txtTest
+            // 
+            this.txtTest.Location = new System.Drawing.Point(213, 260);
+            this.txtTest.Name = "txtTest";
+            this.txtTest.Size = new System.Drawing.Size(75, 23);
+            this.txtTest.TabIndex = 14;
+            this.txtTest.Text = "Test";
+            this.txtTest.UseVisualStyleBackColor = true;
+            this.txtTest.Click += new System.EventHandler(this.txtTest_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(690, 431);
+            this.Controls.Add(this.txtTest);
             this.Controls.Add(this.checkResetAd);
             this.Controls.Add(this.btdoublerightClcik);
             this.Controls.Add(this.btRightClick);
@@ -433,6 +446,7 @@
             this.KeyPreview = true;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
             ((System.ComponentModel.ISupportInitialize)(this.gridlist)).EndInit();
@@ -482,6 +496,7 @@
         private System.Windows.Forms.Button btRightClick;
         private System.Windows.Forms.Button btdoublerightClcik;
         private System.Windows.Forms.CheckBox checkResetAd;
+        private System.Windows.Forms.Button txtTest;
     }
 }
 

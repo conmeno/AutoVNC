@@ -1,7 +1,13 @@
 <?xml version="1.0" standalone="yes"?>
 <DocumentElement>
   <List>
-    <IP>192.168.1.96</IP>
+    <IP>192.168.1.97</IP>
     <Action>0</Action>
+  </List>
+  <List>
+    <IP>192.168.1.39</IP>
+  </List>
+  <List>
+    <IP>192.168.1.32</IP>
   </List>
 </DocumentElement>

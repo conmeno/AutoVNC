@@ -33,7 +33,7 @@ namespace NPNDAutoVNC
         public static extern int GetDlgCtrlID(IntPtr hwnd);
         //mouse
         [DllImport("user32.dll")]
-        public static extern bool GetCursorPos(out Point lpPoint);      
+        public static extern bool GetCursorPos(out Point lpPoint);
 
 
         [System.Runtime.InteropServices.DllImport("user32.dll")]
@@ -73,23 +73,59 @@ namespace NPNDAutoVNC
         #endregion
 
         #endregion
-        int LoopCount = 1;
+        int LoopCount = 0;
+        int Rounds = 0;
+        int Apps = 0;
+
+
+        public void WorkThreadFunction()
+        {
+            //try
+            //{
+                BindingList<VNC> listVNC = (BindingList<VNC>)gridlist.DataSource;
+                Utility.ListIPtoFiles(listVNC);
+                if (listVNC != null && listVNC.Count > 0)
+                    LoopOpenApps(listVNC);
+                // do any background work
+            //}
+            //catch (Exception ex)
+            //{
+            //    // log errors
+            //    MessageBox.Show(ex.Message);
+            //}
+        }
+
+
+
 
         private void btStart_Click(object sender, EventArgs e)
         {
-            BindingList<VNC> listVNC = (BindingList<VNC>)gridlist.DataSource;
 
-            LoopOpenApps(listVNC);
+            //Thread thread = new Thread(new ThreadStart(WorkThreadFunction));
+            //thread.Start();
+            WorkThreadFunction();
+
+
+
         }
         public void LoopOpenApps(BindingList<VNC> listVNC)
         {
-            Utility.OpenApps(listVNC,checkResetAd.Checked,false);
+            Rounds++;
+            lbRounds.Text = Rounds.ToString();
+            Utility.OpenApps(listVNC, checkResetAd.Checked, false);
             LoopCount++;
             if (cbClickAd.Checked)
             {
-                Thread.Sleep(30000);
-                Utility.OpenApps(listVNC, checkResetAd.Checked, true);
+                if (NewConfig.Config.NumberRoundClickAd >= LoopCount)
+                {
+                    //Thread.Sleep(60000);
+                    Utility.OpenApps(listVNC, checkResetAd.Checked, true);
+                    //Thread.Sleep(60000);
+                }
+                
             }
+
+          
             LoopOpenApps(listVNC);
 
         }
@@ -116,8 +152,12 @@ namespace NPNDAutoVNC
 
         private void Auto_Load(object sender, EventArgs e)
         {
-           
-         LoadFirst();
+
+            LoadFirst();
+            //show config data
+            txtVNCName.Text = NewConfig.Config.VNCName;
+            txtNumberRoundClickAd.Text = NewConfig.Config.NumberRoundClickAd.ToString();
+
         }
         public void LoadFirst()
         {
@@ -140,21 +180,21 @@ namespace NPNDAutoVNC
             txtPointX.Text = e.X.ToString();
             txtPointY.Text = e.Y.ToString();
 
-            txtVNCPointX.Text = (e.X - NewConfig.Config.VNCPoint.X).ToString() ;
-            txtVNCPointY.Text=(e.Y - NewConfig.Config.VNCPoint.Y).ToString();
+            txtVNCPointX.Text = (e.X - NewConfig.Config.VNCPoint.X).ToString();
+            txtVNCPointY.Text = (e.Y - NewConfig.Config.VNCPoint.Y).ToString();
 
 
             HookManager.MouseClick -= HookManager_MouseClick;
         }
         public void MouseMoved(object sender, MouseEventArgs e)
-        { 
+        {
 
             labpoint.Text = String.Format("x={0}  y={1}", e.X, e.Y);
             //if (e.Clicks > 0) LogWrite("MouseButton     - " + e.Button.ToString());
         }
 
         #region "Config Button Click Event"
-        
+
         private void btSaveVNCPoint_Click(object sender, EventArgs e)
         {
             NewConfig config = Utility.LoadConfig(false);
@@ -227,7 +267,21 @@ namespace NPNDAutoVNC
             Utility.SaveConfig(config);
         }
 
-      
+        private void btSaveVNCName_Click(object sender, EventArgs e)
+        {
+            NewConfig config = Utility.LoadConfig(false);
+            config.VNCName = txtVNCName.Text;
+            
+            Utility.SaveConfig(config);
+
+        }
+        private void btSaveNumberRoundClickAd_Click(object sender, EventArgs e)
+        {
+            NewConfig config = Utility.LoadConfig(false);
+            config.NumberRoundClickAd = int.Parse(txtNumberRoundClickAd.Text);
+
+            Utility.SaveConfig(config);
+        }
         #endregion
 
         private void ListIPCopy_Click(object sender, EventArgs e)
@@ -245,5 +299,9 @@ namespace NPNDAutoVNC
             Utility.SaveListVNC(listVNC);
             LoadFirst();
         }
+
+      
+
+       
     }
 }

@@ -199,13 +199,17 @@ namespace NPNDAutoVNC
             }
             foreach (var item in VNCList)
             {
-                string fileName = VNCPath + "\\" + NewConfig.Config.DefaultIP+ item.IP + ".vnc";
-                StreamWriter sw = new StreamWriter(fileName);
-                sw.WriteLine("[Connection]");
-                sw.WriteLine("Host=" + NewConfig.Config.DefaultIP + item.IP);
-                sw.WriteLine("Password=b4d90014103bde54");
-                sw.WriteLine(VNCConfigText);
-                sw.Close();
+                if (item.IP != null && item.IP != string.Empty)
+                {
+                    string fileName = VNCPath + "\\" + NewConfig.Config.DefaultIP + item.IP + ".vnc";
+                    StreamWriter sw = new StreamWriter(fileName);
+                    sw.WriteLine("[Connection]");
+                    sw.WriteLine("Host=" + NewConfig.Config.DefaultIP + item.IP);
+                    sw.WriteLine("Password=b4d90014103bde54");
+                    sw.WriteLine(VNCConfigText);
+                    sw.Close();
+                }
+                
             }
 
         }
@@ -304,8 +308,8 @@ namespace NPNDAutoVNC
         public static void SaveListVNC(BindingList<VNC> listVNC)
         {
             string VNCListPath = Application.StartupPath + "\\ListVNC.txt";
-            if (listVNC.Count == 0)
-                listVNC.Add(new VNC());
+            //if (listVNC.Count == 0)
+            //    listVNC.Add(new VNC());
             string XML = Serialize(listVNC, true);
             System.IO.StreamWriter sr = new StreamWriter(VNCListPath);
             sr.WriteLine(XML);
@@ -326,11 +330,14 @@ namespace NPNDAutoVNC
             sendMouseRightclick(appclose);
             Thread.Sleep(1000);
 
-            if (!ResetAd)
-            {
-                sendMouseLeftclick(appclose);
-                Thread.Sleep(4000);
-            }
+
+            sendMouseLeftclick(appclose);
+            Thread.Sleep(4000);
+            //if (!ResetAd)
+            //{
+            //    sendMouseLeftclick(appclose);
+            //    Thread.Sleep(4000);
+            //}
 
             SetCursorPos(appstart.X, appstart.Y);
             //Thread.Sleep(2500);

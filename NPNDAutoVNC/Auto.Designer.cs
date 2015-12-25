@@ -31,19 +31,22 @@
             this.btStart = new System.Windows.Forms.Button();
             this.checkResetAd = new System.Windows.Forms.CheckBox();
             this.cbClickAd = new System.Windows.Forms.CheckBox();
-            this.numTick = new System.Windows.Forms.NumericUpDown();
-            this.checkBoxStartAndClose = new System.Windows.Forms.CheckBox();
             this.gridlist = new System.Windows.Forms.DataGridView();
             this.IP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Action = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btSave = new System.Windows.Forms.Button();
             this.btSaveList = new System.Windows.Forms.Button();
             this.labpoint = new System.Windows.Forms.Label();
             this.btGetPoint = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btSaveNumberRoundClickAd = new System.Windows.Forms.Button();
+            this.txtNumberRoundClickAd = new System.Windows.Forms.TextBox();
+            this.btSaveVNCName = new System.Windows.Forms.Button();
+            this.txtVNCName = new System.Windows.Forms.TextBox();
+            this.ListIPCopy = new System.Windows.Forms.Button();
+            this.txtListIP = new System.Windows.Forms.TextBox();
             this.txtVNCPointY = new System.Windows.Forms.TextBox();
             this.txtPointX = new System.Windows.Forms.TextBox();
             this.txtPointY = new System.Windows.Forms.TextBox();
@@ -59,9 +62,9 @@
             this.btSaveAdPoint = new System.Windows.Forms.Button();
             this.btSaveAppPoint = new System.Windows.Forms.Button();
             this.btSaveVNCPoint = new System.Windows.Forms.Button();
-            this.txtListIP = new System.Windows.Forms.TextBox();
-            this.ListIPCopy = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numTick)).BeginInit();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lbRounds = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridlist)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -70,7 +73,7 @@
             // 
             // btStart
             // 
-            this.btStart.Location = new System.Drawing.Point(697, 502);
+            this.btStart.Location = new System.Drawing.Point(384, 495);
             this.btStart.Name = "btStart";
             this.btStart.Size = new System.Drawing.Size(75, 47);
             this.btStart.TabIndex = 2;
@@ -81,7 +84,7 @@
             // checkResetAd
             // 
             this.checkResetAd.AutoSize = true;
-            this.checkResetAd.Location = new System.Drawing.Point(6, 56);
+            this.checkResetAd.Location = new System.Drawing.Point(78, 10);
             this.checkResetAd.Name = "checkResetAd";
             this.checkResetAd.Size = new System.Drawing.Size(84, 17);
             this.checkResetAd.TabIndex = 17;
@@ -91,42 +94,12 @@
             // cbClickAd
             // 
             this.cbClickAd.AutoSize = true;
-            this.cbClickAd.Location = new System.Drawing.Point(7, 33);
+            this.cbClickAd.Location = new System.Drawing.Point(7, 10);
             this.cbClickAd.Name = "cbClickAd";
             this.cbClickAd.Size = new System.Drawing.Size(65, 17);
             this.cbClickAd.TabIndex = 16;
             this.cbClickAd.Text = "Click Ad";
             this.cbClickAd.UseVisualStyleBackColor = true;
-            // 
-            // numTick
-            // 
-            this.numTick.Enabled = false;
-            this.numTick.Location = new System.Drawing.Point(118, 7);
-            this.numTick.Maximum = new decimal(new int[] {
-            100000000,
-            0,
-            0,
-            0});
-            this.numTick.Name = "numTick";
-            this.numTick.Size = new System.Drawing.Size(87, 20);
-            this.numTick.TabIndex = 15;
-            this.numTick.Value = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            // 
-            // checkBoxStartAndClose
-            // 
-            this.checkBoxStartAndClose.AutoSize = true;
-            this.checkBoxStartAndClose.Checked = true;
-            this.checkBoxStartAndClose.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxStartAndClose.Location = new System.Drawing.Point(7, 10);
-            this.checkBoxStartAndClose.Name = "checkBoxStartAndClose";
-            this.checkBoxStartAndClose.Size = new System.Drawing.Size(99, 17);
-            this.checkBoxStartAndClose.TabIndex = 14;
-            this.checkBoxStartAndClose.Text = "Start And Close";
-            this.checkBoxStartAndClose.UseVisualStyleBackColor = true;
             // 
             // gridlist
             // 
@@ -136,10 +109,10 @@
             this.IP,
             this.Status,
             this.Action});
-            this.gridlist.Location = new System.Drawing.Point(0, 79);
+            this.gridlist.Location = new System.Drawing.Point(130, 49);
             this.gridlist.Name = "gridlist";
             this.gridlist.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.gridlist.Size = new System.Drawing.Size(747, 213);
+            this.gridlist.Size = new System.Drawing.Size(314, 339);
             this.gridlist.TabIndex = 18;
             // 
             // IP
@@ -160,19 +133,9 @@
             this.Action.HeaderText = "Action";
             this.Action.Name = "Action";
             // 
-            // btSave
-            // 
-            this.btSave.Location = new System.Drawing.Point(616, 502);
-            this.btSave.Name = "btSave";
-            this.btSave.Size = new System.Drawing.Size(75, 47);
-            this.btSave.TabIndex = 19;
-            this.btSave.Text = "Save";
-            this.btSave.UseVisualStyleBackColor = true;
-            this.btSave.Click += new System.EventHandler(this.btSave_Click);
-            // 
             // btSaveList
             // 
-            this.btSaveList.Location = new System.Drawing.Point(7, 298);
+            this.btSaveList.Location = new System.Drawing.Point(369, 397);
             this.btSaveList.Name = "btSaveList";
             this.btSaveList.Size = new System.Drawing.Size(75, 47);
             this.btSaveList.TabIndex = 20;
@@ -205,29 +168,32 @@
             this.tabControl1.Location = new System.Drawing.Point(11, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(761, 473);
+            this.tabControl1.Size = new System.Drawing.Size(462, 477);
             this.tabControl1.TabIndex = 24;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.gridlist);
             this.tabPage1.Controls.Add(this.btSaveList);
             this.tabPage1.Controls.Add(this.checkResetAd);
-            this.tabPage1.Controls.Add(this.checkBoxStartAndClose);
-            this.tabPage1.Controls.Add(this.numTick);
+            this.tabPage1.Controls.Add(this.ListIPCopy);
+            this.tabPage1.Controls.Add(this.txtListIP);
             this.tabPage1.Controls.Add(this.cbClickAd);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(753, 447);
+            this.tabPage1.Size = new System.Drawing.Size(454, 451);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Main";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.ListIPCopy);
-            this.tabPage2.Controls.Add(this.txtListIP);
+            this.tabPage2.Controls.Add(this.btSaveNumberRoundClickAd);
+            this.tabPage2.Controls.Add(this.txtNumberRoundClickAd);
+            this.tabPage2.Controls.Add(this.btSaveVNCName);
+            this.tabPage2.Controls.Add(this.txtVNCName);
             this.tabPage2.Controls.Add(this.txtVNCPointY);
             this.tabPage2.Controls.Add(this.txtPointX);
             this.tabPage2.Controls.Add(this.txtPointY);
@@ -248,10 +214,63 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(753, 447);
+            this.tabPage2.Size = new System.Drawing.Size(405, 447);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Config";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btSaveNumberRoundClickAd
+            // 
+            this.btSaveNumberRoundClickAd.Location = new System.Drawing.Point(6, 307);
+            this.btSaveNumberRoundClickAd.Name = "btSaveNumberRoundClickAd";
+            this.btSaveNumberRoundClickAd.Size = new System.Drawing.Size(130, 23);
+            this.btSaveNumberRoundClickAd.TabIndex = 45;
+            this.btSaveNumberRoundClickAd.Text = "NumberRoundClickAd";
+            this.btSaveNumberRoundClickAd.UseVisualStyleBackColor = true;
+            this.btSaveNumberRoundClickAd.Click += new System.EventHandler(this.btSaveNumberRoundClickAd_Click);
+            // 
+            // txtNumberRoundClickAd
+            // 
+            this.txtNumberRoundClickAd.Location = new System.Drawing.Point(156, 309);
+            this.txtNumberRoundClickAd.Name = "txtNumberRoundClickAd";
+            this.txtNumberRoundClickAd.Size = new System.Drawing.Size(100, 20);
+            this.txtNumberRoundClickAd.TabIndex = 44;
+            // 
+            // btSaveVNCName
+            // 
+            this.btSaveVNCName.Location = new System.Drawing.Point(6, 281);
+            this.btSaveVNCName.Name = "btSaveVNCName";
+            this.btSaveVNCName.Size = new System.Drawing.Size(130, 23);
+            this.btSaveVNCName.TabIndex = 43;
+            this.btSaveVNCName.Text = "Save VNC Name";
+            this.btSaveVNCName.UseVisualStyleBackColor = true;
+            this.btSaveVNCName.Click += new System.EventHandler(this.btSaveVNCName_Click);
+            // 
+            // txtVNCName
+            // 
+            this.txtVNCName.Location = new System.Drawing.Point(156, 283);
+            this.txtVNCName.Name = "txtVNCName";
+            this.txtVNCName.Size = new System.Drawing.Size(100, 20);
+            this.txtVNCName.TabIndex = 42;
+            this.txtVNCName.Text = "vncviewer";
+            // 
+            // ListIPCopy
+            // 
+            this.ListIPCopy.Location = new System.Drawing.Point(7, 397);
+            this.ListIPCopy.Name = "ListIPCopy";
+            this.ListIPCopy.Size = new System.Drawing.Size(117, 47);
+            this.ListIPCopy.TabIndex = 41;
+            this.ListIPCopy.Text = "Copy List to IP List";
+            this.ListIPCopy.UseVisualStyleBackColor = true;
+            this.ListIPCopy.Click += new System.EventHandler(this.ListIPCopy_Click);
+            // 
+            // txtListIP
+            // 
+            this.txtListIP.Location = new System.Drawing.Point(6, 33);
+            this.txtListIP.Multiline = true;
+            this.txtListIP.Name = "txtListIP";
+            this.txtListIP.Size = new System.Drawing.Size(118, 355);
+            this.txtListIP.TabIndex = 40;
             // 
             // txtVNCPointY
             // 
@@ -276,7 +295,7 @@
             // 
             // btSaveAppPoint2
             // 
-            this.btSaveAppPoint2.Location = new System.Drawing.Point(9, 176);
+            this.btSaveAppPoint2.Location = new System.Drawing.Point(7, 176);
             this.btSaveAppPoint2.Name = "btSaveAppPoint2";
             this.btSaveAppPoint2.Size = new System.Drawing.Size(130, 23);
             this.btSaveAppPoint2.TabIndex = 36;
@@ -389,36 +408,45 @@
             this.btSaveVNCPoint.UseVisualStyleBackColor = true;
             this.btSaveVNCPoint.Click += new System.EventHandler(this.btSaveVNCPoint_Click);
             // 
-            // txtListIP
+            // label3
             // 
-            this.txtListIP.Location = new System.Drawing.Point(455, 18);
-            this.txtListIP.Multiline = true;
-            this.txtListIP.Name = "txtListIP";
-            this.txtListIP.Size = new System.Drawing.Size(292, 328);
-            this.txtListIP.TabIndex = 40;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(19, 495);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(47, 13);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "Rounds:";
             // 
-            // ListIPCopy
+            // lbRounds
             // 
-            this.ListIPCopy.Location = new System.Drawing.Point(617, 362);
-            this.ListIPCopy.Name = "ListIPCopy";
-            this.ListIPCopy.Size = new System.Drawing.Size(130, 23);
-            this.ListIPCopy.TabIndex = 41;
-            this.ListIPCopy.Text = "Copy List to IP List";
-            this.ListIPCopy.UseVisualStyleBackColor = true;
-            this.ListIPCopy.Click += new System.EventHandler(this.ListIPCopy_Click);
+            this.lbRounds.AutoSize = true;
+            this.lbRounds.Location = new System.Drawing.Point(70, 495);
+            this.lbRounds.Name = "lbRounds";
+            this.lbRounds.Size = new System.Drawing.Size(13, 13);
+            this.lbRounds.TabIndex = 26;
+            this.lbRounds.Text = "1";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(127, 33);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(36, 13);
+            this.label4.TabIndex = 27;
+            this.label4.Text = "IP List";
             // 
             // Auto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(481, 547);
+            this.Controls.Add(this.lbRounds);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.btSave);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btStart);
             this.Name = "Auto";
             this.Text = "Auto";
             this.Load += new System.EventHandler(this.Auto_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numTick)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridlist)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -426,6 +454,7 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -434,13 +463,10 @@
         private System.Windows.Forms.Button btStart;
         private System.Windows.Forms.CheckBox checkResetAd;
         private System.Windows.Forms.CheckBox cbClickAd;
-        private System.Windows.Forms.NumericUpDown numTick;
-        private System.Windows.Forms.CheckBox checkBoxStartAndClose;
         private System.Windows.Forms.DataGridView gridlist;
         private System.Windows.Forms.DataGridViewTextBoxColumn IP;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.DataGridViewTextBoxColumn Action;
-        private System.Windows.Forms.Button btSave;
         private System.Windows.Forms.Button btSaveList;
         private System.Windows.Forms.Label labpoint;
         private System.Windows.Forms.Button btGetPoint;
@@ -464,5 +490,12 @@
         private System.Windows.Forms.TextBox txtVNCPointY;
         private System.Windows.Forms.Button ListIPCopy;
         private System.Windows.Forms.TextBox txtListIP;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbRounds;
+        private System.Windows.Forms.Button btSaveVNCName;
+        private System.Windows.Forms.TextBox txtVNCName;
+        private System.Windows.Forms.Button btSaveNumberRoundClickAd;
+        private System.Windows.Forms.TextBox txtNumberRoundClickAd;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -169,7 +169,7 @@ namespace NPNDAutoVNC
                                 ResetAd(NewConfig.Config.ResetAppPoint, NewConfig.Config.ResetPoint1, NewConfig.Config.ResetPoint2, NewConfig.Config.ResetPoint3);
                             }
 
-                            CloseAndRestart(NewConfig.Config.AppPoint, NewConfig.Config.ClosePoint);
+                            CloseAndRestart(NewConfig.Config.AppPoint, NewConfig.Config.ClosePoint, isResetAd);
                         }
 
                         
@@ -319,14 +319,19 @@ namespace NPNDAutoVNC
             Thread.Sleep(500);
             sendMouseLeftclick(Pad);
         }
-        public static void CloseAndRestart(Point appstart, Point appclose)
+        public static void CloseAndRestart(Point appstart, Point appclose, bool ResetAd = false)
         {
             SetCursorPos(appclose.X, appclose.Y);
             Thread.Sleep(500);
             sendMouseRightclick(appclose);
             Thread.Sleep(1000);
-            sendMouseLeftclick(appclose);
-            Thread.Sleep(4000);
+
+            if (!ResetAd)
+            {
+                sendMouseLeftclick(appclose);
+                Thread.Sleep(4000);
+            }
+
             SetCursorPos(appstart.X, appstart.Y);
             //Thread.Sleep(2500);
             sendMouseLeftclick(appstart);
@@ -352,7 +357,7 @@ namespace NPNDAutoVNC
             //SetCursorPos(appReset.X, appReset.Y);
             //Thread.Sleep(1000);
             sendMouseLeftclick(appReset);
-            Thread.Sleep(4000);
+            Thread.Sleep(8000);
 
             //click reset point 1
             SetCursorPos(appReset1.X, appReset1.Y);

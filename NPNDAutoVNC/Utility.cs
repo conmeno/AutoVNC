@@ -176,7 +176,7 @@ namespace NPNDAutoVNC
 
 
                         Thread.Sleep(1000);
-                        Process p = Process.GetProcessesByName(CTLConfig._ProcessName)[0];
+                        Process p = Process.GetProcessesByName(NewConfig.Config.VNCName)[0];
                         if (p != null)
                             p.Kill();
                     }
@@ -199,7 +199,7 @@ namespace NPNDAutoVNC
             }
             foreach (var item in VNCList)
             {
-                string fileName = VNCPath + "\\" + NewConfig.Config.DefaultIP + item.IP + ".vnc";
+                string fileName = VNCPath + "\\" + NewConfig.Config.DefaultIP+ item.IP + ".vnc";
                 StreamWriter sw = new StreamWriter(fileName);
                 sw.WriteLine("[Connection]");
                 sw.WriteLine("Host=" + NewConfig.Config.DefaultIP + item.IP);

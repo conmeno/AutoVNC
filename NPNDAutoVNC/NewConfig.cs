@@ -9,6 +9,7 @@ namespace NPNDAutoVNC
     {
 
         public int Sleep { get; set; }
+        public string VNCName { get; set; }
         public Point VNCPoint { get; set; }
         public  Point AppPoint { get; set; }
 

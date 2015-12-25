@@ -237,9 +237,9 @@ namespace NPNDAutoVNC
 
             foreach (string item in listStr)
             {
-                string str = item.Replace(System.Environment.NewLine, "");
+                string str = item.Replace("\r", "");//System.Environment.NewLine
                 VNC v = new VNC();
-                v.IP = NewConfig.Config.DefaultIP + str;
+                v.IP = str;
                 listVNC.Add(v);
             }
             Utility.SaveListVNC(listVNC);

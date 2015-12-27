@@ -40,13 +40,20 @@
             this.btGetPoint = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtRoundClick = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtRoundClickWaiting = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.ListIPCopy = new System.Windows.Forms.Button();
+            this.txtListIP = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btSaveNumberRoundClickAd = new System.Windows.Forms.Button();
             this.txtNumberRoundClickAd = new System.Windows.Forms.TextBox();
             this.btSaveVNCName = new System.Windows.Forms.Button();
             this.txtVNCName = new System.Windows.Forms.TextBox();
-            this.ListIPCopy = new System.Windows.Forms.Button();
-            this.txtListIP = new System.Windows.Forms.TextBox();
             this.txtVNCPointY = new System.Windows.Forms.TextBox();
             this.txtPointX = new System.Windows.Forms.TextBox();
             this.txtPointY = new System.Windows.Forms.TextBox();
@@ -64,27 +71,33 @@
             this.btSaveVNCPoint = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lbRounds = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridlist)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btStart
             // 
-            this.btStart.Location = new System.Drawing.Point(384, 495);
+            this.btStart.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btStart.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btStart.Location = new System.Drawing.Point(419, 407);
             this.btStart.Name = "btStart";
-            this.btStart.Size = new System.Drawing.Size(75, 47);
+            this.btStart.Size = new System.Drawing.Size(127, 47);
             this.btStart.TabIndex = 2;
             this.btStart.Text = "Start";
-            this.btStart.UseVisualStyleBackColor = true;
+            this.btStart.UseVisualStyleBackColor = false;
             this.btStart.Click += new System.EventHandler(this.btStart_Click);
             // 
             // checkResetAd
             // 
             this.checkResetAd.AutoSize = true;
-            this.checkResetAd.Location = new System.Drawing.Point(78, 10);
+            this.checkResetAd.Checked = true;
+            this.checkResetAd.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkResetAd.Location = new System.Drawing.Point(12, 21);
             this.checkResetAd.Name = "checkResetAd";
             this.checkResetAd.Size = new System.Drawing.Size(84, 17);
             this.checkResetAd.TabIndex = 17;
@@ -94,7 +107,7 @@
             // cbClickAd
             // 
             this.cbClickAd.AutoSize = true;
-            this.cbClickAd.Location = new System.Drawing.Point(7, 10);
+            this.cbClickAd.Location = new System.Drawing.Point(10, 9);
             this.cbClickAd.Name = "cbClickAd";
             this.cbClickAd.Size = new System.Drawing.Size(65, 17);
             this.cbClickAd.TabIndex = 16;
@@ -109,10 +122,10 @@
             this.IP,
             this.Status,
             this.Action});
-            this.gridlist.Location = new System.Drawing.Point(130, 49);
+            this.gridlist.Location = new System.Drawing.Point(325, 38);
             this.gridlist.Name = "gridlist";
             this.gridlist.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.gridlist.Size = new System.Drawing.Size(314, 339);
+            this.gridlist.Size = new System.Drawing.Size(198, 298);
             this.gridlist.TabIndex = 18;
             // 
             // IP
@@ -120,24 +133,27 @@
             this.IP.DataPropertyName = "IP";
             this.IP.HeaderText = "IP";
             this.IP.Name = "IP";
+            this.IP.Width = 50;
             // 
             // Status
             // 
             this.Status.DataPropertyName = "Status";
             this.Status.HeaderText = "Status";
             this.Status.Name = "Status";
+            this.Status.Width = 50;
             // 
             // Action
             // 
             this.Action.DataPropertyName = "Action";
             this.Action.HeaderText = "Action";
             this.Action.Name = "Action";
+            this.Action.Width = 50;
             // 
             // btSaveList
             // 
-            this.btSaveList.Location = new System.Drawing.Point(369, 397);
+            this.btSaveList.Location = new System.Drawing.Point(448, 348);
             this.btSaveList.Name = "btSaveList";
-            this.btSaveList.Size = new System.Drawing.Size(75, 47);
+            this.btSaveList.Size = new System.Drawing.Size(75, 27);
             this.btSaveList.TabIndex = 20;
             this.btSaveList.Text = "Save List";
             this.btSaveList.UseVisualStyleBackColor = true;
@@ -165,28 +181,112 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(11, 12);
+            this.tabControl1.Location = new System.Drawing.Point(-1, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(462, 477);
+            this.tabControl1.Size = new System.Drawing.Size(551, 403);
             this.tabControl1.TabIndex = 24;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label8);
+            this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.gridlist);
             this.tabPage1.Controls.Add(this.btSaveList);
             this.tabPage1.Controls.Add(this.checkResetAd);
             this.tabPage1.Controls.Add(this.ListIPCopy);
             this.tabPage1.Controls.Add(this.txtListIP);
-            this.tabPage1.Controls.Add(this.cbClickAd);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(454, 451);
+            this.tabPage1.Size = new System.Drawing.Size(543, 377);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Main";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.txtRoundClick);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.txtRoundClickWaiting);
+            this.panel1.Controls.Add(this.cbClickAd);
+            this.panel1.Location = new System.Drawing.Point(12, 44);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(156, 140);
+            this.panel1.TabIndex = 42;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(8, 78);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(90, 13);
+            this.label7.TabIndex = 46;
+            this.label7.Text = "Num Round Click";
+            // 
+            // txtRoundClick
+            // 
+            this.txtRoundClick.Location = new System.Drawing.Point(10, 94);
+            this.txtRoundClick.Name = "txtRoundClick";
+            this.txtRoundClick.Size = new System.Drawing.Size(65, 20);
+            this.txtRoundClick.TabIndex = 45;
+            this.txtRoundClick.Text = "1";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(81, 51);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(49, 13);
+            this.label6.TabIndex = 44;
+            this.label6.Text = "Seconds";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(13, 32);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(86, 13);
+            this.label5.TabIndex = 27;
+            this.label5.Text = "Round Wait time";
+            // 
+            // txtRoundClickWaiting
+            // 
+            this.txtRoundClickWaiting.Location = new System.Drawing.Point(10, 48);
+            this.txtRoundClickWaiting.Name = "txtRoundClickWaiting";
+            this.txtRoundClickWaiting.Size = new System.Drawing.Size(65, 20);
+            this.txtRoundClickWaiting.TabIndex = 43;
+            this.txtRoundClickWaiting.Text = "20";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(322, 19);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(36, 13);
+            this.label4.TabIndex = 27;
+            this.label4.Text = "IP List";
+            // 
+            // ListIPCopy
+            // 
+            this.ListIPCopy.Location = new System.Drawing.Point(208, 343);
+            this.ListIPCopy.Name = "ListIPCopy";
+            this.ListIPCopy.Size = new System.Drawing.Size(104, 32);
+            this.ListIPCopy.TabIndex = 41;
+            this.ListIPCopy.Text = "Copy List to IP List";
+            this.ListIPCopy.UseVisualStyleBackColor = true;
+            this.ListIPCopy.Click += new System.EventHandler(this.ListIPCopy_Click);
+            // 
+            // txtListIP
+            // 
+            this.txtListIP.Location = new System.Drawing.Point(208, 38);
+            this.txtListIP.Multiline = true;
+            this.txtListIP.Name = "txtListIP";
+            this.txtListIP.Size = new System.Drawing.Size(104, 297);
+            this.txtListIP.TabIndex = 40;
             // 
             // tabPage2
             // 
@@ -214,7 +314,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(405, 447);
+            this.tabPage2.Size = new System.Drawing.Size(543, 377);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Config";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -250,27 +350,9 @@
             // 
             this.txtVNCName.Location = new System.Drawing.Point(156, 283);
             this.txtVNCName.Name = "txtVNCName";
-            this.txtVNCName.Size = new System.Drawing.Size(100, 20);
+            this.txtVNCName.Size = new System.Drawing.Size(288, 20);
             this.txtVNCName.TabIndex = 42;
             this.txtVNCName.Text = "vncviewer";
-            // 
-            // ListIPCopy
-            // 
-            this.ListIPCopy.Location = new System.Drawing.Point(7, 397);
-            this.ListIPCopy.Name = "ListIPCopy";
-            this.ListIPCopy.Size = new System.Drawing.Size(117, 47);
-            this.ListIPCopy.TabIndex = 41;
-            this.ListIPCopy.Text = "Copy List to IP List";
-            this.ListIPCopy.UseVisualStyleBackColor = true;
-            this.ListIPCopy.Click += new System.EventHandler(this.ListIPCopy_Click);
-            // 
-            // txtListIP
-            // 
-            this.txtListIP.Location = new System.Drawing.Point(6, 33);
-            this.txtListIP.Multiline = true;
-            this.txtListIP.Name = "txtListIP";
-            this.txtListIP.Size = new System.Drawing.Size(118, 355);
-            this.txtListIP.TabIndex = 40;
             // 
             // txtVNCPointY
             // 
@@ -411,7 +493,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(19, 495);
+            this.label3.Location = new System.Drawing.Point(12, 411);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 25;
@@ -420,26 +502,26 @@
             // lbRounds
             // 
             this.lbRounds.AutoSize = true;
-            this.lbRounds.Location = new System.Drawing.Point(70, 495);
+            this.lbRounds.Location = new System.Drawing.Point(63, 411);
             this.lbRounds.Name = "lbRounds";
             this.lbRounds.Size = new System.Drawing.Size(13, 13);
             this.lbRounds.TabIndex = 26;
             this.lbRounds.Text = "1";
             // 
-            // label4
+            // label8
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(127, 33);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 13);
-            this.label4.TabIndex = 27;
-            this.label4.Text = "IP List";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(210, 20);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(41, 13);
+            this.label8.TabIndex = 43;
+            this.label8.Text = "IP Text";
             // 
             // Auto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(481, 547);
+            this.ClientSize = new System.Drawing.Size(553, 459);
             this.Controls.Add(this.lbRounds);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label3);
@@ -451,6 +533,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
@@ -464,9 +548,6 @@
         private System.Windows.Forms.CheckBox checkResetAd;
         private System.Windows.Forms.CheckBox cbClickAd;
         private System.Windows.Forms.DataGridView gridlist;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Action;
         private System.Windows.Forms.Button btSaveList;
         private System.Windows.Forms.Label labpoint;
         private System.Windows.Forms.Button btGetPoint;
@@ -497,5 +578,15 @@
         private System.Windows.Forms.Button btSaveNumberRoundClickAd;
         private System.Windows.Forms.TextBox txtNumberRoundClickAd;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Action;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtRoundClickWaiting;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtRoundClick;
+        private System.Windows.Forms.Label label8;
     }
 }

@@ -116,16 +116,19 @@ namespace NPNDAutoVNC
             LoopCount++;
             if (cbClickAd.Checked)
             {
-                if (NewConfig.Config.NumberRoundClickAd >= LoopCount)
+                if (LoopCount>= int.Parse(txtRoundClick.Text))
                 {
                     //Thread.Sleep(60000);
+                    int RoundTimneWait = int.Parse((txtRoundClickWaiting.Text + "000"));
+                    Thread.Sleep(RoundTimneWait);
                     Utility.OpenApps(listVNC, checkResetAd.Checked, true);
-                    //Thread.Sleep(60000);
+                   
+                    Thread.Sleep(RoundTimneWait);
+                    LoopCount = 0;
                 }
                 
             }
-
-          
+                      
             LoopOpenApps(listVNC);
 
         }
@@ -299,6 +302,8 @@ namespace NPNDAutoVNC
             Utility.SaveListVNC(listVNC);
             LoadFirst();
         }
+
+      
 
       
 

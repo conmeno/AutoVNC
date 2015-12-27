@@ -332,7 +332,7 @@ namespace NPNDAutoVNC
 
 
             sendMouseLeftclick(appclose);
-            Thread.Sleep(4000);
+            Thread.Sleep(5000);
             //if (!ResetAd)
             //{
             //    sendMouseLeftclick(appclose);

@@ -166,7 +166,7 @@ namespace NPNDAutoVNC
                         {
                             if (isResetAd)
                             {
-                                ResetAd(NewConfig.Config.ResetAppPoint, NewConfig.Config.ResetPoint1, NewConfig.Config.ResetPoint2, NewConfig.Config.ResetPoint3);
+                                ResetAd(NewConfig.Config.ClosePoint, NewConfig.Config.ResetAppPoint, NewConfig.Config.ResetPoint1, NewConfig.Config.ResetPoint2, NewConfig.Config.ResetPoint3);
                             }
 
                             CloseAndRestart(NewConfig.Config.AppPoint, NewConfig.Config.ClosePoint, isResetAd);
@@ -325,21 +325,30 @@ namespace NPNDAutoVNC
         }
         public static void CloseAndRestart(Point appstart, Point appclose, bool ResetAd = false)
         {
-            SetCursorPos(appclose.X, appclose.Y);
-            Thread.Sleep(500);
-            sendMouseRightclick(appclose);
-            Thread.Sleep(1000);
 
 
-            sendMouseLeftclick(appclose);
-            Thread.Sleep(5000);
-            //if (!ResetAd)
-            //{
-            //    sendMouseLeftclick(appclose);
-            //    Thread.Sleep(4000);
-            //}
 
-            SetCursorPos(appstart.X, appstart.Y);
+
+            if (!ResetAd)
+            {
+                SetCursorPos(appclose.X, appclose.Y);
+                Thread.Sleep(500);
+                sendMouseRightclick(appclose);
+                Thread.Sleep(1000);
+                sendMouseLeftclick(appclose);
+                Thread.Sleep(5000);
+                SetCursorPos(appstart.X, appstart.Y);  
+            }
+            else
+            {
+                SetCursorPos(appstart.X, appstart.Y);
+                Thread.Sleep(500);
+                sendMouseRightclick(appclose);
+                Thread.Sleep(2000);
+            }
+            
+
+                   
             //Thread.Sleep(2500);
             sendMouseLeftclick(appstart);
             //Thread.Sleep(500);
@@ -352,19 +361,20 @@ namespace NPNDAutoVNC
             Thread.Sleep(500);
             sendMouseLeftclick(AdPoint); 
         }
-        public static void ResetAd(Point appReset, Point appReset1, Point appReset2, Point appReset3)
+        public static void ResetAd(Point ClosePoint,Point appReset, Point appReset1, Point appReset2, Point appReset3)
         {
 
-            SetCursorPos(appReset.X, appReset.Y);
+            SetCursorPos(ClosePoint.X, ClosePoint.Y);
             Thread.Sleep(500);
-            sendMouseRightclick(appReset);
+            sendMouseRightclick(ClosePoint);
             Thread.Sleep(2500);
-
+            sendMouseLeftclick(ClosePoint);
+            Thread.Sleep(5000);
             //click to App reset
-            //SetCursorPos(appReset.X, appReset.Y);
+            SetCursorPos(appReset.X, appReset.Y);
             //Thread.Sleep(1000);
             sendMouseLeftclick(appReset);
-            Thread.Sleep(8000);
+            Thread.Sleep(6500);
 
             //click reset point 1
             SetCursorPos(appReset1.X, appReset1.Y);
@@ -384,7 +394,48 @@ namespace NPNDAutoVNC
             sendMouseLeftclick(appReset3);
 
         }
+        public static void NormalReset(Point ClosePoint, Point appReset, Point appReset1, Point appReset2, Point appReset3)
+        {
 
+            //SetCursorPos(ClosePoint.X, ClosePoint.Y);
+            //Thread.Sleep(500);
+            //sendMouseRightclick(ClosePoint);
+            //Thread.Sleep(2500);
+            //sendMouseLeftclick(ClosePoint);
+            //Thread.Sleep(5000);
+            ////click to App reset
+            //SetCursorPos(appReset.X, appReset.Y);
+            ////Thread.Sleep(1000);
+            //sendMouseLeftclick(appReset);
+            //Thread.Sleep(6500);
+            
+
+            //mouse drag
+            SetCursorPos(appReset1.X, appReset1.Y); Thread.Sleep(3000);
+            LeftMouseDown(appReset1);
+           
+            SetCursorPos(appReset2.X, appReset2.Y);
+            LeftMouseUp(appReset2);
+
+
+            //click reset point 1
+            //SetCursorPos(appReset1.X, appReset1.Y);
+            //Thread.Sleep(300);
+            //sendMouseLeftclick(appReset1);
+            //Thread.Sleep(2000);
+
+            ////click reset point 2
+            //SetCursorPos(appReset2.X, appReset2.Y);
+            //Thread.Sleep(300);
+            //sendMouseLeftclick(appReset2);
+            //Thread.Sleep(2000);
+
+            ////click reset point 3
+            //SetCursorPos(appReset3.X, appReset3.Y);
+            //Thread.Sleep(300);
+            //sendMouseLeftclick(appReset3);
+
+        }
         #region mouse
         static void sendMouseLeftclick(Point p)
         {
@@ -412,7 +463,18 @@ namespace NPNDAutoVNC
 
             mouse_event(MOUSEEVENTF_RIGHTDOWN | MOUSEEVENTF_RIGHTUP, p.X, p.Y, 0, 0);
         }
-      
+
+        static public void LeftMouseDown(Point p)
+        {
+            // Simulate left down, notice that RELATIVE movement is 0
+            mouse_event(MOUSEEVENTF_LEFTDOWN, p.X, p.Y, 0, 0);
+        }
+
+        static public void LeftMouseUp(Point p)
+        {
+            // Simulate left up, notice that RELATIVE movement is 0 too
+            mouse_event(MOUSEEVENTF_LEFTUP, p.X, p.Y, 0, 0);
+        }
 
         //private void btGetPoint_Click(object sender, EventArgs e)
         //{

@@ -303,6 +303,14 @@ namespace NPNDAutoVNC
             LoadFirst();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+                {
+                    Point p1 = new Point(865, 546);
+                    Point p2 = new Point(961, 212);
+            Utility.NormalReset(NewConfig.Config.ClosePoint, NewConfig.Config.ResetAppPoint, p1,p2, NewConfig.Config.ResetPoint3);
+
+        }
+
       
 
       

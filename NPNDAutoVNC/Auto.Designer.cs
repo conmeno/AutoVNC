@@ -40,6 +40,7 @@
             this.btGetPoint = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.txtRoundClick = new System.Windows.Forms.TextBox();
@@ -71,7 +72,7 @@
             this.btSaveVNCPoint = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lbRounds = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridlist)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -107,6 +108,8 @@
             // cbClickAd
             // 
             this.cbClickAd.AutoSize = true;
+            this.cbClickAd.Checked = true;
+            this.cbClickAd.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbClickAd.Location = new System.Drawing.Point(10, 9);
             this.cbClickAd.Name = "cbClickAd";
             this.cbClickAd.Size = new System.Drawing.Size(65, 17);
@@ -189,6 +192,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Controls.Add(this.label4);
@@ -204,6 +208,15 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Main";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(210, 20);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(41, 13);
+            this.label8.TabIndex = 43;
+            this.label8.Text = "IP Text";
             // 
             // panel1
             // 
@@ -233,7 +246,7 @@
             this.txtRoundClick.Name = "txtRoundClick";
             this.txtRoundClick.Size = new System.Drawing.Size(65, 20);
             this.txtRoundClick.TabIndex = 45;
-            this.txtRoundClick.Text = "1";
+            this.txtRoundClick.Text = "3";
             // 
             // label6
             // 
@@ -508,14 +521,15 @@
             this.lbRounds.TabIndex = 26;
             this.lbRounds.Text = "1";
             // 
-            // label8
+            // button1
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(210, 20);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(41, 13);
-            this.label8.TabIndex = 43;
-            this.label8.Text = "IP Text";
+            this.button1.Location = new System.Drawing.Point(12, 211);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(104, 32);
+            this.button1.TabIndex = 44;
+            this.button1.Text = "Copy List to IP List";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Auto
             // 
@@ -588,5 +602,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtRoundClick;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button button1;
     }
 }

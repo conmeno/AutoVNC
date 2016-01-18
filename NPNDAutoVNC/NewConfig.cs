@@ -24,6 +24,21 @@ namespace NPNDAutoVNC
         public Point ResetPoint2 { get; set; }
         public Point ResetPoint3 { get; set; }       
 
+
+        //setting point
+        public Point SettingPoint { get; set; }
+        public Point SettingPoint1 { get; set; }
+
+        public Point SettingPoint2 { get; set; }
+        public Point SettingPoint3 { get; set; }
+       
+
+        //Privacy app on homescreen
+        public Point PrivacyAppPoint { get; set; }
+        public Point PrivacyP1 { get; set; }
+        public Point PrivacyP2 { get; set; }
+
+
         public string VNCConfigFile { get; set; }
         public string VNCPasswordCode { get; set; }
         public string DefaultIP { get; set; }
@@ -37,6 +52,7 @@ namespace NPNDAutoVNC
         public string IP { get; set; }
         public int Status { get; set; }
         public int Action { get; set; }
+
 
         public  VNC()
         { 

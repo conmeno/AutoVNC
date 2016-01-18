@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -112,7 +113,7 @@ namespace NPNDAutoVNC
         {
             Rounds++;
             lbRounds.Text = Rounds.ToString();
-            Utility.OpenApps(listVNC, checkResetAd.Checked, false);
+            Utility.OpenApps(listVNC,  false,checkResetNormal.Checked);
             LoopCount++;
             if (cbClickAd.Checked)
             {
@@ -121,7 +122,7 @@ namespace NPNDAutoVNC
                     //Thread.Sleep(60000);
                     int RoundTimneWait = int.Parse((txtRoundClickWaiting.Text + "000"));
                     Thread.Sleep(RoundTimneWait);
-                    Utility.OpenApps(listVNC, checkResetAd.Checked, true);
+                    Utility.OpenApps(listVNC, true, checkResetNormal.Checked);
                    
                     Thread.Sleep(RoundTimneWait);
                     LoopCount = 0;
@@ -151,6 +152,9 @@ namespace NPNDAutoVNC
 
             //}
             Utility.SaveListVNC(listVNC);
+
+           
+            Utility.ListIPtoFiles(listVNC);
         }
 
         private void Auto_Load(object sender, EventArgs e)
@@ -303,11 +307,20 @@ namespace NPNDAutoVNC
             LoadFirst();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-                {
-                    Point p1 = new Point(865, 546);
-                    Point p2 = new Point(961, 212);
-            Utility.NormalReset(NewConfig.Config.ClosePoint, NewConfig.Config.ResetAppPoint, p1,p2, NewConfig.Config.ResetPoint3);
+        //private void button1_Click(object sender, EventArgs e)
+        //        {
+        //            Utility.NormalReset(NewConfig.Config.ClosePoint, NewConfig.Config.SettingPoint, NewConfig.Config.SettingPoint1, NewConfig.Config.SettingPoint2, NewConfig.Config.SettingPoint3);
+
+        //}
+
+        private void gridlist_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+            BindingList<VNC> listVNC = (BindingList<VNC>)gridlist.DataSource;
+            string tempIP =  Application.StartupPath + "\\VNC\\" + NewConfig.Config.DefaultIP +  listVNC[e.RowIndex].IP + ".vnc";
+
+
+            Process.Start(tempIP);
 
         }
 

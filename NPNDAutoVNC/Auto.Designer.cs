@@ -32,9 +32,6 @@
             this.checkResetAd = new System.Windows.Forms.CheckBox();
             this.cbClickAd = new System.Windows.Forms.CheckBox();
             this.gridlist = new System.Windows.Forms.DataGridView();
-            this.IP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Action = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btSaveList = new System.Windows.Forms.Button();
             this.labpoint = new System.Windows.Forms.Label();
             this.btGetPoint = new System.Windows.Forms.Button();
@@ -72,12 +69,19 @@
             this.btSaveVNCPoint = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lbRounds = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.checkResetNormal = new System.Windows.Forms.CheckBox();
+            this.IP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Action = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Run = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.checkResetHomescreen = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridlist)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btStart
@@ -98,11 +102,11 @@
             this.checkResetAd.AutoSize = true;
             this.checkResetAd.Checked = true;
             this.checkResetAd.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkResetAd.Location = new System.Drawing.Point(12, 21);
+            this.checkResetAd.Location = new System.Drawing.Point(10, 15);
             this.checkResetAd.Name = "checkResetAd";
-            this.checkResetAd.Size = new System.Drawing.Size(84, 17);
+            this.checkResetAd.Size = new System.Drawing.Size(124, 17);
             this.checkResetAd.TabIndex = 17;
-            this.checkResetAd.Text = "Reset Ad ID";
+            this.checkResetAd.Text = "Reset Ad ID by PMP";
             this.checkResetAd.UseVisualStyleBackColor = true;
             // 
             // cbClickAd
@@ -124,37 +128,18 @@
             this.gridlist.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IP,
             this.Status,
-            this.Action});
-            this.gridlist.Location = new System.Drawing.Point(325, 38);
+            this.Action,
+            this.Run});
+            this.gridlist.Location = new System.Drawing.Point(289, 38);
             this.gridlist.Name = "gridlist";
             this.gridlist.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.gridlist.Size = new System.Drawing.Size(198, 298);
+            this.gridlist.Size = new System.Drawing.Size(251, 298);
             this.gridlist.TabIndex = 18;
-            // 
-            // IP
-            // 
-            this.IP.DataPropertyName = "IP";
-            this.IP.HeaderText = "IP";
-            this.IP.Name = "IP";
-            this.IP.Width = 50;
-            // 
-            // Status
-            // 
-            this.Status.DataPropertyName = "Status";
-            this.Status.HeaderText = "Status";
-            this.Status.Name = "Status";
-            this.Status.Width = 50;
-            // 
-            // Action
-            // 
-            this.Action.DataPropertyName = "Action";
-            this.Action.HeaderText = "Action";
-            this.Action.Name = "Action";
-            this.Action.Width = 50;
+            this.gridlist.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridlist_CellContentClick);
             // 
             // btSaveList
             // 
-            this.btSaveList.Location = new System.Drawing.Point(448, 348);
+            this.btSaveList.Location = new System.Drawing.Point(462, 347);
             this.btSaveList.Name = "btSaveList";
             this.btSaveList.Size = new System.Drawing.Size(75, 27);
             this.btSaveList.TabIndex = 20;
@@ -192,13 +177,12 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.panel2);
             this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.gridlist);
             this.tabPage1.Controls.Add(this.btSaveList);
-            this.tabPage1.Controls.Add(this.checkResetAd);
             this.tabPage1.Controls.Add(this.ListIPCopy);
             this.tabPage1.Controls.Add(this.txtListIP);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -212,7 +196,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(210, 20);
+            this.label8.Location = new System.Drawing.Point(181, 20);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(41, 13);
             this.label8.TabIndex = 43;
@@ -226,7 +210,7 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.txtRoundClickWaiting);
             this.panel1.Controls.Add(this.cbClickAd);
-            this.panel1.Location = new System.Drawing.Point(12, 44);
+            this.panel1.Location = new System.Drawing.Point(12, 195);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(156, 140);
             this.panel1.TabIndex = 42;
@@ -246,7 +230,7 @@
             this.txtRoundClick.Name = "txtRoundClick";
             this.txtRoundClick.Size = new System.Drawing.Size(65, 20);
             this.txtRoundClick.TabIndex = 45;
-            this.txtRoundClick.Text = "3";
+            this.txtRoundClick.Text = "6";
             // 
             // label6
             // 
@@ -285,7 +269,7 @@
             // 
             // ListIPCopy
             // 
-            this.ListIPCopy.Location = new System.Drawing.Point(208, 343);
+            this.ListIPCopy.Location = new System.Drawing.Point(179, 343);
             this.ListIPCopy.Name = "ListIPCopy";
             this.ListIPCopy.Size = new System.Drawing.Size(104, 32);
             this.ListIPCopy.TabIndex = 41;
@@ -295,7 +279,7 @@
             // 
             // txtListIP
             // 
-            this.txtListIP.Location = new System.Drawing.Point(208, 38);
+            this.txtListIP.Location = new System.Drawing.Point(179, 38);
             this.txtListIP.Multiline = true;
             this.txtListIP.Name = "txtListIP";
             this.txtListIP.Size = new System.Drawing.Size(104, 297);
@@ -521,15 +505,67 @@
             this.lbRounds.TabIndex = 26;
             this.lbRounds.Text = "1";
             // 
-            // button1
+            // panel2
             // 
-            this.button1.Location = new System.Drawing.Point(12, 211);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(104, 32);
-            this.button1.TabIndex = 44;
-            this.button1.Text = "Copy List to IP List";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.panel2.Controls.Add(this.checkResetHomescreen);
+            this.panel2.Controls.Add(this.checkResetNormal);
+            this.panel2.Controls.Add(this.checkResetAd);
+            this.panel2.Location = new System.Drawing.Point(12, 38);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(156, 139);
+            this.panel2.TabIndex = 45;
+            // 
+            // checkResetNormal
+            // 
+            this.checkResetNormal.AutoSize = true;
+            this.checkResetNormal.Checked = true;
+            this.checkResetNormal.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkResetNormal.Location = new System.Drawing.Point(10, 55);
+            this.checkResetNormal.Name = "checkResetNormal";
+            this.checkResetNormal.Size = new System.Drawing.Size(120, 17);
+            this.checkResetNormal.TabIndex = 46;
+            this.checkResetNormal.Text = "Reset Ad ID Normal";
+            this.checkResetNormal.UseVisualStyleBackColor = true;
+            // 
+            // IP
+            // 
+            this.IP.DataPropertyName = "IP";
+            this.IP.HeaderText = "IP";
+            this.IP.Name = "IP";
+            this.IP.Width = 50;
+            // 
+            // Status
+            // 
+            this.Status.DataPropertyName = "Status";
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            this.Status.Width = 50;
+            // 
+            // Action
+            // 
+            this.Action.DataPropertyName = "Action";
+            this.Action.HeaderText = "Action";
+            this.Action.Name = "Action";
+            this.Action.Width = 50;
+            // 
+            // Run
+            // 
+            this.Run.HeaderText = "Test";
+            this.Run.Name = "Run";
+            this.Run.Text = "Run";
+            this.Run.Width = 50;
+            // 
+            // checkResetHomescreen
+            // 
+            this.checkResetHomescreen.AutoSize = true;
+            this.checkResetHomescreen.Checked = true;
+            this.checkResetHomescreen.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkResetHomescreen.Location = new System.Drawing.Point(10, 92);
+            this.checkResetHomescreen.Name = "checkResetHomescreen";
+            this.checkResetHomescreen.Size = new System.Drawing.Size(149, 17);
+            this.checkResetHomescreen.TabIndex = 47;
+            this.checkResetHomescreen.Text = "Reset Ad ID HomeScreen";
+            this.checkResetHomescreen.UseVisualStyleBackColor = true;
             // 
             // Auto
             // 
@@ -551,6 +587,8 @@
             this.panel1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -592,9 +630,6 @@
         private System.Windows.Forms.Button btSaveNumberRoundClickAd;
         private System.Windows.Forms.TextBox txtNumberRoundClickAd;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Action;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtRoundClickWaiting;
@@ -602,6 +637,12 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtRoundClick;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.CheckBox checkResetNormal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Action;
+        private System.Windows.Forms.DataGridViewButtonColumn Run;
+        private System.Windows.Forms.CheckBox checkResetHomescreen;
     }
 }

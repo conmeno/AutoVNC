@@ -147,7 +147,7 @@ namespace NPNDAutoVNC
 
 
         //phuong edit
-        public static void OpenApps(BindingList<VNC> VNCList, bool isResetAd, bool clickAd)
+        public static void OpenApps(BindingList<VNC> VNCList, bool clickAd, bool ResetNormal=false)
         {
             foreach (var item in VNCList)
             {
@@ -155,7 +155,7 @@ namespace NPNDAutoVNC
                     if (item.IP.Trim() != string.Empty)
                     {
                         OpenVNCFile(NewConfig.Config.DefaultIP + item.IP);
-                        Thread.Sleep(1000);
+                        Thread.Sleep(2000);
                         //Point app = GetPointRandonApp(Convert.ToInt32("0" + txtslapp.Text));
 
                         if (clickAd)
@@ -164,12 +164,19 @@ namespace NPNDAutoVNC
                         }
                         else
                         {
-                            if (isResetAd)
+                             //reset normal or PMP
+                            if (ResetNormal)
+                            {
+                                //NormalReset(NewConfig.Config.ClosePoint, NewConfig.Config.SettingPoint, NewConfig.Config.SettingPoint1, NewConfig.Config.SettingPoint2, NewConfig.Config.SettingPoint3);
+                                PrivacyIconReset(NewConfig.Config.ClosePoint, NewConfig.Config.SettingPoint,NewConfig.Config.PrivacyAppPoint, NewConfig.Config.PrivacyP1, NewConfig.Config.PrivacyP2);
+                            }
+                            else
                             {
                                 ResetAd(NewConfig.Config.ClosePoint, NewConfig.Config.ResetAppPoint, NewConfig.Config.ResetPoint1, NewConfig.Config.ResetPoint2, NewConfig.Config.ResetPoint3);
                             }
 
-                            CloseAndRestart(NewConfig.Config.AppPoint, NewConfig.Config.ClosePoint, isResetAd);
+                            
+                            CloseAndRestart(NewConfig.Config.AppPoint, NewConfig.Config.ClosePoint, true);
                         }
 
                         
@@ -239,6 +246,30 @@ namespace NPNDAutoVNC
                     Config.ResetPoint2 = new Point(Config.VNCPoint.X + Config.ResetPoint2.X, Config.VNCPoint.Y + Config.ResetPoint2.Y);
 
                     Config.ResetPoint3 = new Point(Config.VNCPoint.X + Config.ResetPoint3.X, Config.VNCPoint.Y + Config.ResetPoint3.Y);
+
+
+
+                    //setting
+
+                    Config.SettingPoint = new Point(Config.VNCPoint.X + Config.SettingPoint.X, Config.VNCPoint.Y + Config.SettingPoint.Y);
+
+                    Config.SettingPoint1 = new Point(Config.VNCPoint.X + Config.SettingPoint1.X, Config.VNCPoint.Y + Config.SettingPoint1.Y);
+
+                    Config.SettingPoint2 = new Point(Config.VNCPoint.X + Config.SettingPoint2.X, Config.VNCPoint.Y + Config.SettingPoint2.Y);
+
+                    Config.SettingPoint3 = new Point(Config.VNCPoint.X + Config.SettingPoint3.X, Config.VNCPoint.Y + Config.SettingPoint3.Y);
+
+
+                    ///privacy
+
+                    Config.PrivacyAppPoint = new Point(Config.VNCPoint.X + Config.PrivacyAppPoint.X, Config.VNCPoint.Y + Config.PrivacyAppPoint.Y);
+
+                    Config.PrivacyP1 = new Point(Config.VNCPoint.X + Config.PrivacyP1.X, Config.VNCPoint.Y + Config.PrivacyP1.Y);
+
+                    Config.PrivacyP2 = new Point(Config.VNCPoint.X + Config.PrivacyP2.X, Config.VNCPoint.Y + Config.PrivacyP2.Y);
+
+                    
+
                 }
             }
             catch
@@ -394,46 +425,134 @@ namespace NPNDAutoVNC
             sendMouseLeftclick(appReset3);
 
         }
-        public static void NormalReset(Point ClosePoint, Point appReset, Point appReset1, Point appReset2, Point appReset3)
+        public static void NormalReset(Point ClosePoint,Point SettingPoint, Point Point1,Point Point2,Point Point3)
         {
+ 
+                SetCursorPos(ClosePoint.X, ClosePoint.Y);
+                Thread.Sleep(500);
+                sendMouseRightclick(ClosePoint);
+                Thread.Sleep(2500);
+                sendMouseLeftclick(ClosePoint);
+                Thread.Sleep(5000);
 
-            //SetCursorPos(ClosePoint.X, ClosePoint.Y);
-            //Thread.Sleep(500);
-            //sendMouseRightclick(ClosePoint);
-            //Thread.Sleep(2500);
-            //sendMouseLeftclick(ClosePoint);
-            //Thread.Sleep(5000);
-            ////click to App reset
-            //SetCursorPos(appReset.X, appReset.Y);
-            ////Thread.Sleep(1000);
-            //sendMouseLeftclick(appReset);
-            //Thread.Sleep(6500);
-            
 
-            //mouse drag
-            SetCursorPos(appReset1.X, appReset1.Y); Thread.Sleep(3000);
-            LeftMouseDown(appReset1);
+                //click to Setting
+                SetCursorPos(SettingPoint.X, SettingPoint.Y);
+                //Thread.Sleep(1000);
+                sendMouseLeftclick(SettingPoint);
+                Thread.Sleep(3000);
+
+
+                //mouse drag 1
+                SetCursorPos(Point1.X, Point1.Y); Thread.Sleep(3000);
+                LeftMouseDown(Point1);
+
+                SetCursorPos(Point1.X, Point1.Y - 10);
+                Point TempP = new Point(Point1.X, Point1.Y - 10);
+                LeftMouseUp(TempP);
+
+
+                //click privacy
+                Thread.Sleep(3000);
+                SetCursorPos(TempP.X, TempP.Y);
+                sendMouseLeftclick(TempP);
+
+
+                //mouse drag 2
+                SetCursorPos(Point1.X, Point1.Y); Thread.Sleep(3000);
+                LeftMouseDown(Point1);
+
+                SetCursorPos(Point1.X, Point1.Y - 10);
+                Point Temp2 = new Point(Point1.X, Point2.Y - 10);
+                LeftMouseUp(Temp2);
+
+                //click Advertising
+                Thread.Sleep(3000);
+                SetCursorPos(Point1.X, Point1.Y);
+                sendMouseLeftclick(Point1);
+
+              
+
+                //click reset Advertising Identifier
+                Thread.Sleep(2000);
+
+                SetCursorPos(Point2.X, Point2.Y);
+                sendMouseLeftclick(Point2);
+
+
+                //click reset Advertising Identifier
+                Thread.Sleep(2000);
+                SetCursorPos(Point3.X, Point3.Y);
+                sendMouseLeftclick(Point3);
+ 
            
-            SetCursorPos(appReset2.X, appReset2.Y);
-            LeftMouseUp(appReset2);
+
+        }
+
+        public static void PrivacyIconReset(Point ClosePoint,Point SettingPoint, Point PrivacyAppPoint, Point Point1, Point Point2)
+        {
+            Thread.Sleep(2000);
+            SetCursorPos(ClosePoint.X, ClosePoint.Y);
+            Thread.Sleep(500);
+            sendMouseRightclick(ClosePoint);
+            Thread.Sleep(2500);
+            sendMouseLeftclick(ClosePoint);
+            Thread.Sleep(5000);
 
 
-            //click reset point 1
-            //SetCursorPos(appReset1.X, appReset1.Y);
-            //Thread.Sleep(300);
-            //sendMouseLeftclick(appReset1);
-            //Thread.Sleep(2000);
+          
 
-            ////click reset point 2
-            //SetCursorPos(appReset2.X, appReset2.Y);
-            //Thread.Sleep(300);
-            //sendMouseLeftclick(appReset2);
-            //Thread.Sleep(2000);
+            //click to Setting
+            SetCursorPos(SettingPoint.X, SettingPoint.Y);
+            //Thread.Sleep(1000);
+            sendMouseLeftclick(SettingPoint);
+            Thread.Sleep(5000);
 
-            ////click reset point 3
-            //SetCursorPos(appReset3.X, appReset3.Y);
-            //Thread.Sleep(300);
-            //sendMouseLeftclick(appReset3);
+         
+
+            //click PrivacyAppPoint
+            SetCursorPos(PrivacyAppPoint.X, PrivacyAppPoint.Y);
+            sendMouseRightclick(PrivacyAppPoint);
+            Thread.Sleep(4000);
+            sendMouseLeftclick(PrivacyAppPoint);
+
+
+            //mouse drag 1
+            SetCursorPos(Point1.X, Point1.Y);
+            Thread.Sleep(3000);
+            LeftMouseDown(Point1);
+          
+            SetCursorPos(Point1.X, Point1.Y - 100);
+            Thread.Sleep(1000);
+            Point TempP = new Point(Point1.X, Point1.Y - 100);
+            LeftMouseUp(TempP);
+
+ 
+
+        
+
+            //click Advertising
+            Thread.Sleep(3000);
+            SetCursorPos(Point1.X, Point1.Y);
+            sendMouseLeftclick(Point1);
+
+
+
+            //click reset Advertising Identifier
+            Thread.Sleep(2000);
+            SetCursorPos(Point2.X, Point2.Y);
+            sendMouseLeftclick(Point2);
+
+            Thread.Sleep(2000);
+
+
+
+            //click reset  
+            SetCursorPos(Point1.X, Point1.Y);
+            Thread.Sleep(2000);         
+            sendMouseLeftclick(Point1);
+
+
 
         }
         #region mouse

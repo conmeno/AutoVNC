@@ -1,5 +1,7 @@
 <NewConfig>
   <Sleep>1000</Sleep>
+  <VNCName>vncviewer</VNCName>
+  <NumberRoundClickAd>4</NumberRoundClickAd>
   <VNCPoint>
     <X>791</X>
     <Y>281</Y>
@@ -36,6 +38,34 @@
     <X>163</X>
     <Y>201</Y>
   </ResetPoint3>
+  <SettingPoint>
+    <X>273</X>
+    <Y>428</Y>
+  </SettingPoint>
+  <SettingPoint1>
+    <X>161</X>
+    <Y>429</Y>
+  </SettingPoint1>
+  <SettingPoint2>
+    <X>156</X>
+    <Y>203</Y>
+  </SettingPoint2>
+  <SettingPoint3>
+    <X>163</X>
+    <Y>397</Y>
+  </SettingPoint3>
+  <PrivacyAppPoint>
+    <X>46</X>
+    <Y>58</Y>
+  </PrivacyAppPoint>
+  <PrivacyP1>
+    <X>140</X>
+    <Y>322</Y>
+  </PrivacyP1>
+  <PrivacyP2>
+    <X>155</X>
+    <Y>261</Y>
+  </PrivacyP2>
   <VNCConfigFile>main.vnc</VNCConfigFile>
   <VNCPasswordCode>b4d90014103bde54</VNCPasswordCode>
   <DefaultIP>192.168.1.</DefaultIP>

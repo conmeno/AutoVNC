@@ -32,11 +32,18 @@
             this.checkResetAd = new System.Windows.Forms.CheckBox();
             this.cbClickAd = new System.Windows.Forms.CheckBox();
             this.gridlist = new System.Windows.Forms.DataGridView();
+            this.IP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Action = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Run = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btSaveList = new System.Windows.Forms.Button();
             this.labpoint = new System.Windows.Forms.Label();
             this.btGetPoint = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.checkResetHomescreen = new System.Windows.Forms.CheckBox();
+            this.checkResetNormal = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
@@ -69,19 +76,14 @@
             this.btSaveVNCPoint = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lbRounds = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.checkResetNormal = new System.Windows.Forms.CheckBox();
-            this.IP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Action = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Run = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.checkResetHomescreen = new System.Windows.Forms.CheckBox();
+            this.txtNumRoundReset = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridlist)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btStart
@@ -136,6 +138,34 @@
             this.gridlist.Size = new System.Drawing.Size(251, 298);
             this.gridlist.TabIndex = 18;
             this.gridlist.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridlist_CellContentClick);
+            // 
+            // IP
+            // 
+            this.IP.DataPropertyName = "IP";
+            this.IP.HeaderText = "IP";
+            this.IP.Name = "IP";
+            this.IP.Width = 50;
+            // 
+            // Status
+            // 
+            this.Status.DataPropertyName = "Status";
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            this.Status.Width = 50;
+            // 
+            // Action
+            // 
+            this.Action.DataPropertyName = "Action";
+            this.Action.HeaderText = "Action";
+            this.Action.Name = "Action";
+            this.Action.Width = 50;
+            // 
+            // Run
+            // 
+            this.Run.HeaderText = "Test";
+            this.Run.Name = "Run";
+            this.Run.Text = "Run";
+            this.Run.Width = 50;
             // 
             // btSaveList
             // 
@@ -192,6 +222,42 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Main";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.txtNumRoundReset);
+            this.panel2.Controls.Add(this.checkResetHomescreen);
+            this.panel2.Controls.Add(this.checkResetNormal);
+            this.panel2.Controls.Add(this.checkResetAd);
+            this.panel2.Location = new System.Drawing.Point(12, 38);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(156, 151);
+            this.panel2.TabIndex = 45;
+            // 
+            // checkResetHomescreen
+            // 
+            this.checkResetHomescreen.AutoSize = true;
+            this.checkResetHomescreen.Checked = true;
+            this.checkResetHomescreen.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkResetHomescreen.Location = new System.Drawing.Point(10, 92);
+            this.checkResetHomescreen.Name = "checkResetHomescreen";
+            this.checkResetHomescreen.Size = new System.Drawing.Size(149, 17);
+            this.checkResetHomescreen.TabIndex = 47;
+            this.checkResetHomescreen.Text = "Reset Ad ID HomeScreen";
+            this.checkResetHomescreen.UseVisualStyleBackColor = true;
+            // 
+            // checkResetNormal
+            // 
+            this.checkResetNormal.AutoSize = true;
+            this.checkResetNormal.Checked = true;
+            this.checkResetNormal.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkResetNormal.Location = new System.Drawing.Point(10, 55);
+            this.checkResetNormal.Name = "checkResetNormal";
+            this.checkResetNormal.Size = new System.Drawing.Size(120, 17);
+            this.checkResetNormal.TabIndex = 46;
+            this.checkResetNormal.Text = "Reset Ad ID Normal";
+            this.checkResetNormal.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
@@ -505,67 +571,22 @@
             this.lbRounds.TabIndex = 26;
             this.lbRounds.Text = "1";
             // 
-            // panel2
+            // txtNumRoundReset
             // 
-            this.panel2.Controls.Add(this.checkResetHomescreen);
-            this.panel2.Controls.Add(this.checkResetNormal);
-            this.panel2.Controls.Add(this.checkResetAd);
-            this.panel2.Location = new System.Drawing.Point(12, 38);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(156, 139);
-            this.panel2.TabIndex = 45;
+            this.txtNumRoundReset.Location = new System.Drawing.Point(10, 128);
+            this.txtNumRoundReset.Name = "txtNumRoundReset";
+            this.txtNumRoundReset.Size = new System.Drawing.Size(65, 20);
+            this.txtNumRoundReset.TabIndex = 47;
+            this.txtNumRoundReset.Text = "3";
             // 
-            // checkResetNormal
+            // label9
             // 
-            this.checkResetNormal.AutoSize = true;
-            this.checkResetNormal.Checked = true;
-            this.checkResetNormal.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkResetNormal.Location = new System.Drawing.Point(10, 55);
-            this.checkResetNormal.Name = "checkResetNormal";
-            this.checkResetNormal.Size = new System.Drawing.Size(120, 17);
-            this.checkResetNormal.TabIndex = 46;
-            this.checkResetNormal.Text = "Reset Ad ID Normal";
-            this.checkResetNormal.UseVisualStyleBackColor = true;
-            // 
-            // IP
-            // 
-            this.IP.DataPropertyName = "IP";
-            this.IP.HeaderText = "IP";
-            this.IP.Name = "IP";
-            this.IP.Width = 50;
-            // 
-            // Status
-            // 
-            this.Status.DataPropertyName = "Status";
-            this.Status.HeaderText = "Status";
-            this.Status.Name = "Status";
-            this.Status.Width = 50;
-            // 
-            // Action
-            // 
-            this.Action.DataPropertyName = "Action";
-            this.Action.HeaderText = "Action";
-            this.Action.Name = "Action";
-            this.Action.Width = 50;
-            // 
-            // Run
-            // 
-            this.Run.HeaderText = "Test";
-            this.Run.Name = "Run";
-            this.Run.Text = "Run";
-            this.Run.Width = 50;
-            // 
-            // checkResetHomescreen
-            // 
-            this.checkResetHomescreen.AutoSize = true;
-            this.checkResetHomescreen.Checked = true;
-            this.checkResetHomescreen.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkResetHomescreen.Location = new System.Drawing.Point(10, 92);
-            this.checkResetHomescreen.Name = "checkResetHomescreen";
-            this.checkResetHomescreen.Size = new System.Drawing.Size(149, 17);
-            this.checkResetHomescreen.TabIndex = 47;
-            this.checkResetHomescreen.Text = "Reset Ad ID HomeScreen";
-            this.checkResetHomescreen.UseVisualStyleBackColor = true;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(8, 112);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(85, 13);
+            this.label9.TabIndex = 27;
+            this.label9.Text = "Num round reset";
             // 
             // Auto
             // 
@@ -583,12 +604,12 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -644,5 +665,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Action;
         private System.Windows.Forms.DataGridViewButtonColumn Run;
         private System.Windows.Forms.CheckBox checkResetHomescreen;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtNumRoundReset;
     }
 }

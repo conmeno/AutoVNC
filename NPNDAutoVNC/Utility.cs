@@ -170,10 +170,10 @@ namespace NPNDAutoVNC
                                 //NormalReset(NewConfig.Config.ClosePoint, NewConfig.Config.SettingPoint, NewConfig.Config.SettingPoint1, NewConfig.Config.SettingPoint2, NewConfig.Config.SettingPoint3);
                                 PrivacyIconReset(NewConfig.Config.ClosePoint, NewConfig.Config.SettingPoint,NewConfig.Config.PrivacyAppPoint, NewConfig.Config.PrivacyP1, NewConfig.Config.PrivacyP2);
                             }
-                            else
-                            {
-                                ResetAd(NewConfig.Config.ClosePoint, NewConfig.Config.ResetAppPoint, NewConfig.Config.ResetPoint1, NewConfig.Config.ResetPoint2, NewConfig.Config.ResetPoint3);
-                            }
+                            //else
+                            //{
+                            //    ResetAd(NewConfig.Config.ClosePoint, NewConfig.Config.ResetAppPoint, NewConfig.Config.ResetPoint1, NewConfig.Config.ResetPoint2, NewConfig.Config.ResetPoint3);
+                            //}
 
                             
                             CloseAndRestart(NewConfig.Config.AppPoint, NewConfig.Config.ClosePoint, true);
@@ -495,9 +495,11 @@ namespace NPNDAutoVNC
             SetCursorPos(ClosePoint.X, ClosePoint.Y);
             Thread.Sleep(500);
             sendMouseRightclick(ClosePoint);
-            Thread.Sleep(2500);
+            Thread.Sleep(800);
+            sendMouseRightclick(ClosePoint);
+            Thread.Sleep(300);
             sendMouseLeftclick(ClosePoint);
-            Thread.Sleep(4000);
+            Thread.Sleep(3500);
 
 
           
@@ -506,7 +508,7 @@ namespace NPNDAutoVNC
             SetCursorPos(SettingPoint.X, SettingPoint.Y);
             //Thread.Sleep(1000);
             sendMouseLeftclick(SettingPoint);
-            Thread.Sleep(4000);
+            Thread.Sleep(2500);
 
          
 
@@ -560,7 +562,7 @@ namespace NPNDAutoVNC
 
 
             //click reset  
-            SetCursorPos(Point1.X, Point1.Y);
+            SetCursorPos(Point1.X, Point1.Y-3);
             Thread.Sleep(2000);         
             sendMouseLeftclick(Point1);
 

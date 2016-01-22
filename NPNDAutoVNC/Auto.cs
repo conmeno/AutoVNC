@@ -75,6 +75,7 @@ namespace NPNDAutoVNC
 
         #endregion
         int LoopCount = 0;
+        int LoopReset = 0;
         int Rounds = 0;
         int Apps = 0;
 
@@ -113,8 +114,20 @@ namespace NPNDAutoVNC
         {
             Rounds++;
             lbRounds.Text = Rounds.ToString();
-            Utility.OpenApps(listVNC,  false,checkResetNormal.Checked);
+            
+           
+            bool isResetADID=false;
+
+            if ((LoopReset==0|| LoopReset >= int.Parse(txtNumRoundReset.Text)) && checkResetHomescreen.Checked)
+            {
+                isResetADID = true;
+            }
             LoopCount++;
+            LoopReset++;
+            if (LoopReset >= int.Parse(txtNumRoundReset.Text))
+                LoopReset = 0; 
+
+            Utility.OpenApps(listVNC, false, isResetADID);
             if (cbClickAd.Checked)
             {
                 if (LoopCount>= int.Parse(txtRoundClick.Text))
@@ -122,7 +135,7 @@ namespace NPNDAutoVNC
                     //Thread.Sleep(60000);
                     int RoundTimneWait = int.Parse((txtRoundClickWaiting.Text + "000"));
                     Thread.Sleep(RoundTimneWait);
-                    Utility.OpenApps(listVNC, true, checkResetNormal.Checked);
+                    Utility.OpenApps(listVNC, true, isResetADID);
                    
                     Thread.Sleep(RoundTimneWait);
                     LoopCount = 0;

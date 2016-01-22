@@ -497,7 +497,7 @@ namespace NPNDAutoVNC
             sendMouseRightclick(ClosePoint);
             Thread.Sleep(2500);
             sendMouseLeftclick(ClosePoint);
-            Thread.Sleep(5000);
+            Thread.Sleep(4000);
 
 
           
@@ -506,27 +506,39 @@ namespace NPNDAutoVNC
             SetCursorPos(SettingPoint.X, SettingPoint.Y);
             //Thread.Sleep(1000);
             sendMouseLeftclick(SettingPoint);
-            Thread.Sleep(5000);
+            Thread.Sleep(4000);
 
          
 
             //click PrivacyAppPoint
             SetCursorPos(PrivacyAppPoint.X, PrivacyAppPoint.Y);
             sendMouseRightclick(PrivacyAppPoint);
-            Thread.Sleep(4000);
+            Thread.Sleep(3000);
             sendMouseLeftclick(PrivacyAppPoint);
 
 
             //mouse drag 1
             SetCursorPos(Point1.X, Point1.Y);
-            Thread.Sleep(3000);
+            Thread.Sleep(4000);
             LeftMouseDown(Point1);
-          
+           //Thread.Sleep(150);
             SetCursorPos(Point1.X, Point1.Y - 100);
-            Thread.Sleep(1000);
-            Point TempP = new Point(Point1.X, Point1.Y - 100);
+            //Thread.Sleep(150);
+            SetCursorPos(Point1.X, Point1.Y - 200);
+                   
+            Point TempP = new Point(Point1.X, Point1.Y - 200);
             LeftMouseUp(TempP);
 
+            Thread.Sleep(1000);
+            SetCursorPos(Point1.X, Point1.Y);
+            LeftMouseDown(Point1);
+            //Thread.Sleep(150);
+            SetCursorPos(Point1.X, Point1.Y - 100);
+            //Thread.Sleep(150);
+            SetCursorPos(Point1.X, Point1.Y - 200);
+
+            //Point TempP = new Point(Point1.X, Point1.Y - 200);
+            LeftMouseUp(TempP);
  
 
         

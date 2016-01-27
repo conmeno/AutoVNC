@@ -168,15 +168,17 @@ namespace NPNDAutoVNC
                             if (ResetNormal)
                             {
                                 //NormalReset(NewConfig.Config.ClosePoint, NewConfig.Config.SettingPoint, NewConfig.Config.SettingPoint1, NewConfig.Config.SettingPoint2, NewConfig.Config.SettingPoint3);
-                                PrivacyIconReset(NewConfig.Config.ClosePoint, NewConfig.Config.SettingPoint,NewConfig.Config.PrivacyAppPoint, NewConfig.Config.PrivacyP1, NewConfig.Config.PrivacyP2);
+                                PrivacyIconReset(NewConfig.Config.ClosePoint, NewConfig.Config.SettingPoint, NewConfig.Config.PrivacyAppPoint, NewConfig.Config.PrivacyP1, NewConfig.Config.PrivacyP2);
+                                
                             }
+                            
                             //else
                             //{
                             //    ResetAd(NewConfig.Config.ClosePoint, NewConfig.Config.ResetAppPoint, NewConfig.Config.ResetPoint1, NewConfig.Config.ResetPoint2, NewConfig.Config.ResetPoint3);
                             //}
 
-                            
-                            CloseAndRestart(NewConfig.Config.AppPoint, NewConfig.Config.ClosePoint, true);
+
+                            CloseAndRestart(NewConfig.Config.AppPoint, NewConfig.Config.ClosePoint, ResetNormal);
                         }
 
                         
@@ -506,7 +508,6 @@ namespace NPNDAutoVNC
 
             //click to Setting
             SetCursorPos(SettingPoint.X, SettingPoint.Y);
-            //Thread.Sleep(1000);
             sendMouseLeftclick(SettingPoint);
             Thread.Sleep(2500);
 
@@ -535,12 +536,12 @@ namespace NPNDAutoVNC
             SetCursorPos(Point1.X, Point1.Y);
             LeftMouseDown(Point1);
             //Thread.Sleep(150);
-            SetCursorPos(Point1.X, Point1.Y - 100);
+            SetCursorPos(Point1.X, Point1.Y - 50);
             //Thread.Sleep(150);
-            SetCursorPos(Point1.X, Point1.Y - 200);
+            SetCursorPos(Point1.X, Point1.Y - 100);
 
-            //Point TempP = new Point(Point1.X, Point1.Y - 200);
-            LeftMouseUp(TempP);
+            Point TempP1 = new Point(Point1.X, Point1.Y - 100);
+            LeftMouseUp(TempP1);
  
 
         

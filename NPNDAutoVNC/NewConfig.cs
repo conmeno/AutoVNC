@@ -19,24 +19,19 @@ namespace NPNDAutoVNC
         public Point AdPoint { get; set; }
 
         public Point ClosePoint { get; set; }
-        public Point ResetAppPoint { get; set; }
-        public Point ResetPoint1 { get; set; }
-        public Point ResetPoint2 { get; set; }
-        public Point ResetPoint3 { get; set; }       
+
+
+ 
 
 
         //setting point
-        public Point SettingPoint { get; set; }
-        public Point SettingPoint1 { get; set; }
+        public Point SettingPoint { get; set; } 
 
-        public Point SettingPoint2 { get; set; }
-        public Point SettingPoint3 { get; set; }
-       
 
         //Privacy app on homescreen
-        public Point PrivacyAppPoint { get; set; }
-        public Point PrivacyP1 { get; set; }
-        public Point PrivacyP2 { get; set; }
+        public Point AdvertisingPoint { get; set; }
+        public Point AdvertisingPoint1 { get; set; }
+        public Point AdvertisingPoint2 { get; set; }
 
 
         public string VNCConfigFile { get; set; }

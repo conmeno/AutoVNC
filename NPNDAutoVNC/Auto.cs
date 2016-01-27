@@ -259,7 +259,7 @@ namespace NPNDAutoVNC
         {
             NewConfig config = Utility.LoadConfig(false);
             Point temp = new Point(int.Parse(txtVNCPointX.Text), int.Parse(txtVNCPointY.Text));
-            config.ResetAppPoint = temp;
+            config.AdvertisingPoint = temp;
             Utility.SaveConfig(config);
         }
 
@@ -267,7 +267,7 @@ namespace NPNDAutoVNC
         {
             NewConfig config = Utility.LoadConfig(false);
             Point temp = new Point(int.Parse(txtVNCPointX.Text), int.Parse(txtVNCPointY.Text));
-            config.ResetPoint1 = temp;
+            config.AdvertisingPoint1 = temp;
             Utility.SaveConfig(config);
         }
 
@@ -275,18 +275,11 @@ namespace NPNDAutoVNC
         {
             NewConfig config = Utility.LoadConfig(false);
             Point temp = new Point(int.Parse(txtVNCPointX.Text), int.Parse(txtVNCPointY.Text));
-            config.ResetPoint2 = temp;
+            config.AdvertisingPoint2 = temp;
             Utility.SaveConfig(config);
         }
 
-        private void btResetAppPoint3_Click(object sender, EventArgs e)
-        {
-            NewConfig config = Utility.LoadConfig(false);
-            Point temp = new Point(int.Parse(txtVNCPointX.Text), int.Parse(txtVNCPointY.Text));
-            config.ResetPoint3 = temp;
-            Utility.SaveConfig(config);
-        }
-
+     
         private void btSaveVNCName_Click(object sender, EventArgs e)
         {
             NewConfig config = Utility.LoadConfig(false);

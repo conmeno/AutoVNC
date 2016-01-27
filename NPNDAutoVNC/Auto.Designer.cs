@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btStart = new System.Windows.Forms.Button();
-            this.checkResetAd = new System.Windows.Forms.CheckBox();
             this.cbClickAd = new System.Windows.Forms.CheckBox();
             this.gridlist = new System.Windows.Forms.DataGridView();
             this.IP = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,8 +41,9 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtNumRoundReset = new System.Windows.Forms.TextBox();
             this.checkResetHomescreen = new System.Windows.Forms.CheckBox();
-            this.checkResetNormal = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
@@ -63,7 +63,6 @@
             this.txtPointX = new System.Windows.Forms.TextBox();
             this.txtPointY = new System.Windows.Forms.TextBox();
             this.btSaveAppPoint2 = new System.Windows.Forms.Button();
-            this.btResetAppPoint3 = new System.Windows.Forms.Button();
             this.btResetAppPoint2 = new System.Windows.Forms.Button();
             this.btResetPoint1 = new System.Windows.Forms.Button();
             this.btSaveResetAppPoint = new System.Windows.Forms.Button();
@@ -76,8 +75,6 @@
             this.btSaveVNCPoint = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lbRounds = new System.Windows.Forms.Label();
-            this.txtNumRoundReset = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridlist)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -98,18 +95,6 @@
             this.btStart.Text = "Start";
             this.btStart.UseVisualStyleBackColor = false;
             this.btStart.Click += new System.EventHandler(this.btStart_Click);
-            // 
-            // checkResetAd
-            // 
-            this.checkResetAd.AutoSize = true;
-            this.checkResetAd.Checked = true;
-            this.checkResetAd.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkResetAd.Location = new System.Drawing.Point(10, 15);
-            this.checkResetAd.Name = "checkResetAd";
-            this.checkResetAd.Size = new System.Drawing.Size(124, 17);
-            this.checkResetAd.TabIndex = 17;
-            this.checkResetAd.Text = "Reset Ad ID by PMP";
-            this.checkResetAd.UseVisualStyleBackColor = true;
             // 
             // cbClickAd
             // 
@@ -228,36 +213,39 @@
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.txtNumRoundReset);
             this.panel2.Controls.Add(this.checkResetHomescreen);
-            this.panel2.Controls.Add(this.checkResetNormal);
-            this.panel2.Controls.Add(this.checkResetAd);
             this.panel2.Location = new System.Drawing.Point(12, 38);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(156, 151);
             this.panel2.TabIndex = 45;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(3, 23);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(85, 13);
+            this.label9.TabIndex = 27;
+            this.label9.Text = "Num round reset";
+            // 
+            // txtNumRoundReset
+            // 
+            this.txtNumRoundReset.Location = new System.Drawing.Point(5, 39);
+            this.txtNumRoundReset.Name = "txtNumRoundReset";
+            this.txtNumRoundReset.Size = new System.Drawing.Size(65, 20);
+            this.txtNumRoundReset.TabIndex = 47;
+            this.txtNumRoundReset.Text = "3";
             // 
             // checkResetHomescreen
             // 
             this.checkResetHomescreen.AutoSize = true;
             this.checkResetHomescreen.Checked = true;
             this.checkResetHomescreen.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkResetHomescreen.Location = new System.Drawing.Point(10, 92);
+            this.checkResetHomescreen.Location = new System.Drawing.Point(3, 3);
             this.checkResetHomescreen.Name = "checkResetHomescreen";
-            this.checkResetHomescreen.Size = new System.Drawing.Size(149, 17);
+            this.checkResetHomescreen.Size = new System.Drawing.Size(73, 17);
             this.checkResetHomescreen.TabIndex = 47;
-            this.checkResetHomescreen.Text = "Reset Ad ID HomeScreen";
+            this.checkResetHomescreen.Text = "Reset Ad ";
             this.checkResetHomescreen.UseVisualStyleBackColor = true;
-            // 
-            // checkResetNormal
-            // 
-            this.checkResetNormal.AutoSize = true;
-            this.checkResetNormal.Checked = true;
-            this.checkResetNormal.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkResetNormal.Location = new System.Drawing.Point(10, 55);
-            this.checkResetNormal.Name = "checkResetNormal";
-            this.checkResetNormal.Size = new System.Drawing.Size(120, 17);
-            this.checkResetNormal.TabIndex = 46;
-            this.checkResetNormal.Text = "Reset Ad ID Normal";
-            this.checkResetNormal.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
@@ -361,7 +349,6 @@
             this.tabPage2.Controls.Add(this.txtPointX);
             this.tabPage2.Controls.Add(this.txtPointY);
             this.tabPage2.Controls.Add(this.btSaveAppPoint2);
-            this.tabPage2.Controls.Add(this.btResetAppPoint3);
             this.tabPage2.Controls.Add(this.btResetAppPoint2);
             this.tabPage2.Controls.Add(this.btResetPoint1);
             this.tabPage2.Controls.Add(this.btSaveResetAppPoint);
@@ -448,23 +435,13 @@
             this.btSaveAppPoint2.UseVisualStyleBackColor = true;
             this.btSaveAppPoint2.Click += new System.EventHandler(this.btSaveAppPoint2_Click);
             // 
-            // btResetAppPoint3
-            // 
-            this.btResetAppPoint3.Location = new System.Drawing.Point(156, 205);
-            this.btResetAppPoint3.Name = "btResetAppPoint3";
-            this.btResetAppPoint3.Size = new System.Drawing.Size(130, 23);
-            this.btResetAppPoint3.TabIndex = 34;
-            this.btResetAppPoint3.Text = "Save Reset Point 3";
-            this.btResetAppPoint3.UseVisualStyleBackColor = true;
-            this.btResetAppPoint3.Click += new System.EventHandler(this.btResetAppPoint3_Click);
-            // 
             // btResetAppPoint2
             // 
             this.btResetAppPoint2.Location = new System.Drawing.Point(156, 176);
             this.btResetAppPoint2.Name = "btResetAppPoint2";
             this.btResetAppPoint2.Size = new System.Drawing.Size(130, 23);
             this.btResetAppPoint2.TabIndex = 33;
-            this.btResetAppPoint2.Text = "Save Reset Point 2";
+            this.btResetAppPoint2.Text = "Save Ad Point 2";
             this.btResetAppPoint2.UseVisualStyleBackColor = true;
             this.btResetAppPoint2.Click += new System.EventHandler(this.btResetAppPoint2_Click);
             // 
@@ -474,7 +451,7 @@
             this.btResetPoint1.Name = "btResetPoint1";
             this.btResetPoint1.Size = new System.Drawing.Size(130, 23);
             this.btResetPoint1.TabIndex = 32;
-            this.btResetPoint1.Text = "Save Reset Point 1";
+            this.btResetPoint1.Text = "Save Ad Point 1";
             this.btResetPoint1.UseVisualStyleBackColor = true;
             this.btResetPoint1.Click += new System.EventHandler(this.btResetPoint1_Click);
             // 
@@ -484,7 +461,7 @@
             this.btSaveResetAppPoint.Name = "btSaveResetAppPoint";
             this.btSaveResetAppPoint.Size = new System.Drawing.Size(130, 23);
             this.btSaveResetAppPoint.TabIndex = 31;
-            this.btSaveResetAppPoint.Text = "Save Rest App Point";
+            this.btSaveResetAppPoint.Text = "Save Ad Point";
             this.btSaveResetAppPoint.UseVisualStyleBackColor = true;
             this.btSaveResetAppPoint.Click += new System.EventHandler(this.btSaveResetAppPoint_Click);
             // 
@@ -571,23 +548,6 @@
             this.lbRounds.TabIndex = 26;
             this.lbRounds.Text = "1";
             // 
-            // txtNumRoundReset
-            // 
-            this.txtNumRoundReset.Location = new System.Drawing.Point(10, 128);
-            this.txtNumRoundReset.Name = "txtNumRoundReset";
-            this.txtNumRoundReset.Size = new System.Drawing.Size(65, 20);
-            this.txtNumRoundReset.TabIndex = 47;
-            this.txtNumRoundReset.Text = "3";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(8, 112);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(85, 13);
-            this.label9.TabIndex = 27;
-            this.label9.Text = "Num round reset";
-            // 
             // Auto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -618,7 +578,6 @@
         #endregion
 
         private System.Windows.Forms.Button btStart;
-        private System.Windows.Forms.CheckBox checkResetAd;
         private System.Windows.Forms.CheckBox cbClickAd;
         private System.Windows.Forms.DataGridView gridlist;
         private System.Windows.Forms.Button btSaveList;
@@ -635,7 +594,6 @@
         private System.Windows.Forms.Button btSaveAdPoint;
         private System.Windows.Forms.Button btSaveAppPoint;
         private System.Windows.Forms.Button btSaveVNCPoint;
-        private System.Windows.Forms.Button btResetAppPoint3;
         private System.Windows.Forms.Button btResetAppPoint2;
         private System.Windows.Forms.Button btResetPoint1;
         private System.Windows.Forms.Button btSaveAppPoint2;
@@ -659,7 +617,6 @@
         private System.Windows.Forms.TextBox txtRoundClick;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.CheckBox checkResetNormal;
         private System.Windows.Forms.DataGridViewTextBoxColumn IP;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.DataGridViewTextBoxColumn Action;

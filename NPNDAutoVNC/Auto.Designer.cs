@@ -75,12 +75,15 @@
             this.btSaveVNCPoint = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lbRounds = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtRandom = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.gridlist)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRandom)).BeginInit();
             this.SuspendLayout();
             // 
             // btStart
@@ -210,6 +213,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.txtRandom);
+            this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.txtNumRoundReset);
             this.panel2.Controls.Add(this.checkResetHomescreen);
@@ -548,6 +553,27 @@
             this.lbRounds.TabIndex = 26;
             this.lbRounds.Text = "1";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(4, 75);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(69, 13);
+            this.label10.TabIndex = 48;
+            this.label10.Text = "Random App";
+            // 
+            // txtRandom
+            // 
+            this.txtRandom.Location = new System.Drawing.Point(6, 91);
+            this.txtRandom.Name = "txtRandom";
+            this.txtRandom.Size = new System.Drawing.Size(120, 20);
+            this.txtRandom.TabIndex = 49;
+            this.txtRandom.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // Auto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -570,6 +596,7 @@
             this.panel1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRandom)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -624,5 +651,7 @@
         private System.Windows.Forms.CheckBox checkResetHomescreen;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtNumRoundReset;
+        private System.Windows.Forms.NumericUpDown txtRandom;
+        private System.Windows.Forms.Label label10;
     }
 }

@@ -127,7 +127,7 @@ namespace NPNDAutoVNC
             if (LoopReset >= int.Parse(txtNumRoundReset.Text))
                 LoopReset = 0; 
 
-            Utility.OpenApps(listVNC, false, isResetADID);
+            Utility.OpenApps(listVNC,(int)txtRandom.Value, false, isResetADID);
             if (cbClickAd.Checked)
             {
                 if (LoopCount>= int.Parse(txtRoundClick.Text))
@@ -135,7 +135,7 @@ namespace NPNDAutoVNC
                     //Thread.Sleep(60000);
                     int RoundTimneWait = int.Parse((txtRoundClickWaiting.Text + "000"));
                     Thread.Sleep(RoundTimneWait);
-                    Utility.OpenApps(listVNC, true, isResetADID);
+                    Utility.OpenApps(listVNC,(int)txtRandom.Value, true, isResetADID);
                    
                     Thread.Sleep(RoundTimneWait);
                     LoopCount = 0;

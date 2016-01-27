@@ -147,7 +147,7 @@ namespace NPNDAutoVNC
 
 
         //phuong edit
-        public static void OpenApps(BindingList<VNC> VNCList, bool clickAd, bool ResetNormal=false)
+        public static void OpenApps(BindingList<VNC> VNCList,int numApp, bool clickAd, bool ResetNormal=false)
         {
             foreach (var item in VNCList)
             {
@@ -166,25 +166,14 @@ namespace NPNDAutoVNC
                         {
                              //reset normal or PMP
                             if (ResetNormal)
-                            {
-                                //NormalReset(NewConfig.Config.ClosePoint, NewConfig.Config.SettingPoint, NewConfig.Config.SettingPoint1, NewConfig.Config.SettingPoint2, NewConfig.Config.SettingPoint3);
-                                NewResetAd(NewConfig.Config.ClosePoint, NewConfig.Config.AdvertisingPoint, NewConfig.Config.AdvertisingPoint1, NewConfig.Config.AdvertisingPoint2);
-                                
-                            }
-                            
-                            //else
-                            //{
-                            //    ResetAd(NewConfig.Config.ClosePoint, NewConfig.Config.ResetAppPoint, NewConfig.Config.ResetPoint1, NewConfig.Config.ResetPoint2, NewConfig.Config.ResetPoint3);
-                            //}
+                            {                                
+                                NewResetAd(NewConfig.Config.ClosePoint, NewConfig.Config.AdvertisingPoint, NewConfig.Config.AdvertisingPoint1, NewConfig.Config.AdvertisingPoint2);                                
+                            }                    
 
+                            CloseAndRestart(numApp,NewConfig.Config.AppPoint, NewConfig.Config.ClosePoint, ResetNormal);
+                        } 
 
-                            CloseAndRestart(NewConfig.Config.AppPoint, NewConfig.Config.ClosePoint, ResetNormal);
-                        }
-
-                        
-
-
-                        Thread.Sleep(1000);
+                        //Thread.Sleep(1000);
                         Process p = Process.GetProcessesByName(NewConfig.Config.VNCName)[0];
                         if (p != null)
                             p.Kill();
@@ -346,33 +335,44 @@ namespace NPNDAutoVNC
             Thread.Sleep(500);
             sendMouseLeftclick(Pad);
         }
-        public static void CloseAndRestart(Point appstart, Point appclose, bool ResetAd = false)
+        public static void CloseAndRestart(int numApp,Point appstart, Point appclose, bool ResetAd = false)
         {
             SetCursorPos(appstart.X, appstart.Y);
             Thread.Sleep(500);
             sendMouseRightclick(appstart);
             Thread.Sleep(2000);
             sendMouseRightclick(appstart);
-
+           
 
             if (!ResetAd)
             {
                 SetCursorPos(appclose.X, appclose.Y);
                 Thread.Sleep(200); 
                 sendMouseLeftclick(appclose);
-                Thread.Sleep(5000);
-                SetCursorPos(appstart.X, appstart.Y);
-                sendMouseLeftclick(appstart);
+                Thread.Sleep(4000);
+
+
+              
             }
+
             else
             {
-                Thread.Sleep(2000);
-                SetCursorPos(appstart.X, appstart.Y);
-                Thread.Sleep(200);
-                sendMouseLeftclick(appstart);
-              
-            } 
-                   
+                Thread.Sleep(200);               
+            }
+
+            Point RealAppPoint = new Point(appstart.X, appstart.Y);
+
+            if (numApp >1)
+            {
+
+                Random random = new Random();
+                int randomNumber = random.Next(0, numApp);
+                RealAppPoint.X += randomNumber * 75;
+            }
+
+            SetCursorPos(RealAppPoint.X, RealAppPoint.Y);
+            Thread.Sleep(200);
+            sendMouseLeftclick(RealAppPoint);
        
         }
 
@@ -487,8 +487,10 @@ namespace NPNDAutoVNC
             Thread.Sleep(500);
             sendMouseRightclick(ClosePoint);
             Thread.Sleep(2500);
+            sendMouseRightclick(ClosePoint);
+            Thread.Sleep(200);
             sendMouseLeftclick(ClosePoint);
-            Thread.Sleep(5000);
+            Thread.Sleep(4000);
 
 
          //double click to status bar
@@ -508,9 +510,10 @@ namespace NPNDAutoVNC
 
 
             //click adpoint 2
+            SetCursorPos(AdvertisingPoint2.X, AdvertisingPoint2.Y);
             Thread.Sleep(2000);
-            SetCursorPos(AdvertisingPoint1.X, AdvertisingPoint1.Y);
-            sendMouseLeftclick(AdvertisingPoint1); 
+           
+            sendMouseLeftclick(AdvertisingPoint2); 
 
 
         }

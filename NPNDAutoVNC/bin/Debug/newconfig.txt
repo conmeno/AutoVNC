@@ -1,10 +1,10 @@
 <NewConfig>
   <Sleep>1000</Sleep>
-  <VNCName>vncviewer</VNCName>
+  <VNCName>VNC-Viewer-5.3.0-Windows-32bit</VNCName>
   <NumberRoundClickAd>4</NumberRoundClickAd>
   <VNCPoint>
-    <X>791</X>
-    <Y>281</Y>
+    <X>514</X>
+    <Y>127</Y>
   </VNCPoint>
   <AppPoint>
     <X>45</X>
@@ -22,50 +22,22 @@
     <X>196</X>
     <Y>431</Y>
   </ClosePoint>
-  <ResetAppPoint>
-    <X>44</X>
-    <Y>146</Y>
-  </ResetAppPoint>
-  <ResetPoint1>
-    <X>34</X>
-    <Y>43</Y>
-  </ResetPoint1>
-  <ResetPoint2>
-    <X>156</X>
-    <Y>474</Y>
-  </ResetPoint2>
-  <ResetPoint3>
-    <X>163</X>
-    <Y>201</Y>
-  </ResetPoint3>
   <SettingPoint>
     <X>273</X>
     <Y>428</Y>
   </SettingPoint>
-  <SettingPoint1>
-    <X>161</X>
-    <Y>429</Y>
-  </SettingPoint1>
-  <SettingPoint2>
-    <X>156</X>
-    <Y>203</Y>
-  </SettingPoint2>
-  <SettingPoint3>
-    <X>163</X>
-    <Y>397</Y>
-  </SettingPoint3>
-  <PrivacyAppPoint>
-    <X>46</X>
-    <Y>58</Y>
-  </PrivacyAppPoint>
-  <PrivacyP1>
-    <X>140</X>
-    <Y>322</Y>
-  </PrivacyP1>
-  <PrivacyP2>
-    <X>155</X>
-    <Y>261</Y>
-  </PrivacyP2>
+  <AdvertisingPoint>
+    <X>150</X>
+    <Y>8</Y>
+  </AdvertisingPoint>
+  <AdvertisingPoint1>
+    <X>146</X>
+    <Y>198</Y>
+  </AdvertisingPoint1>
+  <AdvertisingPoint2>
+    <X>146</X>
+    <Y>198</Y>
+  </AdvertisingPoint2>
   <VNCConfigFile>main.vnc</VNCConfigFile>
   <VNCPasswordCode>b4d90014103bde54</VNCPasswordCode>
   <DefaultIP>192.168.1.</DefaultIP>

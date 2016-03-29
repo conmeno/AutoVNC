@@ -18,6 +18,7 @@ namespace NPNDAutoVNC
 
         private const int WM_CLOSE = 16;
         private const int BN_CLICKED = 245;
+        public static int WaitTimeVNC;
 
         [DllImport("user32.dll")]
         public static extern int FindWindow(string lpClassName, String lpWindowName);
@@ -155,7 +156,7 @@ namespace NPNDAutoVNC
                     if (item.IP.Trim() != string.Empty)
                     {
                         OpenVNCFile(NewConfig.Config.DefaultIP + item.IP);
-                        Thread.Sleep(2000);
+                        Thread.Sleep(WaitTimeVNC);
                         //Point app = GetPointRandonApp(Convert.ToInt32("0" + txtslapp.Text));
 
                         if (clickAd)
@@ -173,7 +174,7 @@ namespace NPNDAutoVNC
                             CloseAndRestart(numApp,NewConfig.Config.AppPoint, NewConfig.Config.ClosePoint, ResetNormal);
                         } 
 
-                        //Thread.Sleep(1000);
+                        Thread.Sleep(1000);
                         Process p = Process.GetProcessesByName(NewConfig.Config.VNCName)[0];
                         if (p != null)
                             p.Kill();
@@ -341,7 +342,7 @@ namespace NPNDAutoVNC
             Thread.Sleep(500);
             sendMouseRightclick(appstart);
             Thread.Sleep(2000);
-            sendMouseRightclick(appstart);
+            //sendMouseRightclick(appstart);
            
 
             if (!ResetAd)
@@ -484,10 +485,11 @@ namespace NPNDAutoVNC
         {
 
             SetCursorPos(ClosePoint.X, ClosePoint.Y);
-            Thread.Sleep(500);
+            Thread.Sleep(1000);
             sendMouseRightclick(ClosePoint);
             Thread.Sleep(2500);
-            sendMouseRightclick(ClosePoint);
+            //SetCursorPos(ClosePoint.X, ClosePoint.Y);
+            //sendMouseRightclick(ClosePoint);
             Thread.Sleep(200);
             sendMouseLeftclick(ClosePoint);
             Thread.Sleep(4000);
@@ -504,14 +506,14 @@ namespace NPNDAutoVNC
 
 
             //click adpoint 1
-            Thread.Sleep(5000);
+            Thread.Sleep(6000);
             SetCursorPos(AdvertisingPoint1.X, AdvertisingPoint1.Y);
             sendMouseLeftclick(AdvertisingPoint1);
 
 
             //click adpoint 2
             SetCursorPos(AdvertisingPoint2.X, AdvertisingPoint2.Y);
-            Thread.Sleep(2000);
+            Thread.Sleep(2500);
            
             sendMouseLeftclick(AdvertisingPoint2); 
 

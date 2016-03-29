@@ -84,6 +84,7 @@ namespace NPNDAutoVNC
         {
             //try
             //{
+            Utility.WaitTimeVNC = (int)txtwaitVNC.Value;
                 BindingList<VNC> listVNC = (BindingList<VNC>)gridlist.DataSource;
                 Utility.ListIPtoFiles(listVNC);
                 if (listVNC != null && listVNC.Count > 0)
@@ -106,6 +107,7 @@ namespace NPNDAutoVNC
             //Thread thread = new Thread(new ThreadStart(WorkThreadFunction));
             //thread.Start();
             WorkThreadFunction();
+          
 
 
 

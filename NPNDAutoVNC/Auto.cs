@@ -79,74 +79,75 @@ namespace NPNDAutoVNC
         int Rounds = 0;
         int Apps = 0;
 
-
-        public void WorkThreadFunction()
-        {
-            //try
-            //{
-            Utility.WaitTimeVNC = (int)txtwaitVNC.Value;
-                BindingList<VNC> listVNC = (BindingList<VNC>)gridlist.DataSource;
-                Utility.ListIPtoFiles(listVNC);
-                if (listVNC != null && listVNC.Count > 0)
-                    LoopOpenApps(listVNC);
-                // do any background work
-            //}
-            //catch (Exception ex)
-            //{
-            //    // log errors
-            //    MessageBox.Show(ex.Message);
-            //}
-        }
-
+ 
 
 
 
         private void btStart_Click(object sender, EventArgs e)
         {
 
-            //Thread thread = new Thread(new ThreadStart(WorkThreadFunction));
-            //thread.Start();
-            WorkThreadFunction();
-          
+            try
+            {
+                Utility.WaitTimeVNC = (int)txtwaitVNC.Value;
+            BindingList<VNC> listVNC = (BindingList<VNC>)gridlist.DataSource;
+            Utility.ListIPtoFiles(listVNC);
+            if (listVNC != null && listVNC.Count > 0)
+                LoopOpenApps(listVNC);
+                // do any background work
+            }
+            catch (Exception ex)
+            {
+                
+            }
 
 
 
         }
         public void LoopOpenApps(BindingList<VNC> listVNC)
         {
-            Rounds++;
-            lbRounds.Text = Rounds.ToString();
-            
-           
-            bool isResetADID=false;
-
-            if ((LoopReset==0|| LoopReset >= int.Parse(txtNumRoundReset.Text)) && checkResetHomescreen.Checked)
+            try
             {
-                isResetADID = true;
-            }
-            LoopCount++;
-            LoopReset++;
-            if (LoopReset >= int.Parse(txtNumRoundReset.Text))
-                LoopReset = 0; 
 
-            Utility.OpenApps(listVNC,(int)txtRandom.Value, false, isResetADID);
-            if (cbClickAd.Checked)
-            {
-                if (LoopCount>= int.Parse(txtRoundClick.Text))
+                Rounds++;
+                lbRounds.Text = Rounds.ToString();
+
+
+                bool isResetADID = false;
+
+                if ((LoopReset == 0 || LoopReset >= int.Parse(txtNumRoundReset.Text)) && checkResetHomescreen.Checked)
                 {
-                    //Thread.Sleep(60000);
-                    int RoundTimneWait = int.Parse((txtRoundClickWaiting.Text + "000"));
-                    Thread.Sleep(RoundTimneWait);
-                    Utility.OpenApps(listVNC,(int)txtRandom.Value, true, isResetADID);
-                   
-                    Thread.Sleep(RoundTimneWait);
-                    LoopCount = 0;
+                    isResetADID = true;
                 }
-                
-            }
-                      
-            LoopOpenApps(listVNC);
+                LoopCount++;
+                LoopReset++;
+                if (LoopReset >= int.Parse(txtNumRoundReset.Text))
+                    LoopReset = 0;
 
+                Utility.OpenApps(listVNC, (int)txtRandom.Value, false, isResetADID);
+                if (cbClickAd.Checked)
+                {
+                    if (LoopCount >= int.Parse(txtRoundClick.Text))
+                    {
+                        //Thread.Sleep(60000);
+                        int RoundTimneWait = int.Parse((txtRoundClickWaiting.Text + "000"));
+                        Thread.Sleep(RoundTimneWait);
+                        Utility.OpenApps(listVNC, (int)txtRandom.Value, true, isResetADID);
+
+                        Thread.Sleep(RoundTimneWait);
+                        LoopCount = 0;
+                    }
+
+                }
+
+                LoopOpenApps(listVNC);
+
+            }
+            catch
+            {
+
+            }
+
+            
         }
         private void btSave_Click(object sender, EventArgs e)
         {

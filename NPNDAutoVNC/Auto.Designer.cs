@@ -41,6 +41,8 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtwaitVNC = new System.Windows.Forms.NumericUpDown();
+            this.label11 = new System.Windows.Forms.Label();
             this.txtRandom = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -77,16 +79,14 @@
             this.btSaveVNCPoint = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lbRounds = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtwaitVNC = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.gridlist)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtwaitVNC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRandom)).BeginInit();
             this.panel1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtwaitVNC)).BeginInit();
             this.SuspendLayout();
             // 
             // btStart
@@ -228,6 +228,37 @@
             this.panel2.Size = new System.Drawing.Size(156, 151);
             this.panel2.TabIndex = 45;
             // 
+            // txtwaitVNC
+            // 
+            this.txtwaitVNC.Increment = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.txtwaitVNC.Location = new System.Drawing.Point(7, 128);
+            this.txtwaitVNC.Maximum = new decimal(new int[] {
+            15000,
+            0,
+            0,
+            0});
+            this.txtwaitVNC.Name = "txtwaitVNC";
+            this.txtwaitVNC.Size = new System.Drawing.Size(120, 20);
+            this.txtwaitVNC.TabIndex = 52;
+            this.txtwaitVNC.Value = new decimal(new int[] {
+            8000,
+            0,
+            0,
+            0});
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(4, 112);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(109, 13);
+            this.label11.TabIndex = 51;
+            this.label11.Text = "Wait Time VNC Open";
+            // 
             // txtRandom
             // 
             this.txtRandom.Location = new System.Drawing.Point(6, 85);
@@ -315,7 +346,7 @@
             this.txtRoundClick.Name = "txtRoundClick";
             this.txtRoundClick.Size = new System.Drawing.Size(65, 20);
             this.txtRoundClick.TabIndex = 45;
-            this.txtRoundClick.Text = "6";
+            this.txtRoundClick.Text = "20";
             // 
             // label6
             // 
@@ -341,7 +372,7 @@
             this.txtRoundClickWaiting.Name = "txtRoundClickWaiting";
             this.txtRoundClickWaiting.Size = new System.Drawing.Size(65, 20);
             this.txtRoundClickWaiting.TabIndex = 43;
-            this.txtRoundClickWaiting.Text = "20";
+            this.txtRoundClickWaiting.Text = "5";
             // 
             // label4
             // 
@@ -579,37 +610,6 @@
             this.lbRounds.TabIndex = 26;
             this.lbRounds.Text = "1";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(4, 112);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(109, 13);
-            this.label11.TabIndex = 51;
-            this.label11.Text = "Wait Time VNC Open";
-            // 
-            // txtwaitVNC
-            // 
-            this.txtwaitVNC.Increment = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.txtwaitVNC.Location = new System.Drawing.Point(7, 128);
-            this.txtwaitVNC.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.txtwaitVNC.Name = "txtwaitVNC";
-            this.txtwaitVNC.Size = new System.Drawing.Size(120, 20);
-            this.txtwaitVNC.TabIndex = 52;
-            this.txtwaitVNC.Value = new decimal(new int[] {
-            3000,
-            0,
-            0,
-            0});
-            // 
             // Auto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -628,12 +628,12 @@
             this.tabPage1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtwaitVNC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRandom)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtwaitVNC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

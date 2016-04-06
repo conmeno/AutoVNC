@@ -141,9 +141,15 @@ namespace NPNDAutoVNC
 
         public static void OpenVNCFile(string ip)
         {
-            string VNCPath = Application.StartupPath + "\\VNC\\" + ip + ".vnc";
-            Process.Start(VNCPath);
+            try
+            {
 
+
+                string VNCPath = Application.StartupPath + "\\VNC\\" + ip + ".vnc";
+                Process.Start(VNCPath);
+            }
+            catch
+            { }
         }
 
 
@@ -152,33 +158,41 @@ namespace NPNDAutoVNC
         {
             foreach (var item in VNCList)
             {
-                if (item.IP != null)
-                    if (item.IP.Trim() != string.Empty)
-                    {
-                        OpenVNCFile(NewConfig.Config.DefaultIP + item.IP);
-                        Thread.Sleep(WaitTimeVNC);
-                        //Point app = GetPointRandonApp(Convert.ToInt32("0" + txtslapp.Text));
-
-                        if (clickAd)
+                try
+                {
+                    if (item.IP != null)
+                        if (item.IP.Trim() != string.Empty)
                         {
-                            ClickAd(NewConfig.Config.AdPoint);
+                            OpenVNCFile(NewConfig.Config.DefaultIP + item.IP);
+                            Thread.Sleep(WaitTimeVNC);
+                            //Point app = GetPointRandonApp(Convert.ToInt32("0" + txtslapp.Text));
+
+                            if (clickAd)
+                            {
+                                ClickAd(NewConfig.Config.AdPoint);
+                            }
+                            else
+                            {
+                                //reset normal or PMP
+                                if (ResetNormal)
+                                {
+                                    NewResetAd(NewConfig.Config.ClosePoint, NewConfig.Config.AdvertisingPoint, NewConfig.Config.AdvertisingPoint1, NewConfig.Config.AdvertisingPoint2);
+                                }
+
+                                CloseAndRestart(numApp, NewConfig.Config.AppPoint, NewConfig.Config.ClosePoint, ResetNormal);
+                            }
+
+                            Thread.Sleep(1000);
+                            Process p = Process.GetProcessesByName(NewConfig.Config.VNCName)[0];
+                            if (p != null)
+                                p.Kill();
                         }
-                        else
-                        {
-                             //reset normal or PMP
-                            if (ResetNormal)
-                            {                                
-                                NewResetAd(NewConfig.Config.ClosePoint, NewConfig.Config.AdvertisingPoint, NewConfig.Config.AdvertisingPoint1, NewConfig.Config.AdvertisingPoint2);                                
-                            }                    
+                }
+                catch
+                {
 
-                            CloseAndRestart(numApp,NewConfig.Config.AppPoint, NewConfig.Config.ClosePoint, ResetNormal);
-                        } 
-
-                        Thread.Sleep(1000);
-                        Process p = Process.GetProcessesByName(NewConfig.Config.VNCName)[0];
-                        if (p != null)
-                            p.Kill();
-                    }
+                }
+                
             }
 
         }
@@ -338,43 +352,49 @@ namespace NPNDAutoVNC
         }
         public static void CloseAndRestart(int numApp,Point appstart, Point appclose, bool ResetAd = false)
         {
-            SetCursorPos(appstart.X, appstart.Y);
-            Thread.Sleep(500);
-            sendMouseRightclick(appstart);
-            Thread.Sleep(2000);
-            //sendMouseRightclick(appstart);
-           
-
-            if (!ResetAd)
+            try
             {
-                SetCursorPos(appclose.X, appclose.Y);
-                Thread.Sleep(200); 
-                sendMouseLeftclick(appclose);
-                Thread.Sleep(4000);
+                SetCursorPos(appstart.X, appstart.Y);
+                Thread.Sleep(500);
+                sendMouseRightclick(appstart);
+                Thread.Sleep(2000);
+                //sendMouseRightclick(appstart);
 
 
-              
+                if (!ResetAd)
+                {
+                    SetCursorPos(appclose.X, appclose.Y);
+                    Thread.Sleep(200);
+                    sendMouseLeftclick(appclose);
+                    Thread.Sleep(4000);
+
+
+
+                }
+
+                else
+                {
+                    Thread.Sleep(200);
+                }
+
+                Point RealAppPoint = new Point(appstart.X, appstart.Y);
+
+                if (numApp > 1)
+                {
+
+                    Random random = new Random();
+                    int randomNumber = random.Next(0, numApp);
+                    RealAppPoint.X += randomNumber * 75;
+                }
+
+                SetCursorPos(RealAppPoint.X, RealAppPoint.Y);
+                Thread.Sleep(200);
+                sendMouseLeftclick(RealAppPoint);
             }
-
-            else
+            catch
             {
-                Thread.Sleep(200);               
+
             }
-
-            Point RealAppPoint = new Point(appstart.X, appstart.Y);
-
-            if (numApp >1)
-            {
-
-                Random random = new Random();
-                int randomNumber = random.Next(0, numApp);
-                RealAppPoint.X += randomNumber * 75;
-            }
-
-            SetCursorPos(RealAppPoint.X, RealAppPoint.Y);
-            Thread.Sleep(200);
-            sendMouseLeftclick(RealAppPoint);
-       
         }
 
         public static void ClickAd(Point AdPoint)
@@ -483,39 +503,44 @@ namespace NPNDAutoVNC
 
         public static void NewResetAd(Point ClosePoint, Point AdvertisingPoint, Point AdvertisingPoint1, Point AdvertisingPoint2)
         {
-
-            SetCursorPos(ClosePoint.X, ClosePoint.Y);
-            Thread.Sleep(1000);
-            sendMouseRightclick(ClosePoint);
-            Thread.Sleep(2500);
-            //SetCursorPos(ClosePoint.X, ClosePoint.Y);
-            //sendMouseRightclick(ClosePoint);
-            Thread.Sleep(200);
-            sendMouseLeftclick(ClosePoint);
-            Thread.Sleep(4000);
-
-
-         //double click to status bar
-
-            SetCursorPos(AdvertisingPoint.X, AdvertisingPoint.Y);
-            sendMouseLeftclick(AdvertisingPoint);
-            Thread.Sleep(180);
-            sendMouseLeftclick(AdvertisingPoint);
+            try
+            {
+                SetCursorPos(ClosePoint.X, ClosePoint.Y);
+                Thread.Sleep(1000);
+                sendMouseRightclick(ClosePoint);
+                Thread.Sleep(2500);
+                //SetCursorPos(ClosePoint.X, ClosePoint.Y);
+                //sendMouseRightclick(ClosePoint);
+                Thread.Sleep(200);
+                sendMouseLeftclick(ClosePoint);
+                Thread.Sleep(4000);
 
 
+                //double click to status bar
+
+                SetCursorPos(AdvertisingPoint.X, AdvertisingPoint.Y);
+                sendMouseLeftclick(AdvertisingPoint);
+                Thread.Sleep(180);
+                sendMouseLeftclick(AdvertisingPoint);
 
 
-            //click adpoint 1
-            Thread.Sleep(6000);
-            SetCursorPos(AdvertisingPoint1.X, AdvertisingPoint1.Y);
-            sendMouseLeftclick(AdvertisingPoint1);
 
 
-            //click adpoint 2
-            SetCursorPos(AdvertisingPoint2.X, AdvertisingPoint2.Y);
-            Thread.Sleep(2500);
-           
-            sendMouseLeftclick(AdvertisingPoint2); 
+                //click adpoint 1
+                Thread.Sleep(6000);
+                SetCursorPos(AdvertisingPoint1.X, AdvertisingPoint1.Y);
+                sendMouseLeftclick(AdvertisingPoint1);
+
+
+                //click adpoint 2
+                SetCursorPos(AdvertisingPoint2.X, AdvertisingPoint2.Y);
+                Thread.Sleep(2500);
+
+                sendMouseLeftclick(AdvertisingPoint2);
+            }
+            catch
+            { }
+            
 
 
         }

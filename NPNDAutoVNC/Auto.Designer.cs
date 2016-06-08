@@ -237,7 +237,7 @@
             0});
             this.txtwaitVNC.Location = new System.Drawing.Point(7, 128);
             this.txtwaitVNC.Maximum = new decimal(new int[] {
-            15000,
+            30000,
             0,
             0,
             0});
@@ -245,7 +245,7 @@
             this.txtwaitVNC.Size = new System.Drawing.Size(120, 20);
             this.txtwaitVNC.TabIndex = 52;
             this.txtwaitVNC.Value = new decimal(new int[] {
-            8000,
+            10000,
             0,
             0,
             0});
@@ -346,7 +346,7 @@
             this.txtRoundClick.Name = "txtRoundClick";
             this.txtRoundClick.Size = new System.Drawing.Size(65, 20);
             this.txtRoundClick.TabIndex = 45;
-            this.txtRoundClick.Text = "20";
+            this.txtRoundClick.Text = "30";
             // 
             // label6
             // 

@@ -88,6 +88,7 @@ namespace NPNDAutoVNC
 
             try
             {
+                this.WindowState = FormWindowState.Minimized;
                 Utility.WaitTimeVNC = (int)txtwaitVNC.Value;
             BindingList<VNC> listVNC = (BindingList<VNC>)gridlist.DataSource;
             Utility.ListIPtoFiles(listVNC);

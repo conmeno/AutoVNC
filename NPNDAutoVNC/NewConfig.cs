@@ -20,7 +20,7 @@ namespace NPNDAutoVNC
 
         public Point ClosePoint { get; set; }
 
-
+        public bool autoStart { get; set; }
  
 
 

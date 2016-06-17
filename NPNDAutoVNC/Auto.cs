@@ -1,4 +1,5 @@
 ﻿using Gma.UserActivityMonitor;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -79,29 +80,32 @@ namespace NPNDAutoVNC
         int Rounds = 0;
         int Apps = 0;
 
- 
+
 
 
 
         private void btStart_Click(object sender, EventArgs e)
         {
 
+            StartRunAuto();
+
+        }
+        public void StartRunAuto()
+        {
             try
             {
                 this.WindowState = FormWindowState.Minimized;
                 Utility.WaitTimeVNC = (int)txtwaitVNC.Value;
-            BindingList<VNC> listVNC = (BindingList<VNC>)gridlist.DataSource;
-            Utility.ListIPtoFiles(listVNC);
-            if (listVNC != null && listVNC.Count > 0)
-                LoopOpenApps(listVNC);
+                BindingList<VNC> listVNC = (BindingList<VNC>)gridlist.DataSource;
+                Utility.ListIPtoFiles(listVNC);
+                if (listVNC != null && listVNC.Count > 0)
+                    LoopOpenApps(listVNC);
                 // do any background work
             }
             catch (Exception ex)
             {
-                
+
             }
-
-
 
         }
         public void LoopOpenApps(BindingList<VNC> listVNC)
@@ -148,7 +152,7 @@ namespace NPNDAutoVNC
 
             }
 
-            
+
         }
         private void btSave_Click(object sender, EventArgs e)
         {
@@ -170,7 +174,7 @@ namespace NPNDAutoVNC
             //}
             Utility.SaveListVNC(listVNC);
 
-           
+
             Utility.ListIPtoFiles(listVNC);
         }
 
@@ -182,7 +186,13 @@ namespace NPNDAutoVNC
             txtVNCName.Text = NewConfig.Config.VNCName;
             txtNumberRoundClickAd.Text = NewConfig.Config.NumberRoundClickAd.ToString();
 
+            if (NewConfig.Config.autoStart)
+            {
+                StartRunAuto();
+            }
+            starWithWindows();
         }
+      
         public void LoadFirst()
         {
             BindingList<VNC> listVNC = Utility.LoadVNCListBind();
@@ -334,10 +344,52 @@ namespace NPNDAutoVNC
 
         }
 
-      
+        private void cbAutoStart_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbAutoStart.Checked)
+            {
+                NewConfig config = Utility.LoadConfig(false);                
+                config.autoStart = true;
+                Utility.SaveConfig(config);
 
-      
+             
+            }
+            else
+            {
+                NewConfig config = Utility.LoadConfig(false);
+                config.autoStart = false;
+                Utility.SaveConfig(config);
+            }
+        }
+        RegistryKey rkApp = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+        public void  starWithWindows()
+        {
 
-       
+           
+            if (rkApp.GetValue("AutoGAME") == null)
+            {
+                // The value doesn't exist, the application is not set to run at startup
+                cbStartWindows.Checked = false;
+            }
+            else
+            {
+                // The value exists, the application is set to run at startup
+                cbStartWindows.Checked = true;
+            }
+        }
+
+        private void cbStartWindows_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbStartWindows.Checked)
+            {
+                // Add the value in the registry so that the application runs at startup
+                rkApp.SetValue("AutoGAME", Application.ExecutablePath);
+            }
+            else
+            {
+                // Remove the value from the registry so that the application doesn't start
+                rkApp.DeleteValue("AutoGAME", false);
+            }
+        }
     }
 }

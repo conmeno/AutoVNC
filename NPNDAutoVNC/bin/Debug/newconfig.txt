@@ -7,36 +7,38 @@
     <Y>127</Y>
   </VNCPoint>
   <AppPoint>
-    <X>45</X>
-    <Y>231</Y>
+    <X>46</X>
+    <Y>53</Y>
   </AppPoint>
   <AppPoint2>
     <X>1582</X>
     <Y>564</Y>
   </AppPoint2>
   <AdPoint>
-    <X>161</X>
-    <Y>222</Y>
+    <X>148</X>
+    <Y>304</Y>
   </AdPoint>
   <ClosePoint>
-    <X>196</X>
-    <Y>431</Y>
+    <X>193</X>
+    <Y>421</Y>
   </ClosePoint>
+  <autoStart>false</autoStart>
+  <waitTime>12000</waitTime>
   <SettingPoint>
     <X>273</X>
     <Y>428</Y>
   </SettingPoint>
   <AdvertisingPoint>
-    <X>150</X>
-    <Y>8</Y>
+    <X>180</X>
+    <Y>6</Y>
   </AdvertisingPoint>
   <AdvertisingPoint1>
-    <X>146</X>
-    <Y>198</Y>
+    <X>156</X>
+    <Y>199</Y>
   </AdvertisingPoint1>
   <AdvertisingPoint2>
-    <X>146</X>
-    <Y>198</Y>
+    <X>163</X>
+    <Y>400</Y>
   </AdvertisingPoint2>
   <VNCConfigFile>main.vnc</VNCConfigFile>
   <VNCPasswordCode>b4d90014103bde54</VNCPasswordCode>

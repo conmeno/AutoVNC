@@ -40,6 +40,8 @@
             this.btGetPoint = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.cbStartWindows = new System.Windows.Forms.CheckBox();
+            this.cbAutoStart = new System.Windows.Forms.CheckBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtwaitVNC = new System.Windows.Forms.NumericUpDown();
             this.label11 = new System.Windows.Forms.Label();
@@ -79,8 +81,7 @@
             this.btSaveVNCPoint = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lbRounds = new System.Windows.Forms.Label();
-            this.cbAutoStart = new System.Windows.Forms.CheckBox();
-            this.cbStartWindows = new System.Windows.Forms.CheckBox();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridlist)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -218,6 +219,28 @@
             this.tabPage1.Text = "Main";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // cbStartWindows
+            // 
+            this.cbStartWindows.AutoSize = true;
+            this.cbStartWindows.Location = new System.Drawing.Point(83, 352);
+            this.cbStartWindows.Name = "cbStartWindows";
+            this.cbStartWindows.Size = new System.Drawing.Size(92, 17);
+            this.cbStartWindows.TabIndex = 54;
+            this.cbStartWindows.Text = "Start with Win";
+            this.cbStartWindows.UseVisualStyleBackColor = true;
+            this.cbStartWindows.CheckedChanged += new System.EventHandler(this.cbStartWindows_CheckedChanged);
+            // 
+            // cbAutoStart
+            // 
+            this.cbAutoStart.AutoSize = true;
+            this.cbAutoStart.Location = new System.Drawing.Point(12, 352);
+            this.cbAutoStart.Name = "cbAutoStart";
+            this.cbAutoStart.Size = new System.Drawing.Size(73, 17);
+            this.cbAutoStart.TabIndex = 53;
+            this.cbAutoStart.Text = "Auto Start";
+            this.cbAutoStart.UseVisualStyleBackColor = true;
+            this.cbAutoStart.CheckedChanged += new System.EventHandler(this.cbAutoStart_CheckedChanged);
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.txtwaitVNC);
@@ -350,7 +373,7 @@
             this.txtRoundClick.Name = "txtRoundClick";
             this.txtRoundClick.Size = new System.Drawing.Size(65, 20);
             this.txtRoundClick.TabIndex = 45;
-            this.txtRoundClick.Text = "30";
+            this.txtRoundClick.Text = "50";
             // 
             // label6
             // 
@@ -614,33 +637,21 @@
             this.lbRounds.TabIndex = 26;
             this.lbRounds.Text = "1";
             // 
-            // cbAutoStart
+            // label12
             // 
-            this.cbAutoStart.AutoSize = true;
-            this.cbAutoStart.Location = new System.Drawing.Point(12, 352);
-            this.cbAutoStart.Name = "cbAutoStart";
-            this.cbAutoStart.Size = new System.Drawing.Size(73, 17);
-            this.cbAutoStart.TabIndex = 53;
-            this.cbAutoStart.Text = "Auto Start";
-            this.cbAutoStart.UseVisualStyleBackColor = true;
-            this.cbAutoStart.CheckedChanged += new System.EventHandler(this.cbAutoStart_CheckedChanged);
-            // 
-            // cbStartWindows
-            // 
-            this.cbStartWindows.AutoSize = true;
-            this.cbStartWindows.Location = new System.Drawing.Point(83, 352);
-            this.cbStartWindows.Name = "cbStartWindows";
-            this.cbStartWindows.Size = new System.Drawing.Size(92, 17);
-            this.cbStartWindows.TabIndex = 54;
-            this.cbStartWindows.Text = "Start with Win";
-            this.cbStartWindows.UseVisualStyleBackColor = true;
-            this.cbStartWindows.CheckedChanged += new System.EventHandler(this.cbStartWindows_CheckedChanged);
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(12, 441);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(37, 13);
+            this.label12.TabIndex = 27;
+            this.label12.Text = "v 1.05";
             // 
             // Auto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(553, 476);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.lbRounds);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label3);
@@ -720,5 +731,6 @@
         private System.Windows.Forms.NumericUpDown txtwaitVNC;
         private System.Windows.Forms.CheckBox cbAutoStart;
         private System.Windows.Forms.CheckBox cbStartWindows;
+        private System.Windows.Forms.Label label12;
     }
 }

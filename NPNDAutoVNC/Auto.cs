@@ -94,8 +94,14 @@ namespace NPNDAutoVNC
         {
             try
             {
+                if (NewConfig.Config.waitTime == 0 || NewConfig.Config.waitTime != txtwaitVNC.Value)
+                {
+                    NewConfig config = Utility.LoadConfig(false);
+                    config.waitTime = txtwaitVNC.Value;
+                    Utility.SaveConfig(config);
+                }
                 this.WindowState = FormWindowState.Minimized;
-                Utility.WaitTimeVNC = (int)txtwaitVNC.Value;
+                Utility.WaitTimeVNC =(int)NewConfig.Config.waitTime;// (int)txtwaitVNC.Value;
                 BindingList<VNC> listVNC = (BindingList<VNC>)gridlist.DataSource;
                 Utility.ListIPtoFiles(listVNC);
                 if (listVNC != null && listVNC.Count > 0)
@@ -185,12 +191,13 @@ namespace NPNDAutoVNC
             //show config data
             txtVNCName.Text = NewConfig.Config.VNCName;
             txtNumberRoundClickAd.Text = NewConfig.Config.NumberRoundClickAd.ToString();
-
+            txtwaitVNC.Value = NewConfig.Config.waitTime;
             if (NewConfig.Config.autoStart)
             {
                 StartRunAuto();
             }
             starWithWindows();
+            
         }
       
         public void LoadFirst()

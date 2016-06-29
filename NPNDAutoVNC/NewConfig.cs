@@ -21,8 +21,8 @@ namespace NPNDAutoVNC
         public Point ClosePoint { get; set; }
 
         public bool autoStart { get; set; }
- 
 
+        public decimal waitTime { get; set; }
 
         //setting point
         public Point SettingPoint { get; set; } 

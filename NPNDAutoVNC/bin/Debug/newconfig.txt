@@ -3,8 +3,8 @@
   <VNCName>VNC-Viewer-5.3.0-Windows-32bit</VNCName>
   <NumberRoundClickAd>4</NumberRoundClickAd>
   <VNCPoint>
-    <X>514</X>
-    <Y>127</Y>
+    <X>881</X>
+    <Y>426</Y>
   </VNCPoint>
   <AppPoint>
     <X>46</X>
@@ -24,6 +24,7 @@
   </ClosePoint>
   <autoStart>false</autoStart>
   <waitTime>12000</waitTime>
+  <WaitEachRound>60000</WaitEachRound>
   <SettingPoint>
     <X>273</X>
     <Y>428</Y>

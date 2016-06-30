@@ -18,8 +18,7 @@ namespace NPNDAutoVNC
 
         private const int WM_CLOSE = 16;
         private const int BN_CLICKED = 245;
-        public static int WaitTimeVNC;
-
+         
         [DllImport("user32.dll")]
         public static extern int FindWindow(string lpClassName, String lpWindowName);
         [DllImport("user32.dll")]
@@ -152,7 +151,35 @@ namespace NPNDAutoVNC
             { }
         }
 
+        public static void HomePress(BindingList<VNC> VNCList)
+        {
+            foreach (var item in VNCList)
+            {
+                try
+                {
+                    if (item.IP != null)
+                        if (item.IP.Trim() != string.Empty)
+                        {
+                            OpenVNCFile(NewConfig.Config.DefaultIP + item.IP);
+                            Thread.Sleep((int)NewConfig.Config.waitTime);
+                            //Point app = GetPointRandonApp(Convert.ToInt32("0" + txtslapp.Text));
 
+                            VNCHomePress(NewConfig.Config.AppPoint);
+
+                            Thread.Sleep(5000);
+                            Process p = Process.GetProcessesByName(NewConfig.Config.VNCName)[0];
+                            if (p != null)
+                                p.Kill();
+                        }
+                }
+                catch
+                {
+
+                }
+
+            }
+
+        }
         //phuong edit
         public static void OpenApps(BindingList<VNC> VNCList,int numApp, bool clickAd, bool ResetNormal=false)
         {
@@ -164,7 +191,7 @@ namespace NPNDAutoVNC
                         if (item.IP.Trim() != string.Empty)
                         {
                             OpenVNCFile(NewConfig.Config.DefaultIP + item.IP);
-                            Thread.Sleep(WaitTimeVNC);
+                            Thread.Sleep((int)NewConfig.Config.waitTime);
                             //Point app = GetPointRandonApp(Convert.ToInt32("0" + txtslapp.Text));
 
                             if (clickAd)
@@ -390,6 +417,21 @@ namespace NPNDAutoVNC
                 SetCursorPos(RealAppPoint.X, RealAppPoint.Y);
                 Thread.Sleep(200);
                 sendMouseLeftclick(RealAppPoint);
+            }
+            catch
+            {
+
+            }
+        }
+        public static void VNCHomePress(Point appstart)
+        {
+            try
+            {
+                SetCursorPos(appstart.X, appstart.Y);
+                Thread.Sleep(100);
+                sendMouseRightclick(appstart);
+                //Thread.Sleep(4000);
+                //sendMouseRightclick(appstart);
             }
             catch
             {

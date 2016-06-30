@@ -23,7 +23,7 @@ namespace NPNDAutoVNC
         public bool autoStart { get; set; }
 
         public decimal waitTime { get; set; }
-
+        public decimal WaitEachRound { get; set; }
         //setting point
         public Point SettingPoint { get; set; } 
 

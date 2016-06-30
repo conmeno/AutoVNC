@@ -43,8 +43,6 @@
             this.cbStartWindows = new System.Windows.Forms.CheckBox();
             this.cbAutoStart = new System.Windows.Forms.CheckBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtwaitVNC = new System.Windows.Forms.NumericUpDown();
-            this.label11 = new System.Windows.Forms.Label();
             this.txtRandom = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -82,14 +80,21 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lbRounds = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.btCoverSSH = new System.Windows.Forms.Button();
+            this.WaitEachRound = new System.Windows.Forms.NumericUpDown();
+            this.label13 = new System.Windows.Forms.Label();
+            this.btSaveConfig = new System.Windows.Forms.Button();
+            this.txtwaitVNC = new System.Windows.Forms.NumericUpDown();
+            this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridlist)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtwaitVNC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRandom)).BeginInit();
             this.panel1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.WaitEachRound)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtwaitVNC)).BeginInit();
             this.SuspendLayout();
             // 
             // btStart
@@ -222,7 +227,7 @@
             // cbStartWindows
             // 
             this.cbStartWindows.AutoSize = true;
-            this.cbStartWindows.Location = new System.Drawing.Point(83, 352);
+            this.cbStartWindows.Location = new System.Drawing.Point(81, 319);
             this.cbStartWindows.Name = "cbStartWindows";
             this.cbStartWindows.Size = new System.Drawing.Size(92, 17);
             this.cbStartWindows.TabIndex = 54;
@@ -233,7 +238,7 @@
             // cbAutoStart
             // 
             this.cbAutoStart.AutoSize = true;
-            this.cbAutoStart.Location = new System.Drawing.Point(12, 352);
+            this.cbAutoStart.Location = new System.Drawing.Point(10, 319);
             this.cbAutoStart.Name = "cbAutoStart";
             this.cbAutoStart.Size = new System.Drawing.Size(73, 17);
             this.cbAutoStart.TabIndex = 53;
@@ -243,8 +248,6 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.txtwaitVNC);
-            this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.txtRandom);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label9);
@@ -252,39 +255,8 @@
             this.panel2.Controls.Add(this.checkResetHomescreen);
             this.panel2.Location = new System.Drawing.Point(12, 38);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(156, 151);
+            this.panel2.Size = new System.Drawing.Size(156, 123);
             this.panel2.TabIndex = 45;
-            // 
-            // txtwaitVNC
-            // 
-            this.txtwaitVNC.Increment = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.txtwaitVNC.Location = new System.Drawing.Point(7, 128);
-            this.txtwaitVNC.Maximum = new decimal(new int[] {
-            30000,
-            0,
-            0,
-            0});
-            this.txtwaitVNC.Name = "txtwaitVNC";
-            this.txtwaitVNC.Size = new System.Drawing.Size(120, 20);
-            this.txtwaitVNC.TabIndex = 52;
-            this.txtwaitVNC.Value = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(4, 112);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(109, 13);
-            this.label11.TabIndex = 51;
-            this.label11.Text = "Wait Time VNC Open";
             // 
             // txtRandom
             // 
@@ -353,7 +325,7 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.txtRoundClickWaiting);
             this.panel1.Controls.Add(this.cbClickAd);
-            this.panel1.Location = new System.Drawing.Point(12, 195);
+            this.panel1.Location = new System.Drawing.Point(12, 167);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(156, 140);
             this.panel1.TabIndex = 42;
@@ -430,6 +402,11 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.txtwaitVNC);
+            this.tabPage2.Controls.Add(this.label14);
+            this.tabPage2.Controls.Add(this.btSaveConfig);
+            this.tabPage2.Controls.Add(this.WaitEachRound);
+            this.tabPage2.Controls.Add(this.label13);
             this.tabPage2.Controls.Add(this.btSaveNumberRoundClickAd);
             this.tabPage2.Controls.Add(this.txtNumberRoundClickAd);
             this.tabPage2.Controls.Add(this.btSaveVNCName);
@@ -646,11 +623,97 @@
             this.label12.TabIndex = 27;
             this.label12.Text = "v 1.05";
             // 
+            // btCoverSSH
+            // 
+            this.btCoverSSH.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btCoverSSH.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCoverSSH.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btCoverSSH.Location = new System.Drawing.Point(198, 407);
+            this.btCoverSSH.Name = "btCoverSSH";
+            this.btCoverSSH.Size = new System.Drawing.Size(204, 47);
+            this.btCoverSSH.TabIndex = 28;
+            this.btCoverSSH.Text = "Cover SSH";
+            this.btCoverSSH.UseVisualStyleBackColor = false;
+            this.btCoverSSH.Click += new System.EventHandler(this.btCoverSSH_Click);
+            // 
+            // WaitEachRound
+            // 
+            this.WaitEachRound.Increment = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.WaitEachRound.Location = new System.Drawing.Point(12, 351);
+            this.WaitEachRound.Maximum = new decimal(new int[] {
+            600000,
+            0,
+            0,
+            0});
+            this.WaitEachRound.Name = "WaitEachRound";
+            this.WaitEachRound.Size = new System.Drawing.Size(120, 20);
+            this.WaitEachRound.TabIndex = 54;
+            this.WaitEachRound.Value = new decimal(new int[] {
+            30000,
+            0,
+            0,
+            0});
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(9, 335);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(91, 13);
+            this.label13.TabIndex = 53;
+            this.label13.Text = "Wait each Round";
+            // 
+            // btSaveConfig
+            // 
+            this.btSaveConfig.Location = new System.Drawing.Point(407, 335);
+            this.btSaveConfig.Name = "btSaveConfig";
+            this.btSaveConfig.Size = new System.Drawing.Size(130, 36);
+            this.btSaveConfig.TabIndex = 55;
+            this.btSaveConfig.Text = "Save config";
+            this.btSaveConfig.UseVisualStyleBackColor = true;
+            this.btSaveConfig.Click += new System.EventHandler(this.btSaveWaitEachRound_Click);
+            // 
+            // txtwaitVNC
+            // 
+            this.txtwaitVNC.Increment = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.txtwaitVNC.Location = new System.Drawing.Point(156, 351);
+            this.txtwaitVNC.Maximum = new decimal(new int[] {
+            600000,
+            0,
+            0,
+            0});
+            this.txtwaitVNC.Name = "txtwaitVNC";
+            this.txtwaitVNC.Size = new System.Drawing.Size(120, 20);
+            this.txtwaitVNC.TabIndex = 57;
+            this.txtwaitVNC.Value = new decimal(new int[] {
+            30000,
+            0,
+            0,
+            0});
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(153, 335);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(103, 13);
+            this.label14.TabIndex = 56;
+            this.label14.Text = "Wait time open VNC";
+            // 
             // Auto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(553, 476);
+            this.Controls.Add(this.btCoverSSH);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.lbRounds);
             this.Controls.Add(this.tabControl1);
@@ -665,12 +728,13 @@
             this.tabPage1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtwaitVNC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRandom)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.WaitEachRound)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtwaitVNC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -727,10 +791,14 @@
         private System.Windows.Forms.TextBox txtNumRoundReset;
         private System.Windows.Forms.NumericUpDown txtRandom;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.NumericUpDown txtwaitVNC;
         private System.Windows.Forms.CheckBox cbAutoStart;
         private System.Windows.Forms.CheckBox cbStartWindows;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button btCoverSSH;
+        public System.Windows.Forms.NumericUpDown WaitEachRound;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button btSaveConfig;
+        private System.Windows.Forms.Label label14;
+        public System.Windows.Forms.NumericUpDown txtwaitVNC;
     }
 }

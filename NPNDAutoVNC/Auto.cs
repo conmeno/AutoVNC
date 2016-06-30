@@ -94,14 +94,9 @@ namespace NPNDAutoVNC
         {
             try
             {
-                if (NewConfig.Config.waitTime == 0 || NewConfig.Config.waitTime != txtwaitVNC.Value)
-                {
-                    NewConfig config = Utility.LoadConfig(false);
-                    config.waitTime = txtwaitVNC.Value;
-                    Utility.SaveConfig(config);
-                }
+                
                 this.WindowState = FormWindowState.Minimized;
-                Utility.WaitTimeVNC =(int)NewConfig.Config.waitTime;// (int)txtwaitVNC.Value;
+                 
                 BindingList<VNC> listVNC = (BindingList<VNC>)gridlist.DataSource;
                 Utility.ListIPtoFiles(listVNC);
                 if (listVNC != null && listVNC.Count > 0)
@@ -192,6 +187,7 @@ namespace NPNDAutoVNC
             txtVNCName.Text = NewConfig.Config.VNCName;
             txtNumberRoundClickAd.Text = NewConfig.Config.NumberRoundClickAd.ToString();
             txtwaitVNC.Value = NewConfig.Config.waitTime;
+            WaitEachRound.Value = NewConfig.Config.WaitEachRound;
             if (NewConfig.Config.autoStart)
             {
                 StartRunAuto();
@@ -311,10 +307,19 @@ namespace NPNDAutoVNC
         }
         private void btSaveNumberRoundClickAd_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void btSaveWaitEachRound_Click(object sender, EventArgs e)
+        {
             NewConfig config = Utility.LoadConfig(false);
             config.NumberRoundClickAd = int.Parse(txtNumberRoundClickAd.Text);
-
+            config.VNCName = txtVNCName.Text;
+            config.WaitEachRound = WaitEachRound.Value;
+            config.waitTime = txtwaitVNC.Value;
             Utility.SaveConfig(config);
+            Thread.Sleep(1500);
+            Utility.LoadConfig(true);
         }
         #endregion
 
@@ -358,14 +363,17 @@ namespace NPNDAutoVNC
                 NewConfig config = Utility.LoadConfig(false);                
                 config.autoStart = true;
                 Utility.SaveConfig(config);
+                Thread.Sleep(1000);
+                Utility.LoadConfig(true);
 
-             
             }
             else
             {
                 NewConfig config = Utility.LoadConfig(false);
                 config.autoStart = false;
                 Utility.SaveConfig(config);
+                Thread.Sleep(1000);
+                Utility.LoadConfig(true);
             }
         }
         RegistryKey rkApp = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
@@ -398,5 +406,45 @@ namespace NPNDAutoVNC
                 rkApp.DeleteValue("AutoGAME", false);
             }
         }
+
+        public void LoopCoverSSH(BindingList<VNC> listVNC)
+        {
+            try
+            {
+
+                Rounds++;
+                lbRounds.Text = Rounds.ToString(); 
+                Utility.HomePress(listVNC);
+
+                Thread.Sleep((int)NewConfig.Config.WaitEachRound);
+                LoopCoverSSH(listVNC);
+
+            }
+            catch
+            {
+
+            }
+
+
+        }
+
+        private void btCoverSSH_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.WindowState = FormWindowState.Minimized;
+                 
+                BindingList<VNC> listVNC = (BindingList<VNC>)gridlist.DataSource;
+                Utility.ListIPtoFiles(listVNC);
+
+                if (listVNC != null && listVNC.Count > 0)
+                    LoopCoverSSH(listVNC);
+            }
+            catch
+            {
+            }
+        }
+
+        
     }
 }

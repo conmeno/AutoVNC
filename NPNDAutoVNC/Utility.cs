@@ -164,7 +164,7 @@ namespace NPNDAutoVNC
                             Thread.Sleep((int)NewConfig.Config.waitTime);
                             //Point app = GetPointRandonApp(Convert.ToInt32("0" + txtslapp.Text));
 
-                            VNCHomePress(NewConfig.Config.AppPoint);
+                            VNCHomePress(NewConfig.Config.AppPoint, NewConfig.Config.AdPoint);
 
                             Thread.Sleep(5000);
                             Process p = Process.GetProcessesByName(NewConfig.Config.VNCName)[0];
@@ -423,15 +423,20 @@ namespace NPNDAutoVNC
 
             }
         }
-        public static void VNCHomePress(Point appstart)
+        public static void VNCHomePress(Point appstart,Point AdPoint)
         {
             try
             {
+                SetCursorPos(190, 48);
+
+                Thread.Sleep(1000);
+                sendMouseLeftclick(new Point(190, 48));
+                Thread.Sleep(2000);
+
                 SetCursorPos(appstart.X, appstart.Y);
                 Thread.Sleep(100);
                 sendMouseRightclick(appstart);
-                //Thread.Sleep(4000);
-                //sendMouseRightclick(appstart);
+              
             }
             catch
             {
@@ -448,7 +453,7 @@ namespace NPNDAutoVNC
         }
         public static void ResetAd(Point ClosePoint,Point appReset, Point appReset1, Point appReset2, Point appReset3)
         {
-
+             
             SetCursorPos(ClosePoint.X, ClosePoint.Y);
             Thread.Sleep(500);
             sendMouseRightclick(ClosePoint);

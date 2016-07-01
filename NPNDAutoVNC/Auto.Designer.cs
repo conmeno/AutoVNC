@@ -621,7 +621,7 @@
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(37, 13);
             this.label12.TabIndex = 27;
-            this.label12.Text = "v 1.05";
+            this.label12.Text = "v 1.07";
             // 
             // btCoverSSH
             // 

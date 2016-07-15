@@ -59,6 +59,11 @@
             this.ListIPCopy = new System.Windows.Forms.Button();
             this.txtListIP = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.txtwaitVNC = new System.Windows.Forms.NumericUpDown();
+            this.label14 = new System.Windows.Forms.Label();
+            this.btSaveConfig = new System.Windows.Forms.Button();
+            this.WaitEachRound = new System.Windows.Forms.NumericUpDown();
+            this.label13 = new System.Windows.Forms.Label();
             this.btSaveNumberRoundClickAd = new System.Windows.Forms.Button();
             this.txtNumberRoundClickAd = new System.Windows.Forms.TextBox();
             this.btSaveVNCName = new System.Windows.Forms.Button();
@@ -81,11 +86,7 @@
             this.lbRounds = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.btCoverSSH = new System.Windows.Forms.Button();
-            this.WaitEachRound = new System.Windows.Forms.NumericUpDown();
-            this.label13 = new System.Windows.Forms.Label();
-            this.btSaveConfig = new System.Windows.Forms.Button();
-            this.txtwaitVNC = new System.Windows.Forms.NumericUpDown();
-            this.label14 = new System.Windows.Forms.Label();
+            this.btForceClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridlist)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -93,8 +94,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtRandom)).BeginInit();
             this.panel1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.WaitEachRound)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtwaitVNC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WaitEachRound)).BeginInit();
             this.SuspendLayout();
             // 
             // btStart
@@ -435,6 +436,78 @@
             this.tabPage2.Text = "Config";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // txtwaitVNC
+            // 
+            this.txtwaitVNC.Increment = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.txtwaitVNC.Location = new System.Drawing.Point(156, 351);
+            this.txtwaitVNC.Maximum = new decimal(new int[] {
+            600000,
+            0,
+            0,
+            0});
+            this.txtwaitVNC.Name = "txtwaitVNC";
+            this.txtwaitVNC.Size = new System.Drawing.Size(120, 20);
+            this.txtwaitVNC.TabIndex = 57;
+            this.txtwaitVNC.Value = new decimal(new int[] {
+            30000,
+            0,
+            0,
+            0});
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(153, 335);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(103, 13);
+            this.label14.TabIndex = 56;
+            this.label14.Text = "Wait time open VNC";
+            // 
+            // btSaveConfig
+            // 
+            this.btSaveConfig.Location = new System.Drawing.Point(407, 335);
+            this.btSaveConfig.Name = "btSaveConfig";
+            this.btSaveConfig.Size = new System.Drawing.Size(130, 36);
+            this.btSaveConfig.TabIndex = 55;
+            this.btSaveConfig.Text = "Save config";
+            this.btSaveConfig.UseVisualStyleBackColor = true;
+            this.btSaveConfig.Click += new System.EventHandler(this.btSaveWaitEachRound_Click);
+            // 
+            // WaitEachRound
+            // 
+            this.WaitEachRound.Increment = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.WaitEachRound.Location = new System.Drawing.Point(12, 351);
+            this.WaitEachRound.Maximum = new decimal(new int[] {
+            600000,
+            0,
+            0,
+            0});
+            this.WaitEachRound.Name = "WaitEachRound";
+            this.WaitEachRound.Size = new System.Drawing.Size(120, 20);
+            this.WaitEachRound.TabIndex = 54;
+            this.WaitEachRound.Value = new decimal(new int[] {
+            30000,
+            0,
+            0,
+            0});
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(9, 335);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(91, 13);
+            this.label13.TabIndex = 53;
+            this.label13.Text = "Wait each Round";
+            // 
             // btSaveNumberRoundClickAd
             // 
             this.btSaveNumberRoundClickAd.Location = new System.Drawing.Point(6, 307);
@@ -636,83 +709,25 @@
             this.btCoverSSH.UseVisualStyleBackColor = false;
             this.btCoverSSH.Click += new System.EventHandler(this.btCoverSSH_Click);
             // 
-            // WaitEachRound
+            // btForceClose
             // 
-            this.WaitEachRound.Increment = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.WaitEachRound.Location = new System.Drawing.Point(12, 351);
-            this.WaitEachRound.Maximum = new decimal(new int[] {
-            600000,
-            0,
-            0,
-            0});
-            this.WaitEachRound.Name = "WaitEachRound";
-            this.WaitEachRound.Size = new System.Drawing.Size(120, 20);
-            this.WaitEachRound.TabIndex = 54;
-            this.WaitEachRound.Value = new decimal(new int[] {
-            30000,
-            0,
-            0,
-            0});
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(9, 335);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(91, 13);
-            this.label13.TabIndex = 53;
-            this.label13.Text = "Wait each Round";
-            // 
-            // btSaveConfig
-            // 
-            this.btSaveConfig.Location = new System.Drawing.Point(407, 335);
-            this.btSaveConfig.Name = "btSaveConfig";
-            this.btSaveConfig.Size = new System.Drawing.Size(130, 36);
-            this.btSaveConfig.TabIndex = 55;
-            this.btSaveConfig.Text = "Save config";
-            this.btSaveConfig.UseVisualStyleBackColor = true;
-            this.btSaveConfig.Click += new System.EventHandler(this.btSaveWaitEachRound_Click);
-            // 
-            // txtwaitVNC
-            // 
-            this.txtwaitVNC.Increment = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.txtwaitVNC.Location = new System.Drawing.Point(156, 351);
-            this.txtwaitVNC.Maximum = new decimal(new int[] {
-            600000,
-            0,
-            0,
-            0});
-            this.txtwaitVNC.Name = "txtwaitVNC";
-            this.txtwaitVNC.Size = new System.Drawing.Size(120, 20);
-            this.txtwaitVNC.TabIndex = 57;
-            this.txtwaitVNC.Value = new decimal(new int[] {
-            30000,
-            0,
-            0,
-            0});
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(153, 335);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(103, 13);
-            this.label14.TabIndex = 56;
-            this.label14.Text = "Wait time open VNC";
+            this.btForceClose.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btForceClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btForceClose.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btForceClose.Location = new System.Drawing.Point(66, 407);
+            this.btForceClose.Name = "btForceClose";
+            this.btForceClose.Size = new System.Drawing.Size(127, 47);
+            this.btForceClose.TabIndex = 29;
+            this.btForceClose.Text = "Force Close";
+            this.btForceClose.UseVisualStyleBackColor = false;
+            this.btForceClose.Click += new System.EventHandler(this.btForceClose_Click);
             // 
             // Auto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(553, 476);
+            this.Controls.Add(this.btForceClose);
             this.Controls.Add(this.btCoverSSH);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.lbRounds);
@@ -733,8 +748,8 @@
             this.panel1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.WaitEachRound)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtwaitVNC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WaitEachRound)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -800,5 +815,6 @@
         private System.Windows.Forms.Button btSaveConfig;
         private System.Windows.Forms.Label label14;
         public System.Windows.Forms.NumericUpDown txtwaitVNC;
+        private System.Windows.Forms.Button btForceClose;
     }
 }

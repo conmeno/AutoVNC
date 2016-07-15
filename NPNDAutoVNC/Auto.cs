@@ -86,8 +86,9 @@ namespace NPNDAutoVNC
 
         private void btStart_Click(object sender, EventArgs e)
         {
-
-            StartRunAuto();
+            Thread thread = new Thread(() => StartRunAuto());
+            thread.Start();
+            
 
         }
         public void StartRunAuto()
@@ -190,7 +191,8 @@ namespace NPNDAutoVNC
             WaitEachRound.Value = NewConfig.Config.WaitEachRound;
             if (NewConfig.Config.autoStart)
             {
-                StartRunAuto();
+                Thread thread = new Thread(() => StartRunAuto());
+                thread.Start();
             }
             starWithWindows();
             
@@ -445,6 +447,26 @@ namespace NPNDAutoVNC
             }
         }
 
-        
+        private void btForceClose_Click(object sender, EventArgs e)
+        {
+
+
+            Process[] p = Process.GetProcessesByName(NewConfig.Config.VNCName);
+            try
+            {
+                if (p != null)
+                {
+                    foreach (Process item in p)
+                    {
+                        item.Kill();
+
+                    }
+                }
+            }
+            catch
+            {
+            }
+            Environment.Exit(1);
+        }
     }
 }

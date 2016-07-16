@@ -50,8 +50,6 @@
             this.checkResetHomescreen = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtRoundClick = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtRoundClickWaiting = new System.Windows.Forms.TextBox();
@@ -320,33 +318,14 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.txtRoundClick);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.txtRoundClickWaiting);
             this.panel1.Controls.Add(this.cbClickAd);
             this.panel1.Location = new System.Drawing.Point(12, 167);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(156, 140);
+            this.panel1.Size = new System.Drawing.Size(156, 77);
             this.panel1.TabIndex = 42;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(8, 78);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 13);
-            this.label7.TabIndex = 46;
-            this.label7.Text = "Num Round Click";
-            // 
-            // txtRoundClick
-            // 
-            this.txtRoundClick.Location = new System.Drawing.Point(10, 94);
-            this.txtRoundClick.Name = "txtRoundClick";
-            this.txtRoundClick.Size = new System.Drawing.Size(65, 20);
-            this.txtRoundClick.TabIndex = 45;
-            this.txtRoundClick.Text = "50";
             // 
             // label6
             // 
@@ -793,8 +772,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtRoundClickWaiting;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtRoundClick;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridViewTextBoxColumn IP;

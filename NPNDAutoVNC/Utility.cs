@@ -181,7 +181,7 @@ namespace NPNDAutoVNC
 
         }
         //phuong edit
-        public static void OpenApps(BindingList<VNC> VNCList,int numApp, bool clickAd, bool ResetNormal=false)
+        public static void OpenApps(BindingList<VNC> VNCList,int numApp, bool clickAd,bool isTrungGian,int sobuoc, bool ResetNormal=false)
         {
             foreach (var item in VNCList)
             {
@@ -206,7 +206,7 @@ namespace NPNDAutoVNC
                                     NewResetAd(NewConfig.Config.ClosePoint, NewConfig.Config.AdvertisingPoint, NewConfig.Config.AdvertisingPoint1, NewConfig.Config.AdvertisingPoint2);
                                 }
 
-                                CloseAndRestart(numApp, NewConfig.Config.AppPoint, NewConfig.Config.ClosePoint, ResetNormal);
+                                CloseAndRestart(numApp, NewConfig.Config.AppPoint, NewConfig.Config.ClosePoint,isTrungGian,sobuoc, ResetNormal);
                             }
 
                             Thread.Sleep(1000);
@@ -221,7 +221,6 @@ namespace NPNDAutoVNC
                 }
                 
             }
-
         }
 
 
@@ -292,6 +291,18 @@ namespace NPNDAutoVNC
                     Config.AdvertisingPoint2 = new Point(Config.VNCPoint.X + Config.AdvertisingPoint2.X, Config.VNCPoint.Y + Config.AdvertisingPoint2.Y);
 
                     
+
+                    Config.s1 = new Point(Config.VNCPoint.X + Config.s1.X, Config.VNCPoint.Y + Config.s1.Y);
+                    Config.s2 = new Point(Config.VNCPoint.X + Config.s2.X, Config.VNCPoint.Y + Config.s2.Y);
+                    Config.s3 = new Point(Config.VNCPoint.X + Config.s3.X, Config.VNCPoint.Y + Config.s3.Y);
+                    Config.s4 = new Point(Config.VNCPoint.X + Config.s4.X, Config.VNCPoint.Y + Config.s4.Y);
+                    Config.s5 = new Point(Config.VNCPoint.X + Config.s5.X, Config.VNCPoint.Y + Config.s5.Y);
+                    Config.s6 = new Point(Config.VNCPoint.X + Config.s6.X, Config.VNCPoint.Y + Config.s6.Y);
+
+                    Config.s7 = new Point(Config.VNCPoint.X + Config.s7.X, Config.VNCPoint.Y + Config.s7.Y);
+                    Config.s8 = new Point(Config.VNCPoint.X + Config.s8.X, Config.VNCPoint.Y + Config.s8.Y);
+                    Config.s9 = new Point(Config.VNCPoint.X + Config.s9.X, Config.VNCPoint.Y + Config.s9.Y);
+                    Config.s10 = new Point(Config.VNCPoint.X + Config.s10.X, Config.VNCPoint.Y + Config.s10.Y);
 
                 }
             }
@@ -377,7 +388,7 @@ namespace NPNDAutoVNC
             Thread.Sleep(500);
             sendMouseLeftclick(Pad);
         }
-        public static void CloseAndRestart(int numApp,Point appstart, Point appclose, bool ResetAd = false)
+        public static void CloseAndRestart(int numApp,Point appstart, Point appclose,bool isTrungGian,int sobuoc, bool ResetAd = false)
         {
             try
             {
@@ -414,6 +425,9 @@ namespace NPNDAutoVNC
                     RealAppPoint.X += randomNumber * 75;
                 }
 
+                if(isTrungGian)
+                 ClickTrungGian(sobuoc);
+
                 SetCursorPos(RealAppPoint.X, RealAppPoint.Y);
                 Thread.Sleep(200);
                 sendMouseLeftclick(RealAppPoint);
@@ -422,6 +436,34 @@ namespace NPNDAutoVNC
             {
 
             }
+        }
+
+        public static void ClickTrungGian(int sobuoc)
+        {
+            List<Point> listPoint = new List<Point>();
+          //  Point[] listPoint = new Point[10];
+            listPoint.Add(NewConfig.Config.s1);
+            listPoint.Add(NewConfig.Config.s2);
+            listPoint.Add(NewConfig.Config.s3);
+            listPoint.Add(NewConfig.Config.s4);
+            listPoint.Add(NewConfig.Config.s5);
+
+            listPoint.Add(NewConfig.Config.s6);
+            listPoint.Add(NewConfig.Config.s7);
+            listPoint.Add(NewConfig.Config.s8);
+            listPoint.Add(NewConfig.Config.s9);
+            listPoint.Add(NewConfig.Config.s10);
+            Point[] arr = listPoint.ToArray();
+            for(int i=0;i<sobuoc;i++)
+            {
+                Point p = new Point();
+                p = arr[i];
+                SetCursorPos(p.X,p.Y);
+                Thread.Sleep(3000);
+                sendMouseLeftclick(p);
+
+            }
+            
         }
         public static void VNCHomePress(Point appstart,Point AdPoint)
         {

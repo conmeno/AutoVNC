@@ -80,7 +80,8 @@ namespace NPNDAutoVNC
         int Rounds = 0;
         int Apps = 0;
 
-
+        int RoundTrungGian = 0;
+        
 
 
 
@@ -127,18 +128,19 @@ namespace NPNDAutoVNC
                 }
                 LoopCount++;
                 LoopReset++;
+                RoundTrungGian++;
                 if (LoopReset >= int.Parse(txtNumRoundReset.Text))
                     LoopReset = 0;
 
-                Utility.OpenApps(listVNC, (int)txtRandom.Value, false, isResetADID);
+                Utility.OpenApps(listVNC, (int)txtRandom.Value, false,cbTrungGian.Checked,int.Parse(txtSobuoc.Text), isResetADID);
                 if (cbClickAd.Checked)
                 {
-                    if (LoopCount >= int.Parse(txtRoundClick.Text))
+                    if (LoopCount >= int.Parse(txtNumberRoundClickAd.Text))
                     {
                         //Thread.Sleep(60000);
                         int RoundTimneWait = int.Parse((txtRoundClickWaiting.Text + "000"));
                         Thread.Sleep(RoundTimneWait);
-                        Utility.OpenApps(listVNC, (int)txtRandom.Value, true, isResetADID);
+                        Utility.OpenApps(listVNC, (int)txtRandom.Value, true,false,0, isResetADID);
 
                         Thread.Sleep(RoundTimneWait);
                         LoopCount = 0;
@@ -467,6 +469,86 @@ namespace NPNDAutoVNC
             {
             }
             Environment.Exit(1);
+        }
+
+        private void s1_Click(object sender, EventArgs e)
+        {
+            NewConfig config = Utility.LoadConfig(false);
+            Point temp = new Point(int.Parse(txtVNCPointX.Text), int.Parse(txtVNCPointY.Text));
+            config.s1 = temp;
+            Utility.SaveConfig(config);
+        }
+
+        private void s2_Click(object sender, EventArgs e)
+        {
+            NewConfig config = Utility.LoadConfig(false);
+            Point temp = new Point(int.Parse(txtVNCPointX.Text), int.Parse(txtVNCPointY.Text));
+            config.s2 = temp;
+            Utility.SaveConfig(config);
+        }
+
+        private void s3_Click(object sender, EventArgs e)
+        {
+            NewConfig config = Utility.LoadConfig(false);
+            Point temp = new Point(int.Parse(txtVNCPointX.Text), int.Parse(txtVNCPointY.Text));
+            config.s3 = temp;
+            Utility.SaveConfig(config);
+        }
+
+        private void s4_Click(object sender, EventArgs e)
+        {
+            NewConfig config = Utility.LoadConfig(false);
+            Point temp = new Point(int.Parse(txtVNCPointX.Text), int.Parse(txtVNCPointY.Text));
+            config.s4 = temp;
+            Utility.SaveConfig(config);
+        }
+
+        private void s5_Click(object sender, EventArgs e)
+        {
+            NewConfig config = Utility.LoadConfig(false);
+            Point temp = new Point(int.Parse(txtVNCPointX.Text), int.Parse(txtVNCPointY.Text));
+            config.s5 = temp;
+            Utility.SaveConfig(config);
+        }
+
+        private void s6_Click(object sender, EventArgs e)
+        {
+            NewConfig config = Utility.LoadConfig(false);
+            Point temp = new Point(int.Parse(txtVNCPointX.Text), int.Parse(txtVNCPointY.Text));
+            config.s6 = temp;
+            Utility.SaveConfig(config);
+        }
+
+        private void s7_Click(object sender, EventArgs e)
+        {
+            NewConfig config = Utility.LoadConfig(false);
+            Point temp = new Point(int.Parse(txtVNCPointX.Text), int.Parse(txtVNCPointY.Text));
+            config.s7 = temp;
+            Utility.SaveConfig(config);
+        }
+
+        private void s8_Click(object sender, EventArgs e)
+        {
+            NewConfig config = Utility.LoadConfig(false);
+            Point temp = new Point(int.Parse(txtVNCPointX.Text), int.Parse(txtVNCPointY.Text));
+            config.s8 = temp;
+            Utility.SaveConfig(config);
+        }
+
+        private void s9_Click(object sender, EventArgs e)
+        {
+            NewConfig config = Utility.LoadConfig(false);
+            Point temp = new Point(int.Parse(txtVNCPointX.Text), int.Parse(txtVNCPointY.Text));
+            config.s9 = temp;
+            Utility.SaveConfig(config);
+        }
+
+        private void s10_Click(object sender, EventArgs e)
+        {
+            NewConfig config = Utility.LoadConfig(false);
+            Point temp = new Point(int.Parse(txtVNCPointX.Text), int.Parse(txtVNCPointY.Text));
+            config.s10 = temp;
+            Utility.SaveConfig(config);
         }
     }
 }

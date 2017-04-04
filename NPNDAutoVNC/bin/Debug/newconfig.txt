@@ -3,12 +3,12 @@
   <VNCName>VNC-Viewer-5.3.0-Windows-32bit</VNCName>
   <NumberRoundClickAd>4</NumberRoundClickAd>
   <VNCPoint>
-    <X>881</X>
-    <Y>426</Y>
+    <X>791</X>
+    <Y>282</Y>
   </VNCPoint>
   <AppPoint>
-    <X>46</X>
-    <Y>53</Y>
+    <X>48</X>
+    <Y>60</Y>
   </AppPoint>
   <AppPoint2>
     <X>1582</X>
@@ -44,4 +44,44 @@
   <VNCConfigFile>main.vnc</VNCConfigFile>
   <VNCPasswordCode>b4d90014103bde54</VNCPasswordCode>
   <DefaultIP>192.168.1.</DefaultIP>
+  <s1>
+    <X>272</X>
+    <Y>153</Y>
+  </s1>
+  <s2>
+    <X>160</X>
+    <Y>263</Y>
+  </s2>
+  <s3>
+    <X>112</X>
+    <Y>238</Y>
+  </s3>
+  <s4>
+    <X>156</X>
+    <Y>242</Y>
+  </s4>
+  <s5>
+    <X>74</X>
+    <Y>207</Y>
+  </s5>
+  <s6>
+    <X>0</X>
+    <Y>0</Y>
+  </s6>
+  <s7>
+    <X>0</X>
+    <Y>0</Y>
+  </s7>
+  <s8>
+    <X>0</X>
+    <Y>0</Y>
+  </s8>
+  <s9>
+    <X>0</X>
+    <Y>0</Y>
+  </s9>
+  <s10>
+    <X>0</X>
+    <Y>0</Y>
+  </s10>
 </NewConfig>

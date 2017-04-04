@@ -41,6 +41,21 @@ namespace NPNDAutoVNC
         [XmlIgnore]
         public static NewConfig Config { get; set; }
 
+
+        public Point s1 { get; set; }
+        public Point s2 { get; set; }
+        public Point s3 { get; set; }
+
+        public Point s4 { get; set; }
+        public Point s5 { get; set; }
+        public Point s6 { get; set; }
+
+
+        public Point s7 { get; set; }
+        public Point s8 { get; set; }
+        public Point s9 { get; set; }
+        public Point s10 { get; set; }
+
     }
     public class VNC
     {

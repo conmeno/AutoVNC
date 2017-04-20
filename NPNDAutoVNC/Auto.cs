@@ -87,9 +87,11 @@ namespace NPNDAutoVNC
 
         private void btStart_Click(object sender, EventArgs e)
         {
-            Thread thread = new Thread(() => StartRunAuto());
-            thread.Start();
-            
+            //Thread thread = new Thread(() => StartRunAuto());
+            //thread.Start();
+            StartRunAuto();
+
+
 
         }
         public void StartRunAuto()
@@ -98,7 +100,7 @@ namespace NPNDAutoVNC
             {
                 
                 this.WindowState = FormWindowState.Minimized;
-                 
+                RoundTrungGian = int.Parse(txtRoundTrungGian.Text);
                 BindingList<VNC> listVNC = (BindingList<VNC>)gridlist.DataSource;
                 Utility.ListIPtoFiles(listVNC);
                 if (listVNC != null && listVNC.Count > 0)
@@ -121,7 +123,7 @@ namespace NPNDAutoVNC
 
 
                 bool isResetADID = false;
-
+                bool isTrungGian = false;
                 if ((LoopReset == 0 || LoopReset >= int.Parse(txtNumRoundReset.Text)) && checkResetHomescreen.Checked)
                 {
                     isResetADID = true;
@@ -131,8 +133,13 @@ namespace NPNDAutoVNC
                 RoundTrungGian++;
                 if (LoopReset >= int.Parse(txtNumRoundReset.Text))
                     LoopReset = 0;
+                if(RoundTrungGian>=int.Parse(txtRoundTrungGian.Text))
+                {
+                    RoundTrungGian = 0;
+                    isTrungGian = true;
+                }
 
-                Utility.OpenApps(listVNC, (int)txtRandom.Value, false,cbTrungGian.Checked,int.Parse(txtSobuoc.Text), isResetADID);
+                Utility.OpenApps(listVNC, (int)txtRandom.Value, false,isTrungGian,int.Parse(txtSobuoc.Text), isResetADID);
                 if (cbClickAd.Checked)
                 {
                     if (LoopCount >= int.Parse(txtNumberRoundClickAd.Text))

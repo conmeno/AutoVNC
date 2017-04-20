@@ -40,6 +40,11 @@
             this.btGetPoint = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.txtRoundTrungGian = new System.Windows.Forms.TextBox();
+            this.sdafsdafasf = new System.Windows.Forms.Label();
+            this.txtSobuoc = new System.Windows.Forms.TextBox();
+            this.cbTrungGian = new System.Windows.Forms.CheckBox();
             this.cbStartWindows = new System.Windows.Forms.CheckBox();
             this.cbAutoStart = new System.Windows.Forms.CheckBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -50,6 +55,8 @@
             this.checkResetHomescreen = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btSaveNumberRoundClickAd = new System.Windows.Forms.Button();
+            this.txtNumberRoundClickAd = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtRoundClickWaiting = new System.Windows.Forms.TextBox();
@@ -57,6 +64,17 @@
             this.ListIPCopy = new System.Windows.Forms.Button();
             this.txtListIP = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.s10 = new System.Windows.Forms.Button();
+            this.s9 = new System.Windows.Forms.Button();
+            this.s8 = new System.Windows.Forms.Button();
+            this.s7 = new System.Windows.Forms.Button();
+            this.s6 = new System.Windows.Forms.Button();
+            this.s5 = new System.Windows.Forms.Button();
+            this.s4 = new System.Windows.Forms.Button();
+            this.s3 = new System.Windows.Forms.Button();
+            this.s2 = new System.Windows.Forms.Button();
+            this.s1 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             this.txtwaitVNC = new System.Windows.Forms.NumericUpDown();
             this.label14 = new System.Windows.Forms.Label();
             this.btSaveConfig = new System.Windows.Forms.Button();
@@ -83,34 +101,16 @@
             this.label12 = new System.Windows.Forms.Label();
             this.btCoverSSH = new System.Windows.Forms.Button();
             this.btForceClose = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.cbTrungGian = new System.Windows.Forms.CheckBox();
-            this.btSaveNumberRoundClickAd = new System.Windows.Forms.Button();
-            this.txtNumberRoundClickAd = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.s1 = new System.Windows.Forms.Button();
-            this.s2 = new System.Windows.Forms.Button();
-            this.s3 = new System.Windows.Forms.Button();
-            this.s5 = new System.Windows.Forms.Button();
-            this.s4 = new System.Windows.Forms.Button();
-            this.s10 = new System.Windows.Forms.Button();
-            this.s9 = new System.Windows.Forms.Button();
-            this.s8 = new System.Windows.Forms.Button();
-            this.s7 = new System.Windows.Forms.Button();
-            this.s6 = new System.Windows.Forms.Button();
-            this.txtSobuoc = new System.Windows.Forms.TextBox();
-            this.sdafsdafasf = new System.Windows.Forms.Label();
-            this.txtRoundTrungGian = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridlist)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtRandom)).BeginInit();
             this.panel1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtwaitVNC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WaitEachRound)).BeginInit();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // btStart
@@ -241,6 +241,54 @@
             this.tabPage1.Text = "Main";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.txtRoundTrungGian);
+            this.panel3.Controls.Add(this.sdafsdafasf);
+            this.panel3.Controls.Add(this.txtSobuoc);
+            this.panel3.Controls.Add(this.cbTrungGian);
+            this.panel3.Location = new System.Drawing.Point(3, 285);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(156, 87);
+            this.panel3.TabIndex = 45;
+            // 
+            // txtRoundTrungGian
+            // 
+            this.txtRoundTrungGian.Location = new System.Drawing.Point(64, 32);
+            this.txtRoundTrungGian.Name = "txtRoundTrungGian";
+            this.txtRoundTrungGian.Size = new System.Drawing.Size(34, 20);
+            this.txtRoundTrungGian.TabIndex = 49;
+            this.txtRoundTrungGian.Text = "5";
+            // 
+            // sdafsdafasf
+            // 
+            this.sdafsdafasf.AutoSize = true;
+            this.sdafsdafasf.Location = new System.Drawing.Point(5, 36);
+            this.sdafsdafasf.Name = "sdafsdafasf";
+            this.sdafsdafasf.Size = new System.Drawing.Size(53, 13);
+            this.sdafsdafasf.TabIndex = 48;
+            this.sdafsdafasf.Text = "Vòng chờ";
+            // 
+            // txtSobuoc
+            // 
+            this.txtSobuoc.Location = new System.Drawing.Point(108, 5);
+            this.txtSobuoc.Name = "txtSobuoc";
+            this.txtSobuoc.Size = new System.Drawing.Size(34, 20);
+            this.txtSobuoc.TabIndex = 48;
+            this.txtSobuoc.Text = "5";
+            // 
+            // cbTrungGian
+            // 
+            this.cbTrungGian.AutoSize = true;
+            this.cbTrungGian.Checked = true;
+            this.cbTrungGian.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbTrungGian.Location = new System.Drawing.Point(9, 9);
+            this.cbTrungGian.Name = "cbTrungGian";
+            this.cbTrungGian.Size = new System.Drawing.Size(101, 17);
+            this.cbTrungGian.TabIndex = 16;
+            this.cbTrungGian.Text = "Bước trung gian";
+            this.cbTrungGian.UseVisualStyleBackColor = true;
+            // 
             // cbStartWindows
             // 
             this.cbStartWindows.AutoSize = true;
@@ -347,6 +395,23 @@
             this.panel1.Size = new System.Drawing.Size(156, 129);
             this.panel1.TabIndex = 42;
             // 
+            // btSaveNumberRoundClickAd
+            // 
+            this.btSaveNumberRoundClickAd.Location = new System.Drawing.Point(7, 74);
+            this.btSaveNumberRoundClickAd.Name = "btSaveNumberRoundClickAd";
+            this.btSaveNumberRoundClickAd.Size = new System.Drawing.Size(130, 23);
+            this.btSaveNumberRoundClickAd.TabIndex = 47;
+            this.btSaveNumberRoundClickAd.Text = "NumberRoundClickAd";
+            this.btSaveNumberRoundClickAd.UseVisualStyleBackColor = true;
+            // 
+            // txtNumberRoundClickAd
+            // 
+            this.txtNumberRoundClickAd.Location = new System.Drawing.Point(7, 100);
+            this.txtNumberRoundClickAd.Name = "txtNumberRoundClickAd";
+            this.txtNumberRoundClickAd.Size = new System.Drawing.Size(100, 20);
+            this.txtNumberRoundClickAd.TabIndex = 46;
+            this.txtNumberRoundClickAd.Text = "50";
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -439,10 +504,119 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(543, 377);
+            this.tabPage2.Size = new System.Drawing.Size(543, 401);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Config";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // s10
+            // 
+            this.s10.Location = new System.Drawing.Point(430, 232);
+            this.s10.Name = "s10";
+            this.s10.Size = new System.Drawing.Size(73, 23);
+            this.s10.TabIndex = 68;
+            this.s10.Text = "Step 10 point";
+            this.s10.UseVisualStyleBackColor = true;
+            this.s10.Click += new System.EventHandler(this.s10_Click);
+            // 
+            // s9
+            // 
+            this.s9.Location = new System.Drawing.Point(430, 203);
+            this.s9.Name = "s9";
+            this.s9.Size = new System.Drawing.Size(73, 23);
+            this.s9.TabIndex = 67;
+            this.s9.Text = "Step 9 point";
+            this.s9.UseVisualStyleBackColor = true;
+            this.s9.Click += new System.EventHandler(this.s9_Click);
+            // 
+            // s8
+            // 
+            this.s8.Location = new System.Drawing.Point(430, 176);
+            this.s8.Name = "s8";
+            this.s8.Size = new System.Drawing.Size(73, 23);
+            this.s8.TabIndex = 66;
+            this.s8.Text = "Step 8 point";
+            this.s8.UseVisualStyleBackColor = true;
+            this.s8.Click += new System.EventHandler(this.s8_Click);
+            // 
+            // s7
+            // 
+            this.s7.Location = new System.Drawing.Point(430, 147);
+            this.s7.Name = "s7";
+            this.s7.Size = new System.Drawing.Size(73, 23);
+            this.s7.TabIndex = 65;
+            this.s7.Text = "Step 7 point";
+            this.s7.UseVisualStyleBackColor = true;
+            this.s7.Click += new System.EventHandler(this.s7_Click);
+            // 
+            // s6
+            // 
+            this.s6.Location = new System.Drawing.Point(430, 118);
+            this.s6.Name = "s6";
+            this.s6.Size = new System.Drawing.Size(73, 23);
+            this.s6.TabIndex = 64;
+            this.s6.Text = "Step 6 point";
+            this.s6.UseVisualStyleBackColor = true;
+            this.s6.Click += new System.EventHandler(this.s6_Click);
+            // 
+            // s5
+            // 
+            this.s5.Location = new System.Drawing.Point(351, 232);
+            this.s5.Name = "s5";
+            this.s5.Size = new System.Drawing.Size(73, 23);
+            this.s5.TabIndex = 63;
+            this.s5.Text = "Step 5 point";
+            this.s5.UseVisualStyleBackColor = true;
+            this.s5.Click += new System.EventHandler(this.s5_Click);
+            // 
+            // s4
+            // 
+            this.s4.Location = new System.Drawing.Point(351, 203);
+            this.s4.Name = "s4";
+            this.s4.Size = new System.Drawing.Size(73, 23);
+            this.s4.TabIndex = 62;
+            this.s4.Text = "Step 4 point";
+            this.s4.UseVisualStyleBackColor = true;
+            this.s4.Click += new System.EventHandler(this.s4_Click);
+            // 
+            // s3
+            // 
+            this.s3.Location = new System.Drawing.Point(351, 176);
+            this.s3.Name = "s3";
+            this.s3.Size = new System.Drawing.Size(73, 23);
+            this.s3.TabIndex = 61;
+            this.s3.Text = "Step 3 point";
+            this.s3.UseVisualStyleBackColor = true;
+            this.s3.Click += new System.EventHandler(this.s3_Click);
+            // 
+            // s2
+            // 
+            this.s2.Location = new System.Drawing.Point(351, 147);
+            this.s2.Name = "s2";
+            this.s2.Size = new System.Drawing.Size(73, 23);
+            this.s2.TabIndex = 60;
+            this.s2.Text = "Step 2 point";
+            this.s2.UseVisualStyleBackColor = true;
+            this.s2.Click += new System.EventHandler(this.s2_Click);
+            // 
+            // s1
+            // 
+            this.s1.Location = new System.Drawing.Point(351, 118);
+            this.s1.Name = "s1";
+            this.s1.Size = new System.Drawing.Size(73, 23);
+            this.s1.TabIndex = 59;
+            this.s1.Text = "Step 1 point";
+            this.s1.UseVisualStyleBackColor = true;
+            this.s1.Click += new System.EventHandler(this.s1_Click);
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(348, 82);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(146, 23);
+            this.label7.TabIndex = 58;
+            this.label7.Text = "Bước trung gian";
             // 
             // txtwaitVNC
             // 
@@ -713,180 +887,6 @@
             this.btForceClose.UseVisualStyleBackColor = false;
             this.btForceClose.Click += new System.EventHandler(this.btForceClose_Click);
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.txtRoundTrungGian);
-            this.panel3.Controls.Add(this.sdafsdafasf);
-            this.panel3.Controls.Add(this.txtSobuoc);
-            this.panel3.Controls.Add(this.cbTrungGian);
-            this.panel3.Location = new System.Drawing.Point(3, 285);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(156, 87);
-            this.panel3.TabIndex = 45;
-            // 
-            // cbTrungGian
-            // 
-            this.cbTrungGian.AutoSize = true;
-            this.cbTrungGian.Checked = true;
-            this.cbTrungGian.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbTrungGian.Location = new System.Drawing.Point(9, 9);
-            this.cbTrungGian.Name = "cbTrungGian";
-            this.cbTrungGian.Size = new System.Drawing.Size(101, 17);
-            this.cbTrungGian.TabIndex = 16;
-            this.cbTrungGian.Text = "Bước trung gian";
-            this.cbTrungGian.UseVisualStyleBackColor = true;
-            // 
-            // btSaveNumberRoundClickAd
-            // 
-            this.btSaveNumberRoundClickAd.Location = new System.Drawing.Point(7, 74);
-            this.btSaveNumberRoundClickAd.Name = "btSaveNumberRoundClickAd";
-            this.btSaveNumberRoundClickAd.Size = new System.Drawing.Size(130, 23);
-            this.btSaveNumberRoundClickAd.TabIndex = 47;
-            this.btSaveNumberRoundClickAd.Text = "NumberRoundClickAd";
-            this.btSaveNumberRoundClickAd.UseVisualStyleBackColor = true;
-            // 
-            // txtNumberRoundClickAd
-            // 
-            this.txtNumberRoundClickAd.Location = new System.Drawing.Point(7, 100);
-            this.txtNumberRoundClickAd.Name = "txtNumberRoundClickAd";
-            this.txtNumberRoundClickAd.Size = new System.Drawing.Size(100, 20);
-            this.txtNumberRoundClickAd.TabIndex = 46;
-            this.txtNumberRoundClickAd.Text = "50";
-            // 
-            // label7
-            // 
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(348, 82);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(146, 23);
-            this.label7.TabIndex = 58;
-            this.label7.Text = "Bước trung gian";
-            // 
-            // s1
-            // 
-            this.s1.Location = new System.Drawing.Point(351, 118);
-            this.s1.Name = "s1";
-            this.s1.Size = new System.Drawing.Size(73, 23);
-            this.s1.TabIndex = 59;
-            this.s1.Text = "Step 1 point";
-            this.s1.UseVisualStyleBackColor = true;
-            this.s1.Click += new System.EventHandler(this.s1_Click);
-            // 
-            // s2
-            // 
-            this.s2.Location = new System.Drawing.Point(351, 147);
-            this.s2.Name = "s2";
-            this.s2.Size = new System.Drawing.Size(73, 23);
-            this.s2.TabIndex = 60;
-            this.s2.Text = "Step 2 point";
-            this.s2.UseVisualStyleBackColor = true;
-            this.s2.Click += new System.EventHandler(this.s2_Click);
-            // 
-            // s3
-            // 
-            this.s3.Location = new System.Drawing.Point(351, 176);
-            this.s3.Name = "s3";
-            this.s3.Size = new System.Drawing.Size(73, 23);
-            this.s3.TabIndex = 61;
-            this.s3.Text = "Step 3 point";
-            this.s3.UseVisualStyleBackColor = true;
-            this.s3.Click += new System.EventHandler(this.s3_Click);
-            // 
-            // s5
-            // 
-            this.s5.Location = new System.Drawing.Point(351, 232);
-            this.s5.Name = "s5";
-            this.s5.Size = new System.Drawing.Size(73, 23);
-            this.s5.TabIndex = 63;
-            this.s5.Text = "Step 5 point";
-            this.s5.UseVisualStyleBackColor = true;
-            this.s5.Click += new System.EventHandler(this.s5_Click);
-            // 
-            // s4
-            // 
-            this.s4.Location = new System.Drawing.Point(351, 203);
-            this.s4.Name = "s4";
-            this.s4.Size = new System.Drawing.Size(73, 23);
-            this.s4.TabIndex = 62;
-            this.s4.Text = "Step 4 point";
-            this.s4.UseVisualStyleBackColor = true;
-            this.s4.Click += new System.EventHandler(this.s4_Click);
-            // 
-            // s10
-            // 
-            this.s10.Location = new System.Drawing.Point(430, 232);
-            this.s10.Name = "s10";
-            this.s10.Size = new System.Drawing.Size(73, 23);
-            this.s10.TabIndex = 68;
-            this.s10.Text = "Step 10 point";
-            this.s10.UseVisualStyleBackColor = true;
-            this.s10.Click += new System.EventHandler(this.s10_Click);
-            // 
-            // s9
-            // 
-            this.s9.Location = new System.Drawing.Point(430, 203);
-            this.s9.Name = "s9";
-            this.s9.Size = new System.Drawing.Size(73, 23);
-            this.s9.TabIndex = 67;
-            this.s9.Text = "Step 9 point";
-            this.s9.UseVisualStyleBackColor = true;
-            this.s9.Click += new System.EventHandler(this.s9_Click);
-            // 
-            // s8
-            // 
-            this.s8.Location = new System.Drawing.Point(430, 176);
-            this.s8.Name = "s8";
-            this.s8.Size = new System.Drawing.Size(73, 23);
-            this.s8.TabIndex = 66;
-            this.s8.Text = "Step 8 point";
-            this.s8.UseVisualStyleBackColor = true;
-            this.s8.Click += new System.EventHandler(this.s8_Click);
-            // 
-            // s7
-            // 
-            this.s7.Location = new System.Drawing.Point(430, 147);
-            this.s7.Name = "s7";
-            this.s7.Size = new System.Drawing.Size(73, 23);
-            this.s7.TabIndex = 65;
-            this.s7.Text = "Step 7 point";
-            this.s7.UseVisualStyleBackColor = true;
-            this.s7.Click += new System.EventHandler(this.s7_Click);
-            // 
-            // s6
-            // 
-            this.s6.Location = new System.Drawing.Point(430, 118);
-            this.s6.Name = "s6";
-            this.s6.Size = new System.Drawing.Size(73, 23);
-            this.s6.TabIndex = 64;
-            this.s6.Text = "Step 6 point";
-            this.s6.UseVisualStyleBackColor = true;
-            this.s6.Click += new System.EventHandler(this.s6_Click);
-            // 
-            // txtSobuoc
-            // 
-            this.txtSobuoc.Location = new System.Drawing.Point(9, 32);
-            this.txtSobuoc.Name = "txtSobuoc";
-            this.txtSobuoc.Size = new System.Drawing.Size(34, 20);
-            this.txtSobuoc.TabIndex = 48;
-            this.txtSobuoc.Text = "5";
-            // 
-            // sdafsdafasf
-            // 
-            this.sdafsdafasf.AutoSize = true;
-            this.sdafsdafasf.Location = new System.Drawing.Point(6, 64);
-            this.sdafsdafasf.Name = "sdafsdafasf";
-            this.sdafsdafasf.Size = new System.Drawing.Size(53, 13);
-            this.sdafsdafasf.TabIndex = 48;
-            this.sdafsdafasf.Text = "Vòng chờ";
-            // 
-            // txtRoundTrungGian
-            // 
-            this.txtRoundTrungGian.Location = new System.Drawing.Point(65, 60);
-            this.txtRoundTrungGian.Name = "txtRoundTrungGian";
-            this.txtRoundTrungGian.Size = new System.Drawing.Size(34, 20);
-            this.txtRoundTrungGian.TabIndex = 49;
-            this.txtRoundTrungGian.Text = "5";
-            // 
             // Auto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -906,6 +906,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtRandom)).EndInit();
@@ -915,8 +917,6 @@
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtwaitVNC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.WaitEachRound)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

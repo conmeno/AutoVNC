@@ -205,8 +205,10 @@ namespace NPNDAutoVNC
                                 {
                                     NewResetAd(NewConfig.Config.ClosePoint, NewConfig.Config.AdvertisingPoint, NewConfig.Config.AdvertisingPoint1, NewConfig.Config.AdvertisingPoint2);
                                 }
+                                if (isTrungGian)
+                                    ClickTrungGian222(sobuoc,NewConfig.Config.ClosePoint);
 
-                                CloseAndRestart(numApp, NewConfig.Config.AppPoint, NewConfig.Config.ClosePoint,isTrungGian,sobuoc, ResetNormal);
+                                CloseAndRestart(numApp, NewConfig.Config.AppPoint, NewConfig.Config.ClosePoint,sobuoc, ResetNormal);
                             }
 
                             Thread.Sleep(1000);
@@ -388,7 +390,7 @@ namespace NPNDAutoVNC
             Thread.Sleep(500);
             sendMouseLeftclick(Pad);
         }
-        public static void CloseAndRestart(int numApp,Point appstart, Point appclose,bool isTrungGian,int sobuoc, bool ResetAd = false)
+        public static void CloseAndRestart(int numApp,Point appstart, Point appclose,int sobuoc, bool ResetAd = false)
         {
             try
             {
@@ -425,8 +427,7 @@ namespace NPNDAutoVNC
                     RealAppPoint.X += randomNumber * 75;
                 }
 
-                if(isTrungGian)
-                 ClickTrungGian(sobuoc);
+              
 
                 SetCursorPos(RealAppPoint.X, RealAppPoint.Y);
                 Thread.Sleep(200);
@@ -465,6 +466,52 @@ namespace NPNDAutoVNC
             }
             
         }
+
+        public static void ClickTrungGian222(int sobuoc, Point appclose)
+        {
+            SetCursorPos(appclose.X, appclose.Y);
+            Thread.Sleep(500);
+            sendMouseRightclick(appclose);
+           
+            Thread.Sleep(200);
+            sendMouseLeftclick(appclose);
+            Thread.Sleep(4000);
+
+
+            SetCursorPos(NewConfig.Config.s1.X, NewConfig.Config.s1.Y);
+            Thread.Sleep(7000);
+            sendMouseLeftclick(NewConfig.Config.s1);
+
+
+            SetCursorPos(NewConfig.Config.s2.X, NewConfig.Config.s2.Y);
+            Thread.Sleep(7000);
+            sendMouseLeftclick(NewConfig.Config.s2);
+
+
+            SetCursorPos(NewConfig.Config.s3.X, NewConfig.Config.s3.Y);
+            Thread.Sleep(7000);
+            sendMouseLeftclick(NewConfig.Config.s3);
+
+
+            SetCursorPos(NewConfig.Config.s4.X, NewConfig.Config.s4.Y);
+            Thread.Sleep(7000);
+            sendMouseLeftclick(NewConfig.Config.s4);
+
+
+            SetCursorPos(NewConfig.Config.s5.X, NewConfig.Config.s5.Y);
+            Thread.Sleep(7000);
+            sendMouseLeftclick(NewConfig.Config.s5);
+
+
+
+
+            //end
+
+            Thread.Sleep(1000);
+            sendMouseRightclick(NewConfig.Config.s5);
+        }
+
+
         public static void VNCHomePress(Point appstart,Point AdPoint)
         {
             try

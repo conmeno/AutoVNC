@@ -1,10 +1,10 @@
 <NewConfig>
   <Sleep>1000</Sleep>
-  <VNCName>VNC-Viewer-5.3.0-Windows-32bit</VNCName>
+  <VNCName>VNC-Viewer-5.3.1-Windows-32bit</VNCName>
   <NumberRoundClickAd>4</NumberRoundClickAd>
   <VNCPoint>
     <X>791</X>
-    <Y>282</Y>
+    <Y>279</Y>
   </VNCPoint>
   <AppPoint>
     <X>270</X>
@@ -43,7 +43,7 @@
   </AdvertisingPoint2>
   <VNCConfigFile>main.vnc</VNCConfigFile>
   <VNCPasswordCode>b4d90014103bde54</VNCPasswordCode>
-  <DefaultIP>192.168.1.</DefaultIP>
+  <DefaultIP>192.168.2.</DefaultIP>
   <s1>
     <X>45</X>
     <Y>428</Y>
@@ -65,16 +65,16 @@
     <Y>204</Y>
   </s5>
   <s6>
-    <X>0</X>
-    <Y>0</Y>
+    <X>152</X>
+    <Y>219</Y>
   </s6>
   <s7>
-    <X>0</X>
-    <Y>0</Y>
+    <X>121</X>
+    <Y>434</Y>
   </s7>
   <s8>
-    <X>0</X>
-    <Y>0</Y>
+    <X>70</X>
+    <Y>204</Y>
   </s8>
   <s9>
     <X>0</X>
@@ -84,4 +84,6 @@
     <X>0</X>
     <Y>0</Y>
   </s10>
+  <RightOrLeft>0,0,0,0,0,1,0,0,0,0</RightOrLeft>
+  <StepWaiting>10,7,7,7,7,7,7,7,7,7</StepWaiting>
 </NewConfig>

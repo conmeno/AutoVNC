@@ -34,6 +34,8 @@ namespace NPNDAutoVNC
         [DllImport("user32.dll")]
         public static extern bool GetWindowRect(IntPtr hwnd, ref Rect rectangle);
 
+        public static string[] StepWaitingStatic = new string[10];
+        public static  string[] RightOrLeft = new string[10];
         public struct Rect
         {
             public int Left { get; set; }
@@ -478,32 +480,71 @@ namespace NPNDAutoVNC
             Thread.Sleep(4000);
 
 
-            SetCursorPos(NewConfig.Config.s1.X, NewConfig.Config.s1.Y);
-            Thread.Sleep(7000);
-            sendMouseLeftclick(NewConfig.Config.s1);
+            SetCursorPos(NewConfig.Config.s1.X, NewConfig.Config.s1.Y);         
+            sendMouse(NewConfig.Config.s1,int.Parse(Utility.RightOrLeft[0]));
+            Thread.Sleep(int.Parse(Utility.StepWaitingStatic[0] + "000"));
 
 
-            SetCursorPos(NewConfig.Config.s2.X, NewConfig.Config.s2.Y);
-            Thread.Sleep(7000);
-            sendMouseLeftclick(NewConfig.Config.s2);
-
+            SetCursorPos(NewConfig.Config.s2.X, NewConfig.Config.s2.Y);           
+            sendMouse(NewConfig.Config.s2, int.Parse(Utility.RightOrLeft[1]));
+            Thread.Sleep(int.Parse(Utility.StepWaitingStatic[1] + "000"));
 
             SetCursorPos(NewConfig.Config.s3.X, NewConfig.Config.s3.Y);
-            Thread.Sleep(7000);
-            sendMouseLeftclick(NewConfig.Config.s3);
-
+          
+            sendMouse(NewConfig.Config.s3, int.Parse(Utility.RightOrLeft[2]));
+            Thread.Sleep(int.Parse(Utility.StepWaitingStatic[2] + "000"));
 
             SetCursorPos(NewConfig.Config.s4.X, NewConfig.Config.s4.Y);
-            Thread.Sleep(7000);
-            sendMouseLeftclick(NewConfig.Config.s4);
-
+           
+            sendMouse(NewConfig.Config.s4, int.Parse(Utility.RightOrLeft[3]));
+            Thread.Sleep(int.Parse(Utility.StepWaitingStatic[3] + "000"));
 
             SetCursorPos(NewConfig.Config.s5.X, NewConfig.Config.s5.Y);
-            Thread.Sleep(7000);
-            sendMouseLeftclick(NewConfig.Config.s5);
+           
+            sendMouse(NewConfig.Config.s5, int.Parse(Utility.RightOrLeft[4]));
+            Thread.Sleep(int.Parse(Utility.StepWaitingStatic[4] + "000"));
 
+            if (sobuoc>5)
+            {
 
+                SetCursorPos(NewConfig.Config.s6.X, NewConfig.Config.s6.Y);
+               
+                sendMouse(NewConfig.Config.s6, int.Parse(Utility.RightOrLeft[5]));
+                Thread.Sleep(int.Parse(Utility.StepWaitingStatic[5] + "000"));
+                if (sobuoc > 6)
+                {
 
+                    SetCursorPos(NewConfig.Config.s7.X, NewConfig.Config.s7.Y);
+                  
+                    sendMouse(NewConfig.Config.s7, int.Parse(Utility.RightOrLeft[6]));
+                    Thread.Sleep(int.Parse(Utility.StepWaitingStatic[6] + "000"));
+                    if (sobuoc > 7)
+                    {
+
+                        SetCursorPos(NewConfig.Config.s8.X, NewConfig.Config.s8.Y);
+                        
+                        sendMouse(NewConfig.Config.s8, int.Parse(Utility.RightOrLeft[7]));
+                        Thread.Sleep(int.Parse(Utility.StepWaitingStatic[7] + "000"));
+                        if (sobuoc > 8)
+                        {
+
+                            SetCursorPos(NewConfig.Config.s9.X, NewConfig.Config.s9.Y);
+                           
+                            sendMouse(NewConfig.Config.s9, int.Parse(Utility.RightOrLeft[8]));
+                            Thread.Sleep(int.Parse(Utility.StepWaitingStatic[8] + "000"));
+                            if (sobuoc > 9)
+                            {
+
+                                SetCursorPos(NewConfig.Config.s10.X, NewConfig.Config.s10.Y);
+                                
+                                sendMouse(NewConfig.Config.s10, int.Parse(Utility.RightOrLeft[9]));
+                                Thread.Sleep(int.Parse(Utility.StepWaitingStatic[9] + "000"));
+
+                            }
+                        }
+                    }
+                }
+            }
 
             //end
 
@@ -769,7 +810,13 @@ namespace NPNDAutoVNC
         {
             mouse_event(MOUSEEVENTF_RIGHTDOWN | MOUSEEVENTF_RIGHTUP, p.X, p.Y, 0, 0);
         }
-
+        static void sendMouse(Point p,int status)
+        {
+            if(status==1)
+                mouse_event(MOUSEEVENTF_RIGHTDOWN | MOUSEEVENTF_RIGHTUP, p.X, p.Y, 0, 0);
+            else
+                mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, p.X, p.Y, 0, 0);
+        }
         static void sendMouseDoubleClick(Point p)
         {
             mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, p.X, p.Y, 0, 0);

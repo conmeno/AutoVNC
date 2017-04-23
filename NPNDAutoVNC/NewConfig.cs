@@ -40,7 +40,7 @@ namespace NPNDAutoVNC
 
         [XmlIgnore]
         public static NewConfig Config { get; set; }
-
+        
 
         public Point s1 { get; set; }
         public Point s2 { get; set; }
@@ -56,6 +56,8 @@ namespace NPNDAutoVNC
         public Point s9 { get; set; }
         public Point s10 { get; set; }
 
+        public string RightOrLeft { get; set; }
+        public string StepWaiting { get; set; }
     }
     public class VNC
     {

@@ -83,3 +83,12 @@ H:\AutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.Properties.Resources.resources
 H:\AutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.csproj.GenerateResource.Cache
 H:\AutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.exe
 H:\AutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.pdb
+E:\AUTO\AutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.exe
+E:\AUTO\AutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.pdb
+E:\AUTO\AutoVNC\NPNDAutoVNC\bin\Debug\NPNDAutoVNC.exe
+E:\AUTO\AutoVNC\NPNDAutoVNC\bin\Debug\NPNDAutoVNC.pdb
+E:\AUTO\AutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.csprojResolveAssemblyReference.cache
+E:\AUTO\AutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.Auto.resources
+E:\AUTO\AutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.Form1.resources
+E:\AUTO\AutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.Properties.Resources.resources
+E:\AUTO\AutoVNC\NPNDAutoVNC\obj\Debug\NPNDAutoVNC.csproj.GenerateResource.Cache

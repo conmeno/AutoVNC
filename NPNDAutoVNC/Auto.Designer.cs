@@ -101,6 +101,10 @@
             this.label12 = new System.Windows.Forms.Label();
             this.btCoverSSH = new System.Windows.Forms.Button();
             this.btForceClose = new System.Windows.Forms.Button();
+            this.txtStepWaiting = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtRightOrLeft = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridlist)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -467,6 +471,10 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label15);
+            this.tabPage2.Controls.Add(this.txtRightOrLeft);
+            this.tabPage2.Controls.Add(this.label11);
+            this.tabPage2.Controls.Add(this.txtStepWaiting);
             this.tabPage2.Controls.Add(this.s10);
             this.tabPage2.Controls.Add(this.s9);
             this.tabPage2.Controls.Add(this.s8);
@@ -511,7 +519,7 @@
             // 
             // s10
             // 
-            this.s10.Location = new System.Drawing.Point(430, 232);
+            this.s10.Location = new System.Drawing.Point(426, 159);
             this.s10.Name = "s10";
             this.s10.Size = new System.Drawing.Size(73, 23);
             this.s10.TabIndex = 68;
@@ -521,7 +529,7 @@
             // 
             // s9
             // 
-            this.s9.Location = new System.Drawing.Point(430, 203);
+            this.s9.Location = new System.Drawing.Point(426, 130);
             this.s9.Name = "s9";
             this.s9.Size = new System.Drawing.Size(73, 23);
             this.s9.TabIndex = 67;
@@ -531,7 +539,7 @@
             // 
             // s8
             // 
-            this.s8.Location = new System.Drawing.Point(430, 176);
+            this.s8.Location = new System.Drawing.Point(426, 103);
             this.s8.Name = "s8";
             this.s8.Size = new System.Drawing.Size(73, 23);
             this.s8.TabIndex = 66;
@@ -541,7 +549,7 @@
             // 
             // s7
             // 
-            this.s7.Location = new System.Drawing.Point(430, 147);
+            this.s7.Location = new System.Drawing.Point(426, 74);
             this.s7.Name = "s7";
             this.s7.Size = new System.Drawing.Size(73, 23);
             this.s7.TabIndex = 65;
@@ -551,7 +559,7 @@
             // 
             // s6
             // 
-            this.s6.Location = new System.Drawing.Point(430, 118);
+            this.s6.Location = new System.Drawing.Point(426, 45);
             this.s6.Name = "s6";
             this.s6.Size = new System.Drawing.Size(73, 23);
             this.s6.TabIndex = 64;
@@ -561,7 +569,7 @@
             // 
             // s5
             // 
-            this.s5.Location = new System.Drawing.Point(351, 232);
+            this.s5.Location = new System.Drawing.Point(311, 159);
             this.s5.Name = "s5";
             this.s5.Size = new System.Drawing.Size(73, 23);
             this.s5.TabIndex = 63;
@@ -571,7 +579,7 @@
             // 
             // s4
             // 
-            this.s4.Location = new System.Drawing.Point(351, 203);
+            this.s4.Location = new System.Drawing.Point(311, 130);
             this.s4.Name = "s4";
             this.s4.Size = new System.Drawing.Size(73, 23);
             this.s4.TabIndex = 62;
@@ -581,7 +589,7 @@
             // 
             // s3
             // 
-            this.s3.Location = new System.Drawing.Point(351, 176);
+            this.s3.Location = new System.Drawing.Point(311, 103);
             this.s3.Name = "s3";
             this.s3.Size = new System.Drawing.Size(73, 23);
             this.s3.TabIndex = 61;
@@ -591,7 +599,7 @@
             // 
             // s2
             // 
-            this.s2.Location = new System.Drawing.Point(351, 147);
+            this.s2.Location = new System.Drawing.Point(311, 74);
             this.s2.Name = "s2";
             this.s2.Size = new System.Drawing.Size(73, 23);
             this.s2.TabIndex = 60;
@@ -601,7 +609,7 @@
             // 
             // s1
             // 
-            this.s1.Location = new System.Drawing.Point(351, 118);
+            this.s1.Location = new System.Drawing.Point(311, 45);
             this.s1.Name = "s1";
             this.s1.Size = new System.Drawing.Size(73, 23);
             this.s1.TabIndex = 59;
@@ -612,7 +620,7 @@
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(348, 82);
+            this.label7.Location = new System.Drawing.Point(308, 9);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(146, 23);
             this.label7.TabIndex = 58;
@@ -887,6 +895,40 @@
             this.btForceClose.UseVisualStyleBackColor = false;
             this.btForceClose.Click += new System.EventHandler(this.btForceClose_Click);
             // 
+            // txtStepWaiting
+            // 
+            this.txtStepWaiting.Location = new System.Drawing.Point(311, 219);
+            this.txtStepWaiting.Name = "txtStepWaiting";
+            this.txtStepWaiting.Size = new System.Drawing.Size(206, 20);
+            this.txtStepWaiting.TabIndex = 69;
+            this.txtStepWaiting.Text = "7,7,7,7,7,7,7,7,7,7";
+            // 
+            // label11
+            // 
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(308, 199);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(109, 17);
+            this.label11.TabIndex = 70;
+            this.label11.Text = "Step Waiting";
+            // 
+            // label15
+            // 
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(308, 252);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(209, 20);
+            this.label15.TabIndex = 72;
+            this.label15.Text = "Right click=1, Left click=0";
+            // 
+            // txtRightOrLeft
+            // 
+            this.txtRightOrLeft.Location = new System.Drawing.Point(311, 275);
+            this.txtRightOrLeft.Name = "txtRightOrLeft";
+            this.txtRightOrLeft.Size = new System.Drawing.Size(206, 20);
+            this.txtRightOrLeft.TabIndex = 71;
+            this.txtRightOrLeft.Text = "0,0,0,0,0,0,0,0,0,0";
+            // 
             // Auto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -997,5 +1039,9 @@
         private System.Windows.Forms.TextBox txtSobuoc;
         private System.Windows.Forms.TextBox txtRoundTrungGian;
         private System.Windows.Forms.Label sdafsdafasf;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtStepWaiting;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox txtRightOrLeft;
     }
 }

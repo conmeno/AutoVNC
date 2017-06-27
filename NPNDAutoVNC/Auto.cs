@@ -86,12 +86,13 @@ namespace NPNDAutoVNC
 
 
         private void btStart_Click(object sender, EventArgs e)
-        {
+        {   Utility.RightOrLeft = NewConfig.Config.RightOrLeft.Split(char.Parse(","));
+            Utility.StepWaitingStatic= NewConfig.Config.StepWaiting.Split(char.Parse(","));
             //Thread thread = new Thread(() => StartRunAuto());
             //thread.Start();
             StartRunAuto();
 
-
+         
 
         }
         public void StartRunAuto()
@@ -133,12 +134,15 @@ namespace NPNDAutoVNC
                 RoundTrungGian++;
                 if (LoopReset >= int.Parse(txtNumRoundReset.Text))
                     LoopReset = 0;
+
+             
                 if(RoundTrungGian>=int.Parse(txtRoundTrungGian.Text))
                 {
                     RoundTrungGian = 0;
                     isTrungGian = true;
                 }
-
+                if (!cbTrungGian.Checked)
+                    isTrungGian = false;
                 Utility.OpenApps(listVNC, (int)txtRandom.Value, false,isTrungGian,int.Parse(txtSobuoc.Text), isResetADID);
                 if (cbClickAd.Checked)
                 {
@@ -198,6 +202,8 @@ namespace NPNDAutoVNC
             txtNumberRoundClickAd.Text = NewConfig.Config.NumberRoundClickAd.ToString();
             txtwaitVNC.Value = NewConfig.Config.waitTime;
             WaitEachRound.Value = NewConfig.Config.WaitEachRound;
+            txtStepWaiting.Text = NewConfig.Config.StepWaiting;
+            txtRightOrLeft.Text = NewConfig.Config.RightOrLeft;
             if (NewConfig.Config.autoStart)
             {
                 Thread thread = new Thread(() => StartRunAuto());
@@ -328,6 +334,8 @@ namespace NPNDAutoVNC
             config.VNCName = txtVNCName.Text;
             config.WaitEachRound = WaitEachRound.Value;
             config.waitTime = txtwaitVNC.Value;
+            config.StepWaiting = txtStepWaiting.Text;
+            config.RightOrLeft= txtRightOrLeft.Text;
             Utility.SaveConfig(config);
             Thread.Sleep(1500);
             Utility.LoadConfig(true);

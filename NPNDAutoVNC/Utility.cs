@@ -484,7 +484,7 @@ namespace NPNDAutoVNC
 
 
             SetCursorPos(NewConfig.Config.s2.X, NewConfig.Config.s2.Y);
-            Thread.Sleep(7000);
+            Thread.Sleep(5000);
             sendMouseLeftclick(NewConfig.Config.s2);
 
 
@@ -503,7 +503,42 @@ namespace NPNDAutoVNC
             sendMouseLeftclick(NewConfig.Config.s5);
 
 
+            if(sobuoc>5)
+            {
 
+                SetCursorPos(NewConfig.Config.s6.X, NewConfig.Config.s6.Y);
+                Thread.Sleep(7000);
+                sendMouseLeftclick(NewConfig.Config.s6);
+                if (sobuoc > 6)
+                {
+
+                    SetCursorPos(NewConfig.Config.s7.X, NewConfig.Config.s7.Y);
+                    Thread.Sleep(7000);
+                    sendMouseLeftclick(NewConfig.Config.s7);
+                    if (sobuoc > 7)
+                    {
+
+                        SetCursorPos(NewConfig.Config.s8.X, NewConfig.Config.s8.Y);
+                        Thread.Sleep(7000);
+                        sendMouseLeftclick(NewConfig.Config.s8);
+                        if (sobuoc > 8)
+                        {
+
+                            SetCursorPos(NewConfig.Config.s9.X, NewConfig.Config.s9.Y);
+                            Thread.Sleep(7000);
+                            sendMouseLeftclick(NewConfig.Config.s9);
+                            if (sobuoc > 9)
+                            {
+
+                                SetCursorPos(NewConfig.Config.s10.X, NewConfig.Config.s10.Y);
+                                Thread.Sleep(7000);
+                                sendMouseLeftclick(NewConfig.Config.s10);
+
+                            }
+                        }
+                    }
+                }
+            }
 
             //end
 
